@@ -2,16 +2,20 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
-  project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
-  },
+  logo: <><img src={"https://tonet.io/static/images/logo.png"} style={{width:'100px'}} />  Docs </>,
+
   chat: {
-    link: 'https://discord.com',
+    link: 'https://tonet.io/dashboard',
+    icon: <>Go to Manage</>
+    
   },
   docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  editLink:{text:''},
+  feedback:{
+    content:null
+  },
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'Tonet 2023 ©.',
   },
 }
 
