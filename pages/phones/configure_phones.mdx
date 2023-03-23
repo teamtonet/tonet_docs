@@ -1,0 +1,46 @@
+import { Callout } from 'nextra-theme-docs'
+
+### Call Routing
+    Call Routing Goes through the Following Process.
+    When Your Phone Number is dialled:    
+    1. **Calendar**: The Number checks if it has a Calendar currently active. i.e It is currently the 31st and you have a NYE calendar set.  
+        If an active Calendar is found, the Number goes to the Calendar destination.
+    2. **Schedule**: If no Calendar is selected or currently in range, The Phone checks if it is subscribed to any weekly Schedule. 
+        If it is, it will follow the Scheduled routing, If not, Or the Schedule does not specify a destination for this hour of the week, it goes to:
+    3. **Default**: Default is always the Default destination of a Phone if no Calendar or Schedule is Present.    
+
+To Route Calls, Head over to the Phone Configuration Page: 
+
+* Go to the [Phones tab](https://tonet.io/dashboard/phones) in your tonet.io Platform.  
+
+* Click on the Phone Number you want to Configure.  
+
+* Click on the Configure tab at the top if Not already highlighted. 
+
+<img target="_blank" src={'https://imgur.com/PGanndJ.png'} />
+
+
+As You can see, There are many Configuration features for the Phone.
+
+### Turn ON/OFF Call Recording
+    Use the Toggle Button to turn call recordings on and off. 
+    Call Recordings can be viewed in the [Call Logs](https://tonet.io/dashboard/call_logs/)
+### Change Default Phone Destination
+    Click on the Default Dropdown, and choose from:  
+    * Call Forward: Type a Phone Number in the Field and the calls are automatically transferred to that Number.
+    * Auto Attendant: Send the call to an [Auto Attendant](https://tonet.io/dashboard/ivrs) 
+### Choose a Schedule for the Phone
+    You can select a Schedule for the Phone to be Directed to various locations depending on the time of the week.  
+    Schedules can be created here    
+    You can Only have one Schedule per Phone Number  
+    If no Schedule is Selected, Phone Number will go to Default.
+### Add Calendar Events
+    Unlike Schedule, You can select as Many Calendar Effects as Desired. Only Calendar events not expired will appear as selectable options.
+    <Callout emoji="⚠">
+        If Two Calendar Events interfere with each other and are selected, Phone will route to the first one it sees, as it has no way to understand your intent.  
+    </ Callout>  
+**You should be able to see where your phone is routing to currently in the [Phones tab](https://tonet.io/dashboard/phones) , under the Current Path Header **
+![Current Path](https://imgur.com/Vu3RSUU.png)
+    <Callout emoji="⚠">
+        If you don't see any Calendar or Schedule entries, You may need to Create New ones.
+    </ Callout>
