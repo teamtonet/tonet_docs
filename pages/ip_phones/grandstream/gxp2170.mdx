@@ -1,0 +1,57 @@
+import { Callout } from 'nextra-theme-docs'
+
+# GXP2170 Configuration
+
+<Callout emoji="⚠">
+  Firmware 1.0.7.97 or newer required.
+</Callout>
+
+## SIP Registration
+
+* Find the IP-address of your IP Phone. Press the Menu Key in the middle of the Arrow Pad.
+![main_menu](https://i.imgur.com/KFwB09v.png)
+* Navigate to Status and Select "Network Status"
+* Take note of the IPv4 Address displayed
+
+* Navigate to the IP Phones web-interface using a browser on your PC.
+* Type the IP-Address of the IP Phone in the browser's address bar.
+
+![browser-address-bar](https://i.imgur.com/enL4nfO.png)
+
+* Login to the IP Phones interface (Default username and password is admin / admin)
+
+![login-screen](https://i.imgur.com/JpvMwoI.png)
+
+* Navigate to Accounts - Account 1 - General Settings
+
+![account-1-navigation](https://i.imgur.com/JO5hiM0.png)
+
+* Set the Account to Active and fill out SIP Server, SIP User ID, Authenticate ID, and Name as per the information
+you recieved from Support.
+
+![account-1-settings](https://i.imgur.com/qTBiERU.png)
+
+* Click on Save and Apply
+
+## STUN Configuration
+<Callout emoji="⚠">
+  STUN configuration is required to avoid audio issues such as one way audio.
+</Callout>
+
+* Click on Network Settings in the left hand side menu.
+
+![network-settings-menu](https://i.imgur.com/8rRAJVl.png)
+
+* In the Nat Traversal drop-down menu select STUN
+
+* Click on Save and Apply
+
+* In the top menu select Settings - General Settings
+
+![general-settings-menu](https://i.imgur.com/IQktyb3.png)
+
+* Add "stun.tonet.io:3478" in the "STUN Server" field.
+
+![general-settings](https://i.imgur.com/oHgWaTz.png)
+
+* Click on Save and Apply
