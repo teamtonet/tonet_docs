@@ -19,9 +19,11 @@ const config: DocsThemeConfig = {
   },
 
   useNextSeoProps: () => ({ titleTemplate: "%s \u2013 Tonet" }),
-  head:<head> 
-  <link rel="icon" type="image/x-icon" href="https://tonet.io/static/images/logo_t.png" />
-  </head>
+  head: (
+    <>
+      <link rel="icon" type="image/x-icon" href="https://tonet.io/static/images/logo_t.png" />
+    </>
+  )
 
 }
 
