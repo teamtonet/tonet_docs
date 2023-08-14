@@ -1,0 +1,81 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Tonet Trunk with VICIdial
+
+__1. Ask Tonet Support to prepare your user for vicidial__
+
+Contact Tonet to enable support for vicidial. Vicidial support will be enabled on one user which will be used for the vicidial trunk.
+
+__2. Retrieve the needed SIP details__
+
+Collect the necessary SIP information from Tonet’s dashboard in Users -> User designated for Vicidial -> SIP Information. You will need username, password, domain and port. 
+
+__2. Assign a phone number for incoming calls__
+
+Create or select a phone number to be used for incoming calls to the trunk on Tonet’s dashboard in Phones.
+Route the number to the designated VICIdial user in the Configure tab. You can route several numbers at once to the same user.
+
+<Callout type="info" emoji="ℹ️">
+  Any number you own in Tonet can be used as outgoing caller-id in VICIdial.
+</Callout>
+
+![Phone_Number](https://i.imgur.com/98jcH2A.png)
+
+__4. Configure Tonet as a vicidial carrier__
+
+Admin - Carriers, use the information from Step 1 in place of SIPUser, SIPPassword, domain, port and phonenumber
+
+Carrier ID: tonet\
+Carrier Name: Tonet\
+Registration String:\
+register => SIPUser:SIPPassword@domain:port
+
+![carrier](https://i.imgur.com/MqLHWLO.png)
+
+**Account Entry**:
+```
+[tonet]
+disallow=all
+allow=ulaw
+type=peer
+username=<SIPUser>
+fromuser=<SIPUser>
+secret=SIPPassword
+host=<domain>
+port=<port>
+dtmfmode=rfc2833
+insecure=port,invite 
+context=trunkinbound
+```
+
+![account_entry](https://i.imgur.com/u4RHfzp.png)
+
+**Protocol**: SIP
+
+**Global String**: \<blank\>
+
+**Dialplan Entry**:
+
+For example, to use Tonet via prefix 9 and North American Number Plan, 
+allowing numbers to be entered either with or without the leading 1.
+
+```
+exten => _91XXXXXXXXXX,1,AGI(agi://127.0.0.1:4577/call_log)
+exten => _91XXXXXXXXXX,2,Dial(SIP/${EXTEN:1}@tonet,,tTo)
+exten => _91XXXXXXXXXX,3,Hangup
+exten => _9XXXXXXXXXX,1,AGI(agi://127.0.0.1:4577/call_log)
+exten => _9XXXXXXXXXX,2,Dial(SIP/${EXTEN:1}@tonet,,tTo)
+exten => _9XXXXXXXXXX,3,Hangup
+```
+
+![dialplan_entry](https://i.imgur.com/8aO8G7n.png)
+
+**Active**: Y
+
+Click on SUBMIT to save the trunk. Wait 1 minute for the changes to take effect.
+
+---
+
+Check out [Outbound / Campaigns](/vicidial/campaigns) to configure outgoing calls.
+
+For incoming calls take a look at the [Inbound / Blended section](/vicidial/inbound)

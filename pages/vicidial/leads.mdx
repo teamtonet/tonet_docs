@@ -1,0 +1,67 @@
+# Create a List and import Leads
+
+__Lists - Add A New List__
+
+Create a a list entry to which you will upload the leads. Select which campaign this List should belong to.
+
+![Create_List](https://i.imgur.com/MrMKkSW.png)
+
+Then go to __Lists - Load New Leads__
+
+From here you can import leads in the basic text pipe-delimited or tab-delimited format,
+a CSV file or a simple Excel spreadsheet.
+
+The format of the Lead file is:
+```
+1. Vendor Lead Code - shows up in the Vendor ID field of the GUI
+2. Source Code - internal use only for system and database administrators
+3. List ID - the list number that these leads will show up under
+4. Phone Code - the country code prefix - 1 for US, 44 for UK, 61 for AUS,etc
+5. Phone Number - at least 7 digits long and no more than 16 digits long.
+6. Title - title of the customer - Mr. Ms. Mrs, etc...
+7. First Name
+8. Middle Initial
+9. Last Name
+10. Address Line 1
+11. Address Line 2
+12. Address Line 3
+13. City
+14. State - limited to 2 characters
+15. Province
+16. Postal Code
+17. Country
+18. Gender
+19. Date of Birth
+20. Alternate Phone Number
+21. Email Address
+22. Security Phrase
+23. Comments
+24. Rank
+25. Owner
+```
+
+You can download a sample xls with the correct headers [here](/files/lead_format.xlsx).
+
+![Lead_File_Example](https://i.imgur.com/AopZa52.png)
+
+Choose the Lead file from your computer, make sure to select the approperiate options in the form.
+List ID should be set to the same ID you gave the list you created in the previous step, unless specified in the file itself.
+
+![Lead_Import](https://i.imgur.com/T54u96j.png)
+
+Press Submit and your leads will be imported to the List.
+
+![Leads_Imported](https://i.imgur.com/pnYG02u.png)
+
+If you check the details of you campaign you will see which lists are used by that campaign and how many leads are to be called.
+
+![Campaign_Lists](https://i.imgur.com/W7PkWb3.png)
+
+When a campaign has Leads loaded, an active agent can press "DIAL NEXT NUMBER" to dial from the List (if Dial-Method is set to Manual on the campaign).
+See [Predicitve Dialing](/vicidial/predicitve_dialing) for automatic dialing.
+
+![Dial_Next_Number](https://i.imgur.com/tH7KLqw.png)
+
+The information from the Lead List will be populated in the Agent interface as the call is ringing.
+
+![Agent_Screen_Ringing_Lead](https://i.imgur.com/Z1leGVC.png)

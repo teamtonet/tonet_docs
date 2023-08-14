@@ -1,0 +1,44 @@
+# VICIDial Campagins
+
+All calls in VICIdial whether it's incoming our outgoing requires a campaign.
+Here we will set up a default campaign that allows agents to login to the campaign and manually enter phone numbers to dial.
+
+Check out [Inbound / Blended](/vicidial/inbound) for incoming calls.
+
+__Campaigns - Add A New Campaign__
+
+```
+Campaign ID: 123123
+Campaign Name: my-first-campaign
+Campaign Description: my first manual campaign
+Active: Y
+Park Music-on-Hold: default
+Allow Closers: Y
+Minimum Hopper Level: 5
+Auto Dial Level: 0
+Local Call Time: 24hours
+```
+
+![Add_New_Campaign](https://i.imgur.com/YDjxeva.png)
+
+When you press Submit you will see more details to configure.\
+The main parameters are:
+
+```
+Dial Method: MANUAL
+Dial Prefix: 9 [This must match what you set in Carrier - Tonet - Dialplan Entry]
+Campaign CallerID: <Number you own in Tonet>
+Allow No-Hopper-Leads Logins: Y
+```
+
+This campaign will allow agent logins even if the hopper has no leads. In order to allow agents to manually
+enter phone numbers to dial the User also need to be configured with __Agent Call Manual:__ 1 or 2 in
+__Users - Modify__. When enabled user will see this button in agent screen:
+
+![Manual_Dial_Button](https://i.imgur.com/6XPZpPz.png)
+
+Clicking the Manual Dial presents this screen where agent can enter the number to dial:
+
+![Manual_Dial_Screen](https://i.imgur.com/HsQ1UCU.png)
+
+

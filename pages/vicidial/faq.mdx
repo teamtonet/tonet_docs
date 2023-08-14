@@ -1,0 +1,23 @@
+# Vicidial FAQ
+
+__"Sorry, there are no leads in the hopper for this campaign" when agent login__\
+If this is an empty campaign but you want to allow agents to login and manually dial you need to change
+the "Allow No-Hopper-Leads Logins" setting for the campaign to Y.
+
+If you have loaded leads to this campaign, make sure that there are valid leads in the hopper.
+Go to Campaign - Scroll all the way to the bottom and check the leads in the hopper.
+
+![Lead_Hopper_Availability](https://i.imgur.com/OV84vif.png)
+
+__"Dial timed out, contact your system administrator"__ or\
+__"Call Rejected: CHANUNAVAIL"__\
+Most likely the trunk is not configured correctly. Take a look at the [Tonet Trunk](/vicidial/tonet_trunk) help page
+and verify your settings. If it's still not working please contact your VICIDial Administrator.
+
+__I've added an inbound number but VICIDial doesn't recieve the calls__\
+Note that Tonet sends calls with DNID (dialed number identifier) in E.164 format with a plus sign (+).
+The DID Extension field in VICIDial need to be the same.\
+If VICIDial does not pick up the calls make sure that it is configured to handle DNID with a plus sign.
+
+/etc/asterisk/extensions.conf
+![trunkinbound](https://i.imgur.com/pWsx84t.png)

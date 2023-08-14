@@ -1,0 +1,69 @@
+# VICIDial Agents
+
+There is several steps to set up VICIDial agents and preparing them to start working a [campaign](/vicidial/campaigns).
+
+* [Phones](/vicidial/agents#phones)
+* [Users](/vicidial/agents#users)
+* [User Groups](/vicidial/agents#user-groups)
+* [Agent Login](/vicidial/agents#agent-login)
+
+## Phones
+
+Phones is the SIP extension needed to connect a softphone or ip phone to the VICIDial user.
+Create one phone per user in __Admin - Phones__
+
+![Phone](https://i.imgur.com/XLLlnLv.png)
+
+You will use the __Phone Extension__ and __Registration Password__ from this screen
+to connect your softphone or IP Phone. Make sure to use secure passwords!
+
+## Users
+
+Agents login to VICIDial with a user. Create users for your agents in __Users - Add A New User__.
+
+![User](https://i.imgur.com/L0xNeZ1.png)
+
+There are various settings available for each user, some noteworthy settings are Agent Call Manual and Campaign Ranks.
+
+Agent Call Manual need to be enabled for the user to be able to manually enter phone numbers to dial.
+
+![Manual_Dial](https://i.imgur.com/myHFXIX.png)
+
+Campaign Ranks [ See Campaign for more information]
+
+![Campaign_Rank](https://i.imgur.com/sb7DyxQ.png)
+
+## User Groups
+
+Assigning a user to a User Group makes it easy to manage which Campaigns users work with.
+User Groups - Add a New User Group
+
+![User_Group](https://i.imgur.com/gJhMDx4.png)
+
+In the User Group Detail you can adjust access to Campagins.
+
+![User_Group_Campaign](https://i.imgur.com/W6JBwa1.png)
+
+## Agent Login
+
+1. Connect the agents softphone or IP Phone to the VICIDial Phone.
+
+This is an example using Zoiper softphone connected as Phone 400:
+
+![Zoiper](https://i.imgur.com/wEIuKRf.png)
+
+2. Login to the Agent Screen by browsing to http://your-vicidial-ip-address/agc/vicidial.php
+
+![Agent_Login](https://i.imgur.com/bXnHcsZ.png)
+
+3. Select the campagin to work on
+
+![Agent_Campagin_Selection](https://i.imgur.com/nGpmt6d.png)
+
+4. When the Agent logs in to the campagin the softphone / IP Phone will ring, answer the call and you will be put into a conference session with VICIDial.
+
+![Agent_Login](https://i.imgur.com/GlLW9Va.png)
+
+5. Agent is now ready to start working! Click on Dial next number to dial from campagin leads. Or (if enabled) Manual Dial to enter a number manually.
+
+![Agent_Screen](https://i.imgur.com/OMrxhuC.png)

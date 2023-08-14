@@ -1,0 +1,13 @@
+{
+  "getting_started": {
+    "title": "Getting Started",
+    "href": "/vicidial"
+  },
+  "tonet_trunk": "Tonet Trunk",
+  "agents": "Agents",
+  "campaigns": "Outbound / Campaigns",
+  "auto_dial" : "Auto Dial",
+  "inbound": "Inbound / Blended",
+  "leads": "Leads / Lists",
+  "faq" : "FAQ"
+}

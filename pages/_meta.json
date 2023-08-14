@@ -8,5 +8,7 @@
     "href": "https://twitter.com/tonet.io",
     "newWindow": true
   },
-  "ip_phones" : "IP Phones"
+  "ip_phones" : "IP Phones",
+  "soft_phones" : "Soft Phones",
+  "vicidial": "VICIdial"
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://docs.tonet.io</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/app</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/auto_attendant</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/billing</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/calendar</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/call_logs</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/groups</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/ip_phones/grandstream/gxp2170</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/phones</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/phones/change_permission</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/phones/configure_phones</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/phones/port_number</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/phones/purchase_number</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/profile</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/schedule</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/sign_up</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.tonet.io/users</loc><lastmod>2023-04-27T02:18:58.153Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

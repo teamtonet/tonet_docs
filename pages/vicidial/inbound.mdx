@@ -1,0 +1,109 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Recieve inbound calls in VICIDial / Blended incoming and outgoing campaigns
+
+## Inbound-group and campaign
+
+Create an inbound-group, point a DID at it, and answer incoming calls.
+
+__1. Inbound - Add a New In-Group__
+
+![In-Group](https://i.imgur.com/aN0ELYr.png)
+
+Once you click submit you have the option to configure additional functions for this In-Group
+such as call-time, after-hours route and music-on-hold.
+
+__2. Inbound - Add a New DID__
+
+![New_DID](https://i.imgur.com/6iSdFVi.png)
+
+Once you click submit to create the DID entry and you will see more options which you should
+modify:
+
+<Callout emoji="💡">
+  Note that Tonet sends calls with DNID (dialed number identifier) in E.164 format with a plus sign (+).
+  The DID Extension field in VICIDial need to be the same.
+</Callout>
+
+```
+Active: Y
+DID Route: IN_GROUP
+In-Group ID: maininbound (this is the in-group that we created above)
+In-Group Call Handle Method: CID
+In-Group Agent Search Method: LB
+In-Group Phone Code: 1
+ ```
+
+If VICIDial does not pick up the calls make sure that it is configured to handle DNID with a plus sign.
+/etc/asterisk/extensions.conf
+
+![trunkinbound](https://i.imgur.com/pWsx84t.png)
+
+ __3. Campaigns - Add a New Campaign (Inbound/Closer Campaign)__
+
+```
+Campaign ID: mainin
+Campaign Name: MainInboundCampaign
+Active: Y
+Allow Closers: Y
+Hopper Level: 5
+Auto Dial Level: 1
+Next Agent Call: oldest call finish
+Local Call Time: 24hours
+```
+
+Note:
+You only need to have one CLOSER-type inbound campaign for multiple in-groups.
+Inbound/Closer capable inbound campaigns must have a dial level of at least 1 and a dial method of RATIO or INBOUND_MAN.
+
+![Inbound_Campaign](https://i.imgur.com/MCane8Y.png)
+
+Click on "submit" and then choose the "Detail View" link near the top to access the Campaign Detail Modification screen.
+In this section, adjust the "Allow Inbound and Blended" field to "Y" and the "Dial Method" to "RATIO".
+After adjusting, click "submit" once more. Proceed to the "Allowed Inbound Groups" area,
+select the "mainin" checkbox, and then finalize by clicking the "SUBMIT" button.
+
+Keep in mind: For every new in-group you introduce, you must add it manually to the campaign's
+Allowed Inbound Groups list to accept calls from that specific in-group during the campaign.
+
+![Inbound_Campaign_Groups](https://i.imgur.com/j0x2ON4.png)
+
+__4. Agent login to answer incoming calls__
+
+Agents that should answer incoming calls can now login to the inbound campaign.
+
+![Agent_Login_To_Incoming_Campaign](https://i.imgur.com/2rRDWhF.png)
+
+Select the In-Group, also select Blended Calling if you want to make Outgoing calls from this campaign as well.
+
+![Agent_Select_In-Group](https://i.imgur.com/Krsmx0g.png)
+
+With the campaign set to a dial level of one (1), you're in auto dial mode.
+To start accepting inbound calls, press the RESUME button.
+After concluding your call, click the HANGUP CUSTOMER button, which will lead you to the Disposition screen.
+From there, choose a disposition to finalize the call.
+
+## Blended incoming and outgoing campaign
+
+Once you have an incoming campaign, you can allow access to it from any of your other otgoing campaign.
+This allows agents to work a outgoing campaign and at the same time answer incoming calls.
+
+Go to your outgoing Campaign Details.\
+Set Dial Method to INBOUND_MAN (or RATIO if autodialing)\
+Set Allow Inbound and Blended: Y\
+Press Submit
+
+Scroll down to Allowed Inbound Groups and select the In-Group you created earlier.
+
+![Campaign_Select_InGroup](https://i.imgur.com/oGjzH21.png)
+
+When an agent logs in to the campaign they can select In-Groups to answer incoming calls from.
+Select an In-Group and tick BLENDED CALLING
+
+![Agent_Select_InGroup](https://i.imgur.com/Krsmx0g.png)
+
+By default agent is paused from calls, click on the button to go active.
+
+![Agent_Paused](https://i.imgur.com/fAbolGF.png)
+
+While agent is active inbound calls will be answered.
