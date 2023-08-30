@@ -9,5 +9,6 @@
   "auto_dial" : "Auto Dial",
   "inbound": "Inbound / Blended",
   "leads": "Leads / Lists",
-  "faq" : "FAQ"
+  "faq" : "FAQ",
+  "amd" : "Answering Machine Detection (AMD)"
 }

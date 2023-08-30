@@ -1,0 +1,65 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Answering Machine Detection (AMD)
+
+### What is Answering Machine Detection?
+AMD empowers your agents by prioritizing live-customer interactions. With this feature, our system intelligently identifies
+and filters out calls that connect to voicemails or answering machines,
+ensuring that agents spend more time speaking with actual customers.
+
+**Benefits of Using AMD:**
+
+1. **Increased Agent Efficiency:** AMD boosts productivity by routing more live-customer calls to agents, thereby reducing idle time.
+2. **Optimized Campaign Outcomes:** By interacting more with live customers, there's a higher chance of achieving desired campaign results.
+3. **Enhanced Customer Experience:** Fewer misdirected calls means fewer annoyed customers who receive repeated calls that end up in their voicemail.
+
+**Considerations When Using AMD:**
+
+1. **Processing Time:** One aspect to be mindful of is the additional processing time AMD adds to each call.
+This processing time is applicable to every call, irrespective of whether it's routed to a live customer or an answering machine.
+2. **Recommendation:** Given the extra processing time, we advise against activating AMD for every campaign.
+A strategic approach would be to configure the "Dial Timeout" setting to a range of 22-26 seconds. This ensures that agents don't encounter the typical duration when most voicemails and answering machines are set to activate.
+
+**In Conclusion:**\
+The Answering Machine Detection (AMD) feature, while a cutting-edge addition to our platform,
+should be used judiciously to maximize its benefits. We're here to guide and support you in making the best decisions for
+your campaign strategy.
+
+### How to enable AMD on a campaign
+
+Start by [creating a campaign](/vicidial/campaign).
+
+In the campaign Detail View, find the **Routing Extension** field and change the value to **8369**.
+
+![Routing_Extension](https://i.imgur.com/5zBDWuk.png)
+
+Scroll down to **AMD Type** and make sure **AMD** is selected. Change **AMD Agent Route Options** to **Enabled**.
+
+![AMD](https://i.imgur.com/4mQdEjK.png)
+
+Scroll all the way down and click on Submit. Now scroll back down and click on **AMD Agent Route Options** which has turned into a link.
+
+![AMD_Agent_Route_Options](https://i.imgur.com/vqeNAXv.png)
+
+This brings up the **Mofiy Settings Container** field for AMD_AGENT_OPTIONS of this campaign. Copy paste the following settings:
+
+```
+HUMAN,HUMAN
+NOTSURE,TOOLONG
+```
+
+You can tweak these settings and for example remove NOTSURE,TOOLONG to only send definitively Human detections to the Agent.
+
+<Callout emoji="⚠️">
+Be vary that using strict AMD settings may make calls may fall into FTC's 3% call abandonment rule.
+</Callout>
+
+![AMD_AGENT_OPTIONS](https://i.imgur.com/5gMnjJ5.png)
+
+After running some calls with AMD you can check out the AMD Log Report to see how your AMD is doing.
+
+Navigate to **Reports - Admin Utilities - AMD Log Report**.
+
+Select your time period and server and press **Submit**.
+
+![AMD_LOG_REPORT](https://i.imgur.com/YcVJXSE.png)
