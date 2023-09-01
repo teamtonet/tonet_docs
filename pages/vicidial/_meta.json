@@ -10,5 +10,6 @@
   "inbound": "Inbound / Blended",
   "leads": "Leads / Lists",
   "faq" : "FAQ",
-  "amd" : "Answering Machine Detection (AMD)"
+  "amd" : "Answering Machine Detection (AMD)",
+  "autorotate_cid" : "Auto Rotate Caller ID"
 }
