@@ -1,0 +1,34 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Yealink T-26P Configuration
+
+## SIP Registration
+
+* Find the IP-address of your IP Phone. Press the Menu Key in the middle of the Arrow Pad.
+![main_menu](https://i.imgur.com/yhRqCS5.png)
+* Under "status", as long as the phone has an active network connection it will show the phone's IP-Address.
+* Take note of the IP-Address displayed
+
+* Navigate to the IP Phones web-interface using a browser on your PC.
+* Type the IP-Address of the IP Phone in the browser's address bar.
+
+![browser-address-bar](https://imgur.com/hKTUXc3.png)
+
+* Login to the IP Phones interface (Default username and password is admin / admin)
+
+![login-screen](https://i.imgur.com/qjTBDSI.png)
+
+* Navigate to Account, select Account 1
+
+* Set Line Active to Enabled and fill out **Display Name**, **Register Name**, **User Name**, **Password** and **Server Host & Port** as per the information
+you recieved from Support. Set **NAT** to STUN and set the **Stun Server** to: stun.tonet.io.
+
+![account-1-settings](https://i.imgur.com/Ypfdg5O.png)
+
+* Click on Confirm
+
+* Register Status should switch to show "Registered". If it doesn't, reboot the phone by going to Settings - Upgrade - Reboot.
+
+![register-status](https://i.imgur.com/zdqqxB9.png)
+
+![reboot](https://i.imgur.com/RVu8x6k.png)

@@ -9,6 +9,5 @@
     "newWindow": true
   },
   "ip_phones" : "IP Phones",
-  "soft_phones" : "Soft Phones",
-  "vicidial": "VICIdial"
+  "soft_phones" : "Soft Phones"
 }
