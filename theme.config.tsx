@@ -2,10 +2,10 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <><img src={"https://tonet.io/static/images/logo.png"} style={{width:'100px'}} />  Docs </>,
+  logo: <><img src={"https://tonet.ai/static/images/logo.png"} style={{width:'100px'}} />  Docs </>,
 
   chat: {
-    link: 'https://tonet.io/dashboard',
+    link: 'https://dashboard.tonet.ai',
     icon: <>Go to Manage</>
     
   },
@@ -21,7 +21,7 @@ const config: DocsThemeConfig = {
   useNextSeoProps: () => ({ titleTemplate: "%s \u2013 Tonet" }),
   head: (
     <>
-      <link rel="icon" type="image/x-icon" href="https://tonet.io/static/images/logo_t.png" />
+      <link rel="icon" type="image/x-icon" href="https://tonet.ai/static/images/logo_t.png" />
     </>
   )
 
