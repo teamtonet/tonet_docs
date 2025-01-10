@@ -1,0 +1,51 @@
+import Image from 'next/image'
+
+# Secure Call Sharing
+
+Share call recordings and details instantly with anyone using secure, unique links. Our Call Sharing feature streamlines collaboration and quality assurance by allowing authorized users to generate public links to specific calls, complete with recordings and detailed analytics.
+
+<Image src="/images/analytics/secure_call_sharing.png" alt="Secure Call Sharing" width={1179} height={539} style={{borderRadius: '10px', border: '1px solid #cccccc'}}/>
+
+## Key Benefits
+
+* **Instant Sharing:** Generate secure links in seconds to share call recordings and details with team members, supervisors, or stakeholders
+* **Secure Access:** Each shared call uses a unique, randomly generated URL that can only be accessed by those who have the link
+* **Flexible Control:** Remove access at any time by deactivating the public link, or generate a new link as needed
+* **Complete Information:** Shared calls include all relevant details and recordings, providing full context to recipients
+
+## How to Share a Call
+
+1. Navigate to the Analytics page and locate the call you want to share in the call logs
+2. Click the menu icon (...) next to the call entry
+3. Select "Share" from the menu options
+4. In the sharing modal, click "Create Public Link"
+5. Once generated, use the "Copy Public Link" button to copy the URL to your clipboard
+6. Share the link with your intended recipients
+
+<Image src="/images/analytics/create_public_link.png" alt="How to Share a Call" width={582} height={165} style={{borderRadius: '10px', border: '1px solid #c0c0c0'}}/>
+
+## Managing Shared Calls
+
+### Removing Access
+To prevent further access to a shared call:
+
+1. Return to the call in your Analytics page
+2. Open the sharing modal for the call
+3. Click "Remove Public Link"
+4. The previous link will become inactive immediately
+
+<Image src="/images/analytics/public_link_modal.png" alt="How to remove access" width={582} height={208} style={{borderRadius: '10px', border: '1px solid #c0c0c0'}}/>
+
+### Creating a New Link
+If you need to share the call again after removing access:
+
+1. Follow the same steps to share the call
+2. Click "Create Public Link"
+3. A new, unique link will be generated
+4. The previous link remains inactive for security
+
+### Security Considerations
+
+* Each shared call uses a unique, randomly generated URL that cannot be guessed
+* Links can be deactivated at any time to prevent further access
+* Generating a new link for a call does not reactivate previously removed links
