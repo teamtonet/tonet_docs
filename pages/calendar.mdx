@@ -1,70 +1,96 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
 # Calendar
 
-The calendar feature allows you to mark certain dates and divert calls to a certain IVR, group, user, or a busy tone, this feautre is useful during holidays like Christmas where you can set an IVR to inform your clients you're going to take a number of days off and you will be returning to the office at a certain day.
+The Calendar lets you override your normal call routing on specific dates. Use it for holidays, vacations, company events, or any day where calls should go somewhere different than usual. For example, route calls to a holiday greeting during Christmas week, or send everything to voicemail during your company retreat.
 
-## Create a Calendar  
+Calendar entries take the highest priority in call routing - they override both [schedules](/schedule) and default [phone](/phones) destinations. See [Call Routing Priority](/phones#call-routing-priority).
 
-To create a calendar, click Manage from the side menu.
+Go to **Manage > Calendar** to manage your calendar events.
 
-![manage](https://i.imgur.com/Ol6WdsZ.jpg)
+## Calendar Views
 
-Click on Calendar.
+Use the **View** dropdown in the toolbar to switch between four views. Navigate between months using the **left/right arrows**.
 
-![calendar](https://i.imgur.com/Zn6irgu.jpg)
+### Month
 
-You will be prompted with this screen.
+Full month grid with events shown as blocks on their dates.
 
-![screen](https://i.imgur.com/niqwapt.jpg)
+<Image src="/images/calendar/calendar_month.png" alt="Calendar month view showing Company Retreat event on August 15" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-You can name your new calendar here.
+### Week
 
-![christmas](https://i.imgur.com/6B6Iudm.jpg)
+Detailed week view with time slots.
 
-Next, select the date, click from to set the beginning of the calendar.
+<Image src="/images/calendar/calendar_week.png" alt="Calendar week view with time slots" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![from](https://i.imgur.com/Nmwmn6x.jpg)
+### Agenda
 
-Select the date.
+A list of upcoming events.
 
-![date](https://i.imgur.com/an9vWWt.jpg)
+<Image src="/images/calendar/calendar_agenda.png" alt="Calendar agenda view listing upcoming events" width={1500} height={400} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Select the time.
+---
 
-![time](https://i.imgur.com/GdiJaOs.jpg)
+## Adding a Calendar Event
 
-And click ok.
+Click **+ New Event** in the toolbar to open the event dialog.
 
-![ok](https://i.imgur.com/7ZTvuBy.jpg)
+<Image src="/images/calendar/calendar_edit.png" alt="Edit Event dialog with title, destination, start date, and end date fields" width={600} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Now set the end of the calendar, click on To.
+Fill in the following fields:
 
-![to](https://i.imgur.com/ZRNUpl4.jpg)
+- **Title** - A name for this event (e.g. "Christmas Week", "Labor Day", "Company Retreat")
+- **Destination** - Where calls should go during this event. Opens the route picker with all available options: [Users](/users), [Groups](/groups), [Auto Attendants](/auto_attendant), Voicemail, Phone Number, and Features (like Busy tone).
+- **Start date** - When this event begins (date and time picker)
+- **End date** - When this event ends (date and time picker)
 
-Select the date and time and click ok.
+Click **Confirm** to create the event. It appears on the calendar immediately.
 
-![todate](https://i.imgur.com/hQ4QW2F.jpg)
+You can also click directly on a date in the calendar to create an event with that date pre-filled.
 
-Next, click the destination.
+---
 
-![destination](https://i.imgur.com/u7vLlVx.jpg)
+## Editing a Calendar Event
 
-Select one of the destinations.
+Click on any event in the calendar to open it for editing. The same dialog opens with the current values pre-filled. Make your changes and click **Confirm** to update.
 
-![destinationwhere](https://i.imgur.com/IbpQxTT.jpg)
+To delete an event, click the trash icon in the bottom-left corner of the edit dialog.
 
-You can choose one of the following destinations:
+---
 
-- Busy tone
-- Divert to a certain group
-- Divert to a certain IVR
-- Diver to a certain user
+## Example: Holiday Calendar
 
-In this case, you can [create a Christmas IVR](https://docs.tonet.ai/auto_attendant#set-up-auto-attendant) and set it as the destination.
+Here's how to set up holiday routing for a plumbing company:
 
-Once you are done, click create.
+1. [Create an auto attendant](/auto_attendant) called "Holiday Greeting" with a recording: "Thank you for calling Summit Plumbing. We're currently closed for the holiday and will return on Monday. For emergencies, press 0."
+2. Go to **Calendar** and click **+ New Event**
+3. Create entries for each holiday:
 
-![create](https://i.imgur.com/boHtGsn.jpg)
+| Event | Start | End | Destination |
+|-------|-------|-----|-------------|
+| Labor Day | Sep 7, 12:00 AM | Sep 7, 11:59 PM | Busy |
+| Thanksgiving | Nov 26, 12:00 AM | Nov 27, 11:59 PM | Busy |
+| Christmas Week | Dec 24, 12:00 AM | Dec 26, 11:59 PM | Holiday Greeting (IVR) |
+| Company Retreat | Aug 15, 12:00 AM | Aug 15, 11:59 PM | Busy |
 
-You will find your created calendar on the right hand side.
+During these dates, all calls to phone numbers with a calendar assigned are routed to the specified destination, regardless of their [schedule](/schedule) or default routing.
 
-![done](https://i.imgur.com/TiwfXSF.jpg)
+<Callout type="info">
+  **Busy vs. IVR** - Setting the destination to "Busy" plays a busy tone and disconnects. For a better caller experience, create an [Auto Attendant](/auto_attendant) with a holiday greeting so callers know you're closed, when you'll be back, and what to do in an emergency.
+</Callout>
+
+---
+
+## Assigning the Calendar to a Phone Number
+
+Calendar events only affect phone numbers that have a calendar assigned:
+
+1. Go to **[Phones](/phones)** and click the number you want to configure
+2. In the **Configure** tab, set the **Calendar** dropdown to your calendar
+3. On any date that matches a calendar event, calls to that number are routed to the event's destination
+
+<Callout type="info">
+  **Routing Priority:** Calendar has the highest priority. If today matches a calendar event, that destination is always used - even if the phone number also has a [schedule](/schedule) configured. The priority order is: Calendar > Schedule > Go To (default). See [Call Routing Priority](/phones#call-routing-priority) for full details.
+</Callout>

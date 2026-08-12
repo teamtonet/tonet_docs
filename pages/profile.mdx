@@ -1,60 +1,67 @@
+import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
 # Profile
 
-The profile section displays your personal information like your time zone, your name, your email address, your password, and your address.
+Your personal settings - display name, profile picture, and browser notifications. Click your **avatar** in the top-right corner of the dashboard and select **Profile** to open this page.
 
-## Check Out Profile
+For company-level settings like timezone and business address, see [Account](/account).
 
-To check out your profile, go to Account.
+The Profile page has two tabs: **General** and **Notifications**.
 
-![account](https://i.imgur.com/elxt2OR.jpg)
+---
 
+## General
 
+### Profile Picture
 
-Click on Profile.
+Upload a profile picture that your team sees in [Chat](/chat), call logs, and anywhere your name appears in the dashboard. Click the avatar to upload a new image or remove the current one.
 
-![profile](https://i.imgur.com/uJjxDQM.jpg)
+### Basic Details
 
-You will be prompted with this screen.
+- **Display Name** - The name your team sees. Change it and click **Save Changes** to update.
+- **Email Address** - Your login email. Read-only - contact your administrator to change it.
+- **Extension** - Your internal extension number for receiving calls. Read-only - your administrator assigns this in [Users](/users).
 
-![screen](https://i.imgur.com/Prtjp9s.jpg)
+---
 
-## Time Zone & Inbound CNAM
+## Notifications
 
-Here you can change your time zone.
+Get notified about incoming calls, texts, and voicemails - even when the dashboard isn't your active tab.
 
-![timezone](https://i.imgur.com/Xg9dCjl.jpg)
+### Status
 
-Choose your time zone.
+Check if notifications are set up:
 
-![choosetimezone](https://i.imgur.com/BCBLbmY.jpg)
+- **Browser Support** - All modern browsers support desktop notifications
+- **Permission** - If you haven't allowed notifications yet, click **Request Permission** and accept the prompt.
 
-Here you can also enable inbound CNAM.
+<Callout type="info">
+  If you previously denied notification permission, you'll need to reset it in your browser settings. In Chrome: click the lock icon in the address bar, find Notifications, and change it to Allow.
+</Callout>
 
-CNAM is an acronym for caller ID name, enabling inbound CNAM will allow you to see who is calling you if the name is present, it will also be displayed in the call logs.
+### Notification Types
 
-![cnam](https://i.imgur.com/pOre1of.jpg)
+Choose what you want to be notified about:
 
-## Personal Information
+| Type | What it does |
+|------|-------------|
+| **Incoming Calls** | Desktop notification when a call comes in on any of your [phone numbers](/phones) |
+| **Text Messages** | Notification when an SMS arrives on a number you have [permissions](/phones) for |
+| **Voicemail** | Notification when a new voicemail is left |
 
-Next you have your personal information, these cannot be edited.
+All three are enabled by default. Turn off any type you don't want notifications for.
 
-![personalinfo](https://i.imgur.com/pFEIiP3.jpg)
+<Callout type="info">
+  You won't get a notification popup for something you're already looking at. For example, no SMS notification while you're on the [Chat](/chat) page.
+</Callout>
 
-## Change Password
+### Test Notifications
 
-If you want to change your password, enter your current password, and then enter the new password and confirm it, when you're done, click Update.
+Use the test buttons to verify notifications are working:
 
-![changepassword](https://i.imgur.com/BvDoz8Q.jpg)
+- **Test Call** - Sends a sample incoming call notification
+- **Test SMS** - Sends a sample text message notification
+- **Test Voicemail** - Sends a sample voicemail notification
 
-## Your Address
-
-Here you can change your address.
-
-<Callout emoji="⚠">
-  Make sure the emergency address points to your place of operation for 911 calls purposes.
-</ Callout>
-
-![address](https://i.imgur.com/QWVAqH1.jpg)
-
+If test notifications don't appear, make sure you've allowed notifications in your browser and that Do Not Disturb is off on your computer.

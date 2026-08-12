@@ -1,93 +1,126 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
 # Schedule
 
-The schedule feature allows you to set up a weekly schedule for your phone system, you will be able to direct the calls during certain days (for example weekdays) to a certain feature, group, user, or IVR during certain hours (for example, like during business hours), and set another schedule during certain days (for example weekends) to direct to a certain feature, group, user, or IVR.
+Schedules let you route calls differently based on the time of day and day of the week. During business hours, calls go to your team. After hours, they go to voicemail, an after-hours message, or an [auto attendant](/auto_attendant). You can create as many schedules as you need and assign them to any [phone number](/phones).
 
-## Create a Weekday Schedule
+Go to **Manage > Schedule** to manage your schedules.
 
-To create a weekday schedule, click on manage.
+## Views
 
-![manage](https://i.imgur.com/DKfagij.png)
+The Schedule page has two views, toggled with the **View** dropdown in the toolbar:
 
-Click on Schedule.
+### List View
 
-![schedule](https://i.imgur.com/PjO9G4T.png)
+Shows each schedule as a card with:
 
-Click on New Schedule.
+- **Name** - The schedule name (click to open it in Week View)
+- **Route count** - How many routes are configured
+- **Edit Schedule** - Opens the schedule editor
+- **Delete Schedule** - Removes the schedule after confirmation
 
-![newschedule](https://i.imgur.com/R31IZu9.png)
+<Image src="/images/schedule/schedule_list.png" alt="List View showing Business Hours and After Hours schedules with route counts" width={1500} height={400} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Rename the schedule and click Add.
+### Week View
 
-![name](https://i.imgur.com/ITS8oWg.png)
+A visual calendar grid showing your routes mapped across the week. Each block shows the time range, schedule name, and destination. Use the **Schedule** dropdown to switch between your schedules.
 
-You will be prompted with this screen.
+Click on any block in the calendar to open it in the editor.
 
-![screen](https://i.imgur.com/fk2kFlx.png)
+<Image src="/images/schedule/schedule_week.png" alt="Week View showing Business Hours schedule with routes mapped across Monday-Saturday" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Enter the time that this schedule will begin, click From.
+---
 
-![from](https://i.imgur.com/BreTXHm.png)
+## Creating a Schedule
 
-And set the ending time of this schedule, click To.
+Click **New Schedule** in the toolbar. Enter a name (e.g. "Business Hours", "Weekend", "After Hours") and click **Confirm**. This creates the schedule and takes you to the editor where you add routes.
 
-![to](https://i.imgur.com/sziJhxR.png)
+---
 
-Select the destination of the schedule, and click Go To.
+## Editing a Schedule
 
-![destination](https://i.imgur.com/eW4NIgc.png)
+The schedule editor shows the schedule name at the top (editable) and a routes table below.
 
-Select the days of this schedule.
+<Image src="/images/schedule/schedule_edit.png" alt="Schedule editor showing Business Hours with routes table, expanded route editor with time pickers and day selection" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![days](https://i.imgur.com/jUbTVQI.png)
+### Routes Table
 
-And when you're done, click Save.
+The routes table shows all routes for this schedule:
 
-![save](https://i.imgur.com/4Xsl0ZW.png)
+| Column | Description |
+|--------|-------------|
+| **From** | Start time for this route |
+| **To** | End time for this route |
+| **Week Days** | Which days this route is active (shown as colored pills) |
+| **Destination** | Where calls are routed during this time window |
 
-Your schedule has been created successfully.
+Click the arrow on any row to expand it and edit the route.
 
-![done](https://i.imgur.com/YTee0Wc.png)
+### Route Editor
 
+When you expand a route, the editor shows four fields:
 
+- **Start time** - When this route activates (time picker)
+- **End time** - When this route deactivates (time picker)
+- **Destination** - Where to send calls during this time. Opens the route picker with all available destinations: [Users](/users), [Groups](/groups), [Auto Attendants](/auto_attendant), Voicemail, Phone Number, and Features.
+- **Week Days** - Multi-select dropdown for which days of the week this route applies. Select as many days as you need.
 
-## Create a Weekend Schedule
+Click **Update** to save the route, or **Cancel** to discard changes. Click **Delete Route** to remove this route from the schedule.
 
-To create a weekend schedule, click on manage.
+### Adding Routes
 
-![manage](https://i.imgur.com/DKfagij.png)
+Click **Add Route** below the table to add a new route. The route is created with default values and the editor opens automatically so you can set the time range, days, and destination.
 
-Click on Schedule.
+A schedule can have multiple routes for different time windows. For example:
 
-![schedule](https://i.imgur.com/PjO9G4T.png)
+- Route 1: Monday-Friday, 9:00 AM - 5:00 PM, destination: Sales group
+- Route 2: Monday-Friday, 5:00 PM - 9:00 PM, destination: After Hours auto attendant
+- Route 3: Saturday-Sunday, 10:00 AM - 2:00 PM, destination: Weekend voicemail
 
-Click on New Schedule.
+---
 
-![newschedule](https://i.imgur.com/R31IZu9.png)
+## Example: Business Hours Schedule
 
-Rename the schedule and click Add.
+Here's how to set up a typical business hours schedule for a plumbing company:
 
-![weekend](https://i.imgur.com/L2joKvM.png)
+1. Click **New Schedule** and name it "Business Hours"
+2. Click **Add Route** and configure:
+   - Start time: **8:00 AM**
+   - End time: **5:00 PM**
+   - Destination: **Main Menu** (your [auto attendant](/auto_attendant))
+   - Week Days: **Monday, Tuesday, Wednesday, Thursday, Friday**
+3. Click **Update** to save
+4. Click **Add Route** again for after-hours:
+   - Start time: **5:00 PM**
+   - End time: **8:00 AM**
+   - Destination: **Voicemail** (or an after-hours greeting)
+   - Week Days: **Monday, Tuesday, Wednesday, Thursday, Friday**
+5. Click **Update** to save
+6. Go to [Phones](/phones), select your main number, and set its **Schedule** to "Business Hours"
 
-Enter the time that this schedule will begin, click From.
+Now calls during business hours reach your auto attendant, and after-hours calls go to voicemail.
 
-![from2](https://i.imgur.com/7rwCBmd.png)
+---
 
-And set the ending time of this schedule, click To.
+## Assigning a Schedule to a Phone Number
 
-![to2](https://i.imgur.com/UgvIHKU.png)
+After creating a schedule, assign it to one or more phone numbers:
 
-Select the destination of the schedule, and click Go To.
+1. Go to **[Phones](/phones)** and click the number you want to configure
+2. In the **Configure** tab, set the **Schedule** dropdown to your schedule
+3. The schedule's routes now control where calls to that number are directed, based on the current time and day
 
-![destination2](https://i.imgur.com/YMgmUn1.png)
+<Callout type="info">
+  **Routing Priority:** When a phone number has both a [Calendar](/calendar) entry and a Schedule configured, the Calendar takes priority. If today matches a calendar entry (like a holiday), that destination is used. Otherwise, the schedule's routes are checked. If no schedule route matches the current time, the phone's default **Go To** destination is used. See [Call Routing Priority](/phones#call-routing-priority) for the full order.
+</Callout>
 
-Select the days of this schedule.
+---
 
-![days2](https://i.imgur.com/dzQXF7X.png)
+## Deleting a Schedule
 
-And when you're done, click Save.
+Click **Remove Schedule** (in the editor) or **Delete Schedule** (in the list view). A confirmation dialog asks you to confirm before it's permanently removed.
 
-![save2](https://i.imgur.com/cFI2KWn.png)
-
-Your schedule has been created successfully.
-
-![done2](https://i.imgur.com/laUUPuk.png)
+<Callout type="warning">
+  Before deleting a schedule, check if any [phone numbers](/phones) are using it. Removing a schedule that's still assigned to a phone number means those calls will fall through to the phone's default **Go To** destination instead.
+</Callout>

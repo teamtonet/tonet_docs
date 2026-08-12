@@ -1,30 +1,49 @@
 import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
 
-## Real-Time Call Monitoring & Supervision
+# Call Monitoring
 
-<Image src="/images/analytics/call_monitoring.png" alt="Live call monitoring dashboard showing active calls and agent status" width={828} height={310}/>
+Call monitoring lets managers and owners listen to live calls in real time, or privately coach team members during a call without the caller hearing. It works directly from the Overview page - no extra setup required.
 
-Our platform provides administrators with powerful tools to:
+<Image src="/images/analytics/call_monitoring.png" alt="Active calls panel showing live calls with Listen In and Whisper buttons" width={828} height={310} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-* Track live call statistics and agent performance metrics
-* Monitor agent availability and call volume in real-time  
-* Access detailed analytics for daily and monthly call activities
-* Ensure quality control and maintain service standards
+## Active Calls Panel
 
-## Features & Usage
+The Active Calls panel appears on the [Overview page](/) below the communications feed. It shows every call currently in progress on your phone system:
 
-### Live Monitoring
-* **Silent Monitoring**: Click the Listen button on any active call to quietly monitor conversations without disruption.
-* **Agent Whisper**: Use the Whisper function to privately coach agents during live calls, undetected by customers.
+- **User** - Which team member is on the call
+- **Remote Party** - The other party's phone number
+- **Duration** - A live counter showing how long the call has been going (HH:MM:SS)
+- **Actions** - Listen In and Whisper buttons
 
-### Dashboard Metrics
-* Number of active users
-* Daily and monthly call statistics  
-* Current call statuses and durations
-* Real-time agent availability status
+## Listen In (Silent Monitoring)
 
-### Getting Started
-1. Log in to your administrator account
-2. Navigate to the Overview page
-3. View active calls in the monitoring panel
-4. Use Listen/Whisper buttons to interact with ongoing calls
+Click the **Listen In** button on any active call to silently monitor the conversation. You hear both sides of the call, but neither the team member nor the caller can hear you.
+
+A status bar appears at the top of the page showing "Currently Monitoring: Listen [user name]" with a stop button to disconnect at any time.
+
+**Use cases:**
+- Quality assurance - review how your team handles customer calls
+- Training - observe new employees during their first calls
+- Dispute resolution - listen to a call in progress when a customer escalates
+
+## Whisper (Private Coaching)
+
+Click the **Whisper** button to speak privately to your team member during a live call. You can talk to them, but the caller cannot hear you.
+
+**Use cases:**
+- Coach new employees through difficult calls in real time
+- Provide pricing or policy information to a rep without putting the customer on hold
+- Guide a team member through an unfamiliar process
+
+<Callout type="info">
+  **No setup required.** Call monitoring works out of the box for managers and owners. Regular users cannot see the Listen In or Whisper buttons - they only see their own active calls.
+</Callout>
+
+## How It Works
+
+1. Go to the **Overview** page
+2. Look at the **Active Calls** panel - it shows all calls currently in progress
+3. Click **Listen In** to silently monitor, or **Whisper** to privately coach
+4. The monitoring status bar shows what you're monitoring and lets you stop at any time
+5. You can switch between Listen In and Whisper during the same call

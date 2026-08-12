@@ -1,108 +1,198 @@
-# Call Logs
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
 
-The call logs section displays a record of all the calls made, received, or missed on your Tonet phone system. You can also listen to each call's recording.
+# Analytics
 
-## Accessing Call Logs
+The Analytics page is your central hub for call history, recordings, and voicemail. Access it by clicking **Analytics** in the sidebar.
 
-To go to call logs, click on Manage from your Tonet dashboard.
+## Call History
 
-![manage](https://i.imgur.com/8fmfOmS.jpg)
+The Call History tab shows a complete record of every call on your phone system.
 
-Click on call logs.
+<Image src="/images/analytics/call_history.png" alt="Call History table showing recent calls with direction, source, destination, and duration" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![call_logs](https://i.imgur.com/g4k1Xuk.jpg)
+### Reading the Call Log
 
+Each row represents one call:
 
+- **Call Info** - Icons showing:
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="#4caf50" d="M20 5.41 18.59 4 7 15.59V9H5v10h10v-2H8.41z"/></svg> Incoming call (green arrow pointing down-left)
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="#F97316" d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"/></svg> Outgoing call (orange arrow pointing up-right)
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="#0288d1" d="M15 12h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3zm4 0h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm1 3.5c-1.25 0-2.45-.2-3.57-.57-.1-.03-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.45 2.58l-1.2 1.21c-.4-1.21-.66-2.47-.75-3.79zM19 18.97c-1.32-.09-2.6-.35-3.8-.76l1.2-1.2c.85.24 1.72.39 2.6.45v1.51z"/></svg> Call was answered
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="#EF4444" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"/></svg> Call failed - hover to see the **exact reason** the call failed (see [Call Failure Reasons](#call-failure-reasons) below)
+- **Date and Time** - When the call occurred, displayed in your account's timezone
+- **Extension** - The team member or [group](/groups) who handled the call, shown with their avatar and name
+- **Source** - Where the call came from (phone number and/or line name)
+- **Destination** - Where the call went to
+- **Talk Time** - Duration of the actual conversation
+- **Billing Duration** - The billable duration (can be shown/hidden via column settings)
+- **Total Duration** - Full call duration from start to end, including ringing
+- **Actions**:
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="currentColor" d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"/></svg> Info - view [call details](#call-details)
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg> Share - create a [public link](/analytics/secure_call_sharing)
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play - play the recording inline
 
-You will be prompted with this screen.
+### Inline Recording Playback
 
-![screen](https://i.imgur.com/09VBfJ0.jpg)
+Click the play button on any recorded call to listen to it directly in the call history view. An audio player appears at the top of the page with standard playback controls. If a recording has been deleted, the play button appears with a strikethrough.
 
+### Call Failure Reasons
 
+When a call fails, Tonet shows you the **specific reason** why - not just "missed" or "failed." Hover over the <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginLeft:'2px',marginRight:'2px'}}><path fill="#EF4444" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"/></svg> icon to see the reason. Common examples:
 
-You will find the size of your call recordings so far.
+- **404 Not Found** - The number you dialed doesn't exist or isn't reachable
+- **486 Busy Here** - The person you called is already on another call
+- **603 Declined** - The carrier actively blocked the call. Under the [FCC's 2026 mandate](https://www.fcc.gov), carriers are required to return a 603 response with a reason when they block a call based on analytics, so you can see exactly why your call was blocked and take action.
+- **408 Request Timeout** - The call wasn't answered and timed out
 
-![volume](https://i.imgur.com/1UOaoAH.jpg)
+<Callout type="info">
+  **Why this matters:** Most phone providers just show "Missed" or "Failed" with no explanation. Tonet gives you the actual technical reason a call didn't connect, so you can tell the difference between a customer who was busy, a number that doesn't exist, and a carrier that blocked your call. This level of detail is critical when troubleshooting call delivery issues.
+</Callout>
 
+### Toolbar
 
+The icons in the top-right corner of the table:
 
-You will find all the information pertaining to a call listed in the call logs, such as:
+- **Column toggle** (grid icon) - Show or hide columns. Useful for adding Billing Duration, or hiding columns you don't need. Your visibility preferences are saved between sessions.
+- **Filter** (funnel icon) - Filter calls by direction, user, phone number, date range, or disposition (answered, missed, busy).
+- **Download** (arrow icon) - Export your call history as a CSV file for reporting or record-keeping.
+- **Search** (magnifying glass) - Search across all call fields. Supports phone numbers with or without dashes.
 
-![call](https://i.imgur.com/XHfieUe.jpg)
+You can also resize columns by dragging their edges - your column widths are saved between sessions.
 
-* Direction: Whether it was a dialed call (upwards facing arrow) or a received call (downward facing arrow).
+### Month Selector
 
-​	Example of a dialed call.
+Use the **Month** picker in the top right to view call history for a specific month.
 
-![dialed](https://i.imgur.com/Qz5b8iu.jpg)
+### Bulk Actions
 
-​	Example of a received call.
+Select calls using the checkboxes on the left side of the table. When recordings are selected, a **Delete Recordings** button appears to permanently remove the audio files. This is only available if recording deletion is enabled in your account settings.
 
-​	![received](https://i.imgur.com/8rS2Txb.jpg)
+### Storage
 
-* Source: The number that you made the call from.
-* Destination: The number that you dialed.
-* Date: The date of the call.
-* Answered: If the call was answered, a red phone will be displayed.
+At the bottom of the call history, you can see the total storage used by your call recordings.
 
-![redphone](https://i.imgur.com/JIeWuXR.jpg)
+---
 
-​	If it wasn't answered, the cell will be empty.
+## Call Details
 
-![empty](https://i.imgur.com/HNSQseJ.jpg)
+Click the **Info** button (ℹ) on any call to open the full call detail page. This is where you get the complete picture of a call - recording, transcript, quality metrics, and metadata.
 
-* Billing Duration: This is the duration of the call that you will be billed.
-* Audio: This is the recording of the call.
+### Recording and Playback
 
-You also have the option to delete any of the calls, just select the call, and click Delete Audio.
+The audio player at the top lets you listen to the full call recording with standard controls (play, pause, seek, volume).
 
-![delete](https://i.imgur.com/bWVpVkF.jpg)
+### Interactive Transcript
 
-You can also sort any of the cells by clicking on them.
+<Callout type="info">
+  **Tonet transcribes your calls using AI**, so you can read conversations instead of listening to them. The transcript is interactive - click any word to jump to that moment in the recording.
+</Callout>
 
-![sort](https://i.imgur.com/2ez48r7.jpg)
+If the call was recorded and transcribed, the transcript appears below the player with these features:
 
-You can also use filters by month.
+- **Audio-synced highlighting** - As the recording plays, the current word is highlighted in real time so you can follow along
+- **Click-to-seek** - Click any word in the transcript to jump the audio to that exact moment
+- **Auto-scroll** - The transcript automatically scrolls to follow playback. Toggle the follow button to enable or disable auto-scroll, or just scroll manually to browse the transcript while audio plays.
+- **Speaker labels** - The transcript is organized by speaker and timestamp for easy reading
 
-![filters](https://i.imgur.com/8zVQeOX.jpg)
+### Call Information
 
-Checking the duration will display the full duration of the call.
+The detail page shows three information panels:
 
-![duration](https://i.imgur.com/S6yppT4.jpg)
+**Time Details:**
+- Date and time of the call (UTC)
+- Total duration
 
+**Contact Information:**
+- From: Source phone number or extension
+- To: Destination phone number or extension
 
+**Call Status:**
+- Status: Answered or failed (with reason if failed)
+- Direction: Incoming or outgoing
+- Disposition: ANSWERED, NO ANSWER, BUSY, etc.
 
-Checking the source extension will display the source extension of the source (if found).
+### Call Quality Metrics
 
-![source](https://i.imgur.com/i3U89h3.jpg)
+<Callout type="info">
+  **Call quality metrics help you diagnose audio issues.** If a customer reports choppy audio or dropped words, check the quality metrics for that call to see if the issue was network-related.
+</Callout>
 
+When quality data is available, the detail page shows:
 
+- **Severity badge** - Overall quality rating: Good, Fair, Poor, or Unknown
+- **Packet Loss** (inbound and outbound) - Percentage of lost packets. High packet loss (above 2%) causes choppy or missing audio.
+- **Jitter** - Variation in packet arrival time, in milliseconds. High jitter (above 30ms) causes robotic or distorted audio.
+- **Latency (RTT)** - Round-trip time in milliseconds. High latency causes noticeable delay in the conversation.
+- **Connection Type** - How the call was connected (direct, STUN, or TURN relay)
 
-Checking the destination extension will display the destination extension of the destination (if found).
+If issues are detected, a **Diagnosis** section provides a plain-English explanation of what went wrong and **Recommendations** for fixing it.
 
-![destination](https://i.imgur.com/1WLfV9l.jpg)
+### Report a Call
 
+If something went wrong with a call, click **Report Call** to flag it for review. The button shows how many users have reported the same call.
 
+---
 
-## Listening to Call Recordings
+## Voicemails
 
-To listen to a call recording, click on the blue audio button.
+Click the **Voicemails** tab to see all voicemail messages left by callers.
 
-![bluebutton](https://i.imgur.com/9M2A9wx.jpg)
+Each voicemail shows:
 
+- **From** - The caller's phone number. Internal callers show their name and extension.
+- **Received** - When the voicemail was left
+- **Mailbox** - Which extension or [group](/groups) mailbox received it
+- **Duration** - Length of the message
+- **Transcription** - The AI-generated text of the voicemail. Click the expand arrow to read the full transcription. Shows "Transcribing..." with a spinner while processing is in progress.
+- **Listen** - Play the voicemail recording
+- **Remove** - Delete the voicemail
 
+<Callout type="info">
+  **Automatic Transcription** - Tonet transcribes every voicemail using AI, so you can read messages without listening to them. This is especially useful when you're in a meeting or can't listen to audio. Transcriptions are also included in voicemail-to-email notifications (see [Voicemail Settings](#voicemail-settings) below).
+</Callout>
 
-The audio player will automatically start playing the record.
+### User and Group Mailboxes
 
-![audioplayer](https://i.imgur.com/W56fM1r.jpg)
+Voicemails are organized by mailbox. Each [user](/users) has their own voicemail mailbox based on their extension number. [Groups](/groups) also have their own mailbox - when a call to a ring group goes unanswered, the caller can leave a voicemail for the whole group.
 
+You can view voicemails for any mailbox you have access to. Managers and owners can see all mailboxes.
 
+---
 
-You can change the audio volume from here.
+## Voicemail Settings
 
-![volume2](https://i.imgur.com/hKq83gC.jpg)
+Click the **Voicemail Settings** button on the Voicemails tab to manage greetings and preferences.
 
-If you click on the three buttons, you will be able to download the record or change the playback speed.
+<Image src="/images/analytics/voicemail_settings.png" alt="Voicemail Settings dialog with greeting management and voicemail-to-email toggle" width={1000} height={760} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![download](https://i.imgur.com/QZo316W.jpg)
+### Voicemail to Email
 
+Toggle this on to receive voicemail notifications delivered directly to your email. Each voicemail email includes:
+
+- The audio recording as an attachment
+- The **AI-generated transcription** in the email body - read the message without opening the attachment
+- Caller information and timestamp
+
+This means you never miss a message, even when you're away from the dashboard.
+
+### Select Mailbox
+
+Choose which mailbox to configure. This dropdown lists your personal mailbox (your extension) and any [group](/groups) mailboxes you manage. Each mailbox has its own greeting.
+
+### Greeting Management
+
+- **Current Greeting** - Listen to or delete your existing custom greeting. If no custom greeting is set, callers hear the default system greeting.
+- **Upload New Greeting** - Upload a WAV or MP3 audio file as your greeting. Record it on your phone or computer first, then upload.
+- **Record Greeting** - Record a greeting directly from your browser using your microphone. Click record, speak your greeting, then save.
+
+<Callout type="info">
+  **Group Greetings** - Each [group](/groups) can have its own voicemail greeting. Select the group's mailbox from the dropdown to manage its greeting separately from your personal greeting. For example, your Sales group might say "You've reached the Sales team..." while your Support group says "You've reached the Support department..."
+</Callout>
+
+---
+
+## Related
+
+- **[Call Monitoring](/analytics/call_monitoring)** - Monitor live calls from the Overview page with Listen In and Whisper
+- **[Call Sharing](/analytics/secure_call_sharing)** - Share call recordings and details via secure public links

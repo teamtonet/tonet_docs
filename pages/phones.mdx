@@ -1,6 +1,131 @@
-You need Phone Numbers to get the most out of your Tonet platform.  
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
 
-Head to the [Phone tab](https://dashboard.tonet.ai/phones) in order to configure your phones.  
-Here you can:
-    * [Purchase a New Phone Number](/phones/purchase_number)
-    * [Port a Number you own](/phones/port_number)
+# Phones
+
+Phone numbers are the foundation of your Tonet system. Each number gets its own routing, schedule, recording settings, and permissions. You can buy local or toll-free numbers, port your existing numbers, and configure exactly how calls flow through your business.
+
+Go to **Manage > Phones** to see all your phone numbers.
+
+<Image src="/images/phones/phone_list.png" alt="Phone list showing all numbers with current routing" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+The page has three tabs:
+
+- **My Phone Numbers** - Your active numbers and their current routing (this page)
+- **[Verified Caller ID](/phones/verified_caller_id)** - External numbers verified for use as outbound caller ID
+- **[Blacklist](/phones/blacklist)** - Numbers blocked from calling you
+
+## My Phone Numbers
+
+The table shows all your active phone numbers:
+
+- **Name** - Your label for the number (e.g. "Main Line", "Sales Direct")
+- **Number** - The phone number
+- **Current Path** - Where calls are being routed right now. This updates dynamically based on your [schedule](/schedule), [calendar](/calendar), and default routing. For example, during business hours it might show "Main Menu" (your [auto attendant](/auto_attendant)), and after hours it might show "Busy".
+- **Actions** - Edit (pencil icon) and delete (trash icon)
+
+---
+
+## Purchasing a New Number
+
+Click **+ Add a new Phone Number** in the top right corner.
+
+<Image src="/images/phones/purchase_number.png" alt="Purchase phone number flow with area code search and results" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+1. **Number Type** - Choose **Local Number** or **Toll Free**
+2. **Area Code** - Enter a 3-digit area code (e.g. 702 for Las Vegas, 212 for New York) and click **Search**
+3. **Select Numbers** - Click the numbers you want. Selected numbers are highlighted in orange. Click again to deselect. You can select as many as you need.
+4. Click **Purchase** to add them to your account
+
+Numbers are available immediately. After purchasing, configure the number's routing, permissions, and recording from the edit page.
+
+<Callout type="warning">
+  Make sure your account has enough balance to cover the purchase. Phone numbers are billed monthly from the date of purchase. To remove a number, click the delete icon on the phone list.
+</Callout>
+
+If you want to keep using your existing business number instead, you can [port it to Tonet](/phones/port_number).
+
+---
+
+## Configuring a Phone Number
+
+Click the edit icon (pencil) on any phone number to open its configuration. The edit page has two tabs: **Configure** and **Permissions**.
+
+### Configure Tab
+
+<Image src="/images/phones/phone_edit.png" alt="Phone configuration with name, recording, schedule, and routing" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+- **Name** - A friendly label for this number. This is what your team sees in the sidebar and call logs (e.g. "Main Line", "Sales Direct", "Support").
+
+- **Call Recording** - When enabled, all calls on this number are recorded. Recordings are accessible in [Analytics > Call History](/analytics/call_logs). Tonet stores recordings for the number of days set in your account settings (default 90 days).
+
+- **Record transferred calls** - Also records calls after they're transferred to another extension. Without this, only the initial call segment is recorded.
+
+- **SMS notification on forwarded calls** - Sends a text message to the assigned user when a call is forwarded to them, so they know who's calling before the phone rings.
+
+- **Calendars** - Select [calendar entries](/calendar) that override normal routing. For example, if you add your "Christmas Week" calendar entry here, calls will route to the calendar's destination (usually Busy/voicemail) during that date range, regardless of schedule. You can add multiple calendar entries to a single number.
+
+<Callout type="info">
+  If two calendar entries overlap and both are assigned to the same phone, the number will route to the first matching calendar it finds. Avoid overlapping calendars on the same number.
+</Callout>
+
+- **Schedule** - Assign a [schedule](/schedule) for time-based routing. For example, "Business Hours" might route calls to your [auto attendant](/auto_attendant) Monday-Friday 8 AM - 5 PM, and to voicemail after hours. You can only have one schedule per phone number.
+
+- **Go To** - The default destination when no schedule or calendar applies. Click the pencil icon to open the [route picker](#route-picker) and choose where calls go.
+
+- **Caller ID** - Sets the outbound caller ID for calls made from this number. You can select any number on your account, or a number you've [verified](/phones/verified_caller_id). If you want to display an external number that isn't on your Tonet account, you must [verify it first](/phones/verified_caller_id).
+
+Click **Save Settings** when done.
+
+<Callout type="info">
+  If you don't see any calendar or schedule entries in the dropdowns, you may need to create them first. See [Schedule](/schedule) and [Calendar](/calendar).
+</Callout>
+
+### Call Routing Priority
+
+When a call comes in, Tonet checks routing in this order:
+
+1. **Calendar** - If a calendar entry matches the current date and time, route to its destination
+2. **Schedule** - If a schedule rule matches the current day and time, route to its destination
+3. **Go To (Default)** - If nothing else matches, route to the default destination
+
+You can see where each number is currently routing in the **Current Path** column on the phone list.
+
+### Route Picker
+
+The route picker appears whenever you need to choose a call destination - on the phone's Go To field, in [schedule](/schedule) routes, [auto attendant](/auto_attendant) key assignments, and [calendar](/calendar) entries.
+
+<Image src="/images/phones/route_picker.png" alt="Route destination picker showing users, groups, IVRs, voicemail, and features" width={1200} height={740} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+Filter by category across the top:
+
+- **[Users](/users)** - Route to a specific team member's extension. The call rings their devices.
+- **[Groups](/groups)** - Route to a ring group. The call rings all members of the group (or queues if call queue is enabled).
+- **[IVRs](/auto_attendant)** - Route to an auto attendant menu ("Press 1 for Sales, 2 for Service...").
+- **Voicemail** - Send the caller directly to a user's or group's voicemail box.
+- **Features** - Special destinations like Busy (play busy tone) or an external phone number for call forwarding.
+
+Use the search bar to quickly find a destination by name, extension, or ID.
+
+---
+
+### Permissions Tab
+
+The Permissions tab controls which team members can use this phone number for outbound calls and SMS.
+
+<Image src="/images/phones/permissions.png" alt="Phone permissions showing user cards with checkboxes" width={1150} height={600} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+Each user appears as a card. Click a card to toggle access - selected users (highlighted with an orange border and checkmark) can use this number. Use **Select All** or **Clear All** for bulk changes.
+
+When a user has permission on a phone number, they can:
+
+- **Make outbound calls** using this number as their caller ID
+- **Send SMS** from this number (requires 10DLC registration for the number)
+
+Users without permission won't see this number in their dialpad or SMS composer. This is how you control which team members use which lines - for example, only your sales team should have access to the Sales Direct number.
+
+<Callout type="info">
+  Permissions only affect outbound calls and SMS. Inbound call routing is controlled by the phone number's configuration - schedule, calendar, and Go To settings.
+</Callout>
+
+Click **Save Settings** to apply changes.

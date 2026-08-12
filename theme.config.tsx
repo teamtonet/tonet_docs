@@ -2,26 +2,26 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <><img src={"https://tonet.ai/img/logo/logo.png"} style={{width:'100px'}} />  Docs </>,
+  logo: <><img src={"/images/logo.png"} style={{width:'100px'}} />  Docs </>,
 
   chat: {
     link: 'https://dashboard.tonet.ai',
     icon: <>Go to Manage</>
     
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://tonet.ai',
   editLink:{text:''},
   feedback:{
     content:null
   },
   footer: {
-    text: 'Tonet 2023 ©.',
+    text: 'Tonet 2026 ©.',
   },
 
   useNextSeoProps: () => ({ titleTemplate: "%s \u2013 Tonet" }),
   head: (
     <>
-      <link rel="icon" type="image/x-icon" href="https://tonet.ai/img/logo/logo_t.png" />
+      <link rel="icon" type="image/png" href="/images/logo_t.png" />
     </>
   )
 

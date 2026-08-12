@@ -1,109 +1,106 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
 # Billing
 
-The billing section displays your billing details such as payment history, your usage, and a section to top up your account.
+Tonet uses a prepaid balance model. You add funds to your account, and charges are deducted automatically based on your plan. No contracts, no surprise invoices.
 
-## Recharge Your Account
+Go to **Account > Billing** to manage your billing. Use the **Billing Month** dropdown to view charges and payments from any previous month.
 
-To recharge your account, go to Account.
+<Image src="/images/billing/billing_page.png" alt="Billing page showing Account Information, Usage Summary chart, Topup card, and Payment History" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![account](https://i.imgur.com/qErm6gU.jpg)
+---
 
+## Account Information
 
-Click on Billing.
+Shows your business name and email address on file.
 
-![billing](https://i.imgur.com/I88q5Ou.jpg)
+---
 
-You will be prompted with this screen.
+## Payment Method
 
-![billingdetails](https://i.imgur.com/5MpWJQm.jpg)
+Click **Manage Your Cards** to add a credit or debit card, update expiration dates, or remove cards. This opens a secure Authorize.net window - Tonet never sees or stores your full card number.
 
+If you have multiple cards, swipe between them. The currently displayed card is the one used for top-ups.
 
+---
 
-This section allows you to manage your cards and top-up.
+## Topup
 
-![cards](https://i.imgur.com/CT6z9vb.jpg)
+Top up manually or set up automatic recharging.
 
-To view your cards, click View Cards.
+### Recharge
 
-![viewcards](https://i.imgur.com/3b6ObXN.jpg)
+Enter the amount you want to add to your balance (minimum $15) and click **Add Funds**. The charge goes to your currently selected card.
 
-To add a new card, click Add Card.
+If a payment is declined, you'll need to wait 30 seconds before retrying.
 
-![addcard](https://i.imgur.com/7z5kyV5.jpg)
+### Auto-Recharge
 
-Enter the amount that you want to top up with, note that the minimum amount is $10 USD.
+Toggle **Auto Recharge** on to automatically top up your account when your balance gets low. Two fields appear:
 
-![enteramount](https://i.imgur.com/jVmo0N2.jpg)
+- **Balance Falls** - The threshold that triggers a recharge. When your balance drops to this amount, a top-up is initiated automatically.
+- **Recharge To** - The amount your balance is brought back up to. Must be at least $10 more than the Balance Falls threshold.
 
-If you wish to be automatically recharged, toggle on the button, otherwise, leave it off.
+Click **Confirm** to save your auto-recharge settings. You can toggle it off at any time.
 
-![autorecharge](https://i.imgur.com/onLXJPK.jpg)
+<Image src="/images/billing/auto_recharge.png" alt="Auto-Recharge settings with Balance Falls and Recharge To fields" width={600} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-When you switch it on, two fields will be displayed, the first one is the balance to trigger automatic recharge, for example, if you set it to $1, when your balance falls to $1, your account will be automatically recharged.
+<Callout type="info">
+  Auto-recharge prevents service interruptions. If your balance hits zero, outbound calls and SMS stop working until you add funds. Setting a threshold like $5 with a recharge-to of $25 keeps your system running without manual intervention.
+</Callout>
 
-![fallsto](https://i.imgur.com/ajT8EMS.jpg)
+---
 
-The second field is the amount that you want to recharge to.
+## Usage Summary
 
-![rechargeto](https://i.imgur.com/sOd1BqN.jpg)
+Your spending breakdown for the selected month, shown as a donut chart with totals per category:
 
-When you are ready, click Top Up.
+| Category | What it covers |
+|----------|---------------|
+| **Users** | Daily per-user charge based on your plan |
+| **Calls** | Inbound and outbound call minutes |
+| **SMS** | Inbound and outbound text messages |
+| **Phones** | New number purchases, toll-free numbers, and monthly number maintenance |
+| **Storage** | Call recording storage |
+| **Other** | Any charges that don't fit the above categories |
 
-![topup](https://i.imgur.com/BBld3x2.jpg)
+<Image src="/images/billing/usage_summary.png" alt="Usage Summary donut chart with spending categories breakdown" width={700} height={400} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-## Usage
+---
 
-You can check your usage from the usage section.
+## Usage Details
 
-![usage](https://i.imgur.com/FtshOnv.jpg)
+Every individual charge on your account for the selected month, exportable to a spreadsheet.
 
-This will display the date of the usage, the type, and the amount deducted.
+| Column | Description |
+|--------|-------------|
+| **Date and Time** | When the charge occurred |
+| **Type** | Inbound Call, Outbound Call, Tollfree Call, SMS, User Day, Number Maintenance, New Number, New Toll-Free Number, Storage, Setup Fee, or Other |
+| **Amount** | The dollar amount deducted |
+| **Description** | Details like the phone number called or the user charged |
 
-You can also save the records in a spreadsheet, click Save to do that.
+<Image src="/images/billing/usage_details.png" alt="Usage Details table showing individual charges with date, type chips, amount, and description" width={1500} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![save](https://i.imgur.com/SiV9Ry5.jpg)
-
-A spreadsheet will automatically be downloaded.
-
-You will find all the records organized in the spreadsheet.
-
-![excel](https://i.imgur.com/ZQqrsL8.jpg)
-
-## Usage Chart
-
-You can also check the usage in a chart style.
-
-![chart](https://i.imgur.com/9aSeWfI.jpg)
-
-Each color represents an element.
-
-![elements](https://i.imgur.com/uzmuWOg.jpg)
-
-You can click on an element to exclude it from the costing chart.
-
-![exclude](https://i.imgur.com/jb7EDGb.jpg)
-
-You can also check the last months' costs from here.
-
-![lastmonths](https://i.imgur.com/PK5Ec2D.jpg)
-
-
+---
 
 ## Payment History
 
-Here you can check your payment history.
+Every payment made to your account:
 
-![paymenthistory](https://i.imgur.com/Fd6uZVZ.jpg)
+| Column | Description |
+|--------|-------------|
+| **Date and Time** | When the payment was processed |
+| **Amount** | The dollar amount charged to your card |
+| **Status** | Whether the payment was approved or declined |
+| **Method** | The payment method used |
 
-You will find the date of the payment and the amount charged.
+Declined payments flash red briefly so you can spot issues quickly.
 
-You can also save these records in a spreadsheet, click Save to do that.
+---
 
-![save2](https://i.imgur.com/yCDPFFX.jpg)
+## How Billing Works
 
-A spreadsheet will automatically be downloaded.
+Charges are deducted from your prepaid balance as you go. What you're charged for depends on your plan - check [Usage Details](#usage-details) for a full breakdown at any time.
 
-You will find all the records organized in the spreadsheet.
-
-![excel2](https://i.imgur.com/WOnuGyV.jpg)
-
+When your balance gets low, top up manually or let [auto-recharge](#auto-recharge) handle it. If your balance hits zero, outbound calls and SMS stop working until you add funds.

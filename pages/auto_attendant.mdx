@@ -1,352 +1,134 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
 
-# IVR (Auto-Attendant)
+# Auto Attendant
 
-IVR (Interactive Voice Response) allows your phone to be automatically answered by an auto-attendant, you can set the main welcome message for your business and set redirections for each number from 1 to 9 to redirect to certain extensions.
+The Auto Attendant (also called IVR - Interactive Voice Response) is the phone menu your callers hear when they call in. "Welcome to Summit Plumbing, press 1 for Sales, press 2 for Service..." - that's an auto attendant.
 
-## Set Up Auto-Attendant
+You record a greeting, then map each button press to a destination - a [user](/users), a [group](/groups), another auto attendant, or an external phone number. Callers hear your greeting, press a button, and get routed where they need to go.
 
-To set up auto-attendant, go to your [Tonet dashboard](https://dashboard.tonet.ai).
+Go to **Manage > Auto Attendant** to see your auto attendants.
 
-On the left hand side, click on manage.
+<Image src="/images/auto_attendant/ivr_list.png" alt="Auto Attendant list showing Main Menu with edit and delete buttons" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![manage](https://i.imgur.com/uwrgPRb.jpg)
+## Auto Attendant List
 
-Then click on IVRs.
+Each auto attendant is displayed as a card with:
 
-![ivrs](https://i.imgur.com/ZcK7164.jpg)
+- **Avatar** - The IVR's initials
+- **Name** - The name you gave it (e.g. "Main Menu", "Sales", "After Hours")
+- **Edit IVR** - Opens the editor to change the greeting, routes, or name
+- **Delete IVR** - Removes the auto attendant after a confirmation prompt
 
-Click on New IVR.
+Click **+ Add** in the top right to create a new auto attendant.
 
-![newivr](https://i.imgur.com/ajxrAh6.jpg)
+---
 
-Type the name of the IVR and click add.
+## Creating and Editing an Auto Attendant
 
-![nameivr](https://i.imgur.com/tQowpVI.jpg)
+The auto attendant editor has three sections: name, greeting audio, and routes.
 
-You will be prompted with this screen.
+<Image src="/images/auto_attendant/ivr_edit.png" alt="Edit IVR showing Main Menu with greeting audio player, Upload/Record button, and three routes configured" width={1100} height={700} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![mainivr](https://i.imgur.com/8WOZ5Sl.jpg)
+### Name
 
-### Renaming the Auto-Attendant
+A descriptive name for this auto attendant. Use names that reflect the menu's purpose - "Main Menu", "Sales Menu", "After Hours", etc.
 
-To rename the auto-attendant, click this button.
+### Greeting Audio
 
-![rename](https://i.imgur.com/2TE99qJ.jpg)
+The audio message callers hear when they reach this menu. This is where you tell callers their options: "Thank you for calling Summit Plumbing. For Sales, press 1. For Service, press 2. To speak with the operator, press 0."
 
-Enter the new name of the IVR and click save.
+Click **Upload/Record Audio...** to open the audio dialog where you can:
 
-![newname](https://i.imgur.com/iLn3ave.jpg)
+- **Record** - Record a greeting directly from your browser using your microphone. Click the record button, speak your greeting, then stop and save.
+- **Upload** - Upload an MP3 file you've already recorded. Drag and drop or click to select a file.
 
-### Record a New Message
+After recording or uploading, you can preview the audio with the built-in player before saving.
 
-This toggle allows you to record a new message or upload a message from your folder.
+<Callout type="info">
+  A greeting is required. You cannot save an auto attendant without recording or uploading audio first.
+</Callout>
 
-![toggle](https://i.imgur.com/mKcjeyk.jpg)
+### Routes
 
-To record a new message, set it to record.
+Routes map button presses to destinations. Each route reads as: **Press [button] For [destination]**.
 
-![toggle](https://i.imgur.com/mKcjeyk.jpg)
+Available buttons: **1-9**, **0**, **Star (\*)**, **Pound (#)**, and **No Response** (what happens when the caller doesn't press anything).
 
-When you are ready to record, click the record button.
+Each button can only be assigned once - already-used buttons are greyed out in the dropdown.
 
-![record](https://i.imgur.com/NEdBY9s.jpg)
+Click **Add Route** to add a new route. For each route, select the button and then pick the destination. Click the trash icon to remove a route.
 
-Tonet will ask your permission to use your microphone, click allow to be able to record.
+### Route Destinations
 
-![allow](https://i.imgur.com/T4uwdYo.jpg)
+When you click the Destination field, the route picker opens with all available destinations:
 
-You will notice the recorder will start recording.
+- **[Users](/users)** - Route to a specific team member by extension
+- **[Groups](/groups)** - Route to a ring group (the call rings all members, or queues if [call queue](/groups#call-queue) is enabled)
+- **[IVRs](/auto_attendant)** - Route to another auto attendant for nested menus (see [Nested Menus](#nested-menus-routing-to-individuals) below)
+- **Voicemail** - Send the caller directly to a user's or [group's](/groups#group-voicemail) voicemail
+- **Phone Number** - Forward the call to an external phone number
+- **Features** - Special routing options like Busy (play busy tone) or Repeat (replay the greeting)
 
-![recording](https://i.imgur.com/Xfw8Pnc.jpg)
+Click **Save** to save your auto attendant.
 
-To discard the recording, click this button.
+---
 
-![discard](https://i.imgur.com/E2ffCZH.jpg)
+## Connecting an Auto Attendant to a Phone Number
 
-To save stop the recording, click this button.
+After creating your auto attendant, you need to assign it to one or more phone numbers so callers actually reach it.
 
-![stop](https://i.imgur.com/CguF4F8.jpg)
+1. Go to **[Phones](/phones)** and click the phone number you want to configure
+2. In the **Configure** tab, set the **Go To** destination to your auto attendant
+3. You can also set it as the destination in a [Schedule](/schedule) (e.g. play your main menu during business hours) or [Calendar](/calendar) (e.g. play a holiday greeting on specific dates)
 
+See [Call Routing Priority](/phones#call-routing-priority) for how Tonet decides which destination to use when you have a calendar, schedule, and default route configured.
 
-Once you click stop, the audio player will automatically play your message.
+---
 
-![audioplayer](https://i.imgur.com/L4WRmcI.jpg)
+## Example: Routing to Groups
 
-If you like the message and wish to keep it, click save.
+A plumbing company has two departments that receive calls: Sales and Service.
 
-![save](https://i.imgur.com/Qw9BBPN.jpg)
+1. [Create two groups](/groups): "Sales" and "Service Team", each with the relevant team members
+2. Create an auto attendant called "Main Menu"
+3. Record a greeting: "Thank you for calling Summit Plumbing. For Sales, press 1. For our Service Team, press 2. To reach the operator, press 0."
+4. Add three routes:
+   - Press **One** for **Sales** (group)
+   - Press **Two** for **Service Team** (group)
+   - Press **Zero** for **Rick** (user - the operator)
+5. Go to [Phones](/phones), select your main number, and set its destination to "Main Menu"
 
+When a customer calls, they hear your greeting and press a button. If they press 1, the call rings everyone in the Sales group. If all Sales members are busy and [Call Queue](/groups#call-queue) is enabled, the caller waits in line. If everyone is offline, the caller gets the Sales group's voicemail.
 
-### Upload a New Message
+---
 
-To upload a new message, click on the toggle.
+## Example: Nested Menus (Routing to Individuals)
 
-![toggle](https://i.imgur.com/mKcjeyk.jpg)
+For larger teams, you can create multi-level menus by routing to other auto attendants.
 
-You will be prompted with this screen.
+Say your Sales team has three people and you want callers to choose who to speak with:
 
-![upload](https://i.imgur.com/pkyIGCm.jpg)
+1. Create an auto attendant called **"Sales Menu"** with the greeting: "For Mike, press 1. For Sarah, press 2. For Jake, press 3."
+   - Press **One** for **Mike** (user)
+   - Press **Two** for **Sarah** (user)
+   - Press **Three** for **Jake** (user)
 
-Click on choose file to upload a file from your folder, make sure that the file is an MP3 file.
+2. In your **"Main Menu"** auto attendant, set the Sales route to point to the **Sales Menu** IVR instead of the Sales group:
+   - Press **One** for **Sales Menu** (IVR)
 
-![choosefile](https://i.imgur.com/plfy1i3.jpg)
+Now when a caller presses 1 for Sales, they hear a second menu letting them choose the specific person they want. You can nest as many levels as you need.
 
-Once you chose a file, click on Upload.
+<Callout type="info">
+  **Groups vs. Nested Menus** - If you just want all Sales members to ring at once, route to a [group](/groups). If you want callers to choose a specific person, use a nested auto attendant. You can also combine both: "Press 1 to ring the Sales team, press 2 for Mike directly."
+</Callout>
 
-![uploadfile](https://i.imgur.com/t6cysoP.jpg)
+---
 
-### Setting Routes
+## Deleting an Auto Attendant
 
-To set routes in your main IVR, click add route.
+Click **Delete IVR** on any auto attendant card. A confirmation dialog asks you to confirm before it's permanently removed.
 
-![route](https://i.imgur.com/30YxZHE.jpg)
-
-Select the number/button that you like the client to press to get the route.
-
-![number](https://i.imgur.com/vCMAIXH.jpg)
-
-You can then set the number/button that you chose to a certain route.
-
-![1goesto](https://i.imgur.com/v5MHyu3.jpg)
-
-A route can redirect to:
-
-- Busy
-- A phone number
-- A certain user
-- A certain group
-- Another IVR
-
-#### Setting Routes To Groups (Example 1)
-
-For the sake of simplification, we're going to set an example of setting routes in a software company.
-
-Software company XYZ has two main departments who can receive phone calls, sales and customer service.
-
-1. Create a main auto attendant.
-2. Record the main intro message, it will be something along the lines of "Welcome to XYZ, for sales press 1, for customer service press 2"
-
-![record](https://i.imgur.com/NEdBY9s.jpg)
-
-3. Click save when you're satisfied with the recording.
-
-![save](https://i.imgur.com/Qw9BBPN.jpg)
-
-4. Click Add Route.
-
-![route](https://i.imgur.com/30YxZHE.jpg)
-
-5. Click the number 1.
-
-![number1](https://i.imgur.com/vIGBgPC.jpg)
-
-6. Click on the button to redirect.
-
-![press1](https://i.imgur.com/aIrasMj.jpg)
-
-6. Set the route to Group named "Sales".
-
-![sales](https://i.imgur.com/jTAODBA.jpg)
-
-7. Click Add Route again.
-8. Select number 2.
-
-![number2](https://i.imgur.com/q4ePeUU.jpg)
-
-9. Click on the button to redirect.
-
-![press2](https://i.imgur.com/ESaQtbq.jpg)
-
-10. Choose "Customer Service".
-
-![customerservice](https://i.imgur.com/CLPwg4L.jpg)
-
-11. Once you're done, click Update.
-
-![updatemain2](https://i.imgur.com/afwUMK7.jpg)
-
-You can create groups from the groups section of your dashboard.
-
-Now when the client presses 1 on their phone, they will be redirected to the Sales group, and whoever is available (online and not on a call) from the users in that group will get the call.
-
-If the user is on a call, call queue will be automatically activated and the client will be informed that he is in a queue, and if everyone is offline, then it will go to the voicemail of this group.
-
-And if the client presses 2 on their phone, they will be redirected to the Customer Service group, and whoever is available (online and not on a call) from the users in that group will get the call.
-
-If the user is on a call, call queue will be automatically activated and the client will be informed that he is in a queue, and if everyone is offline, then it will go to the voicemail of this group.
-
-#### Setting Routes To Individuals (Example 2)
-
-In this example, we're going to show how to route to specific individuals in a company.
-
-##### Create a Main Auto Attendant
-
-1. Record the main intro message, it will be something along the lines of "Welcome to XYZ, for sales press 1, for customer service press 2"
-
-![record](https://i.imgur.com/NEdBY9s.jpg)
-
-2. Click save when you're satisfied with the recording.
-
-![save](https://i.imgur.com/Qw9BBPN.jpg)
-
-##### Create an Auto Attendant for Sales
-
-Create a new IVR for sales.
-
-![salesivr](https://i.imgur.com/aZxDcgW.jpg)
-
-
-5. And then specify the routes for each individual in the team in the recording message.
-
-For example, a sales team consisting of 2 members: Louis James and James Watson.
-
-Record the auto attendant for Sales to say: "For Louis James, press 1. For James Watson, press 2"
-
-![recordsales](https://i.imgur.com/uxh5JUM.jpg)
-
-6. Click save when you're satisfied with the recording.
-
-![savesales](https://i.imgur.com/qLFBR7p.jpg)
-
-
-##### Create an Auto Attendant for Customer Service
-
-1. Create a new IVR for customer service.
-
-![newcustomerservice](https://i.imgur.com/zpZHY87.jpg)
-
-2. And then specify the routes for each individual in the team in the recording message.
-
-For example, a customer team consisting of 2 members: Erica Peters and Natalie Kenny.
-
-Record the auto attendant for customer service to say: "For Erica Peters, press 1. For Natalie Kenny, press 2"
-
-![recordcustomer](https://i.imgur.com/dYePrXf.jpg)
-
-6. Click save when you're satisfied with the recording.
-
-![savecustomer](https://i.imgur.com/PwDsQJd.jpg)
-
-##### Adding Routes in the Main Auto Attendant 
-
-1. Now go back to the main IVR.
-
-![selectmainivr](https://i.imgur.com/YzzeUUN.jpg)
-
-2. Click Add Route.
-
-![route](https://i.imgur.com/30YxZHE.jpg)
-
-3. Click the number 1.
-
-![number1](https://i.imgur.com/vIGBgPC.jpg)
-
-4. Click on the button to redirect.
-
-![press1](https://i.imgur.com/aIrasMj.jpg)
-
-5. Choose the Sales IVR.
-
-![redirecttosales](https://i.imgur.com/09REuyW.jpg)
-
-6. Click Add Route again.
-
-7. Select number 2.
-
-![number2](https://i.imgur.com/q4ePeUU.jpg)
-
-9. Click on the button to redirect.
-
-![press2go](https://i.imgur.com/WoTZz0W.jpg)
-
-10. Select customer service IVR.
-
-![2tocustomer](https://i.imgur.com/PejAeTx.jpg)
-
-11. Once you're done, click Update.
-
-![updatemain](https://i.imgur.com/floAyO9.jpg)
-
-##### Adding Routes to Sales Auto Attendant 
-
-1. Go to Sales IVR that you created.
-
-![selectsalesivr](https://i.imgur.com/k8kyBKR.jpg)
-
-2. Add a new route.
-
-![addroutesales](https://i.imgur.com/Mo16SNl.jpg)
-
-3. Click the number 1.
-
-![number1](https://i.imgur.com/vIGBgPC.jpg)
-
-4. Click on the button to redirect.
-
-![1redirectsales](https://i.imgur.com/lQe3QRM.jpg)
-
-5. Select Louis James of sales.
-
-![louis](https://i.imgur.com/PFybqyt.jpg)
-
-6. Click add route again to add the other sales memeber.
-
-![anotherroute](https://i.imgur.com/P5Vgi1Z.jpg)
-
-7. Select number 2.
-
-![number2](https://i.imgur.com/q4ePeUU.jpg)
-
-9. Click on the button to redirect.
-
-![press2sales](https://i.imgur.com/LPOsVTv.jpg)
-
-10. Select James Watson, the second member of sales.
-
-![james](https://i.imgur.com/RE16KWJ.jpg)
-
-11. Once you're done, click Update.
-
-![updatesales](https://i.imgur.com/eOPvOGm.jpg)
-
-##### Adding Routes to Customer Service Auto Attendant 
-
-1. Go to customer service IVR that you created.
-
-![customerivr](https://i.imgur.com/EdxHDw1.jpg)
-
-2. Add a new route.
-
-![newroute](https://i.imgur.com/ucBATB9.jpg)
-
-3. Click the number 1.
-
-![number1](https://i.imgur.com/vIGBgPC.jpg)
-
-4. Click on the button to redirect.
-
-![press1customer](https://i.imgur.com/EyYrLTT.jpg)
-
-5. Select Erica Peters of customer service.
-
-![erica](https://i.imgur.com/fJ8QO08.jpg)
-
-6. Click add route again to add the other customer service member.
-
-![addroutecustomer](https://i.imgur.com/QbxOlZ3.jpg)
-
-7. Select number 2.
-
-![number2](https://i.imgur.com/q4ePeUU.jpg)
-
-9. Click on the button to redirect.
-
-![press2customer](https://i.imgur.com/jlaJQK9.jpg)
-
-10. Select Natalie Kenny, the second member of customer service.
-
-![natalie](https://i.imgur.com/BgMNvMV.jpg)
-
-11. Once you're done, click Update.
-
-![updatecustomer](https://i.imgur.com/lipg8LP.jpg)
+<Callout type="warning">
+  Before deleting an auto attendant, check if any [phone numbers](/phones), [schedules](/schedule), [calendars](/calendar), or other auto attendants are routing calls to it. Deleting an IVR that's still referenced as a route destination will cause those calls to fail.
+</Callout>

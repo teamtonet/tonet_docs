@@ -1,0 +1,58 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
+# Account
+
+Your business settings - timezone, address, and password. Click the **timezone display** in the top bar to open this page.
+
+For personal settings like your display name, profile picture, and notifications, see [Profile](/profile).
+
+The Account page has two tabs: **General** and **Security**.
+
+---
+
+## General
+
+### Basic Details
+
+- **Full Name** - Your account name. Read-only.
+- **Email Address** - Your login email. Read-only.
+
+### Location
+
+Set your business timezone and address. These settings apply to your entire account - all [call logs](/analytics/call_logs), [schedules](/schedule), and [calendar](/calendar) entries use the timezone you set here.
+
+- **Country** - Select from the dropdown
+- **Time Zone** - Your business timezone. All times in the dashboard use this timezone. If you haven't set one yet, it uses your browser's timezone.
+- **Street Address** - Your business street address
+- **Apt / Suite / Etc** - Unit, suite, or floor number
+- **City** - City
+- **State** - Select from dropdown (US states)
+- **Postal Code** - ZIP or postal code
+
+Click **Update** to save your changes.
+
+<Callout type="info">
+  You can also open this page by clicking the timezone display in the top bar of the dashboard. It takes you directly to the timezone field so you can update it quickly.
+</Callout>
+
+---
+
+## Security
+
+### Change Password
+
+Update your account password. Passwords must meet these requirements:
+
+- Minimum **12 characters**
+- At least one **uppercase** letter
+- At least one **lowercase** letter
+- At least one **number**
+- At least one **special character** (@ $ ! % * ? & #)
+
+To change your password:
+
+1. Enter your **Current Password**
+2. Enter your **New Password** - a strength meter below the field shows how strong your new password is
+3. **Confirm Password** - must match exactly
+4. Click **Update**

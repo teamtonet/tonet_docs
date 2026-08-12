@@ -1,381 +1,118 @@
-# Tonet.app
+import { Callout } from 'nextra-theme-docs'
+import Image from 'next/image'
 
-This is the main application where you can:
+# Mobile App
 
-1. Make and receive calls from a web browser
-2. Send SMS and receive SMS
-3. Listen to voicemails
-4. Edit your user profile
-5. Choose from outbound text or call numbers permitted by system manager (from .io)
-6. Send messages to other users in same company
+Take your business phone system with you. The Tonet mobile app gives you the same calling, texting, and voicemail features you get in the [dashboard](/index) - right on your phone. Your phone numbers, contacts, and call history stay in sync across all your devices.
 
-## Logging In
+Available for [iPhone](https://apps.apple.com/us/app/tonet/id6755547036) and [Android](https://play.google.com/store/apps/details?id=ai.tonet).
 
-From your browser, go to [tonet.app](https://tonet.app/)
+---
 
-You will be prompted with the log in screen.
+## Getting Started
 
-![login](https://i.imgur.com/poqKUMD.jpg)
+Download the app from the App Store or Google Play and sign in with the same email and password you use for the [web dashboard](https://dashboard.tonet.ai).
 
-Enter your credentials and click Login.
+---
 
-### Forgot Password
+## Home
 
-In case you forgot your password, click Forgot Password?
+<Image src="/images/app/home.webp" alt="Tonet mobile app home screen showing messages and call history icons" width={300} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![forgotpassword2](https://i.imgur.com/SSElpsy.jpg)
+The Home tab is your starting point. It shows quick counts for unread messages and missed calls so you can see at a glance what needs attention.
 
-Enter your email address, and click send email.
+### Conversations
 
-![forgotpassword](https://i.imgur.com/YBXz8RG.jpg)
+Tap messages to open your conversations. Three filters at the top let you switch views:
 
-You will get a confirmation asking you to check your email for resetting your password.
+- **All** - Every conversation, both team messages and SMS
+- **Team** - Internal messages with your team members only
+- **SMS** - Customer text messages, organized by phone number
 
-![resetpassword](https://i.imgur.com/iHCfboj.jpg)
+Tap any conversation to open it. Type a message and send, or attach an image. Messages sync across all your devices - anything you send from the app shows up in the [web dashboard Chat](/chat) too.
 
-You will get an email (make sure that you check your spam messages as well) providing you with link to reset your password, click on the link to set up your new password.
+To start a new conversation, tap the compose button and choose whether you're messaging a team member or sending an SMS to an external number.
 
-![linktoreset](https://i.imgur.com/ZDmTrBw.jpg)
+<Image src="/images/app/new_conversation.webp" alt="New Conversation screen with Team Message and Text Message SMS options" width={300} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Enter your new password, and then repeat the password once more, and click set password.
+### Call History
 
-![setpassword](https://i.imgur.com/D1EczeU.jpg)
+View your complete call log, grouped by date. Each entry shows:
 
-Your will be prompted with the login screen, with your new password.
+- Caller or recipient name and number
+- Call direction (inbound or outbound)
+- Duration
+- Whether it went to voicemail
 
-![login](https://i.imgur.com/poqKUMD.jpg)
+Tap any call to call the number back. Voicemails have a play button to listen right from the list.
 
-Click login.
+---
 
-## Application's Main Screen
+## Dialpad
 
-Once you login, you will be prompted with the following screen.
+<Image src="/images/app/dialpad.webp" alt="Tonet mobile app dialpad with number keys and call button" width={300} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-![mainscreen](https://i.imgur.com/NvL6w5B.jpg)
+A full phone keypad for dialing numbers. During an active call, you can use the keypad to navigate phone menus, enter PINs, and so on.
 
-The first button allows you to check your new messages, you will find the number of new messages written on the button as shown below.
+---
 
-![messages](https://i.imgur.com/DA2rLxG.jpg)
+## Active Calls
 
-The second button shows you the call logs, which will show you information of the incoming and the outgoing calls like:
+When you're on a call, a call screen appears with:
 
-- The call origin and destination.
+- Caller name and number
+- Call duration timer
+- **Mute** - Mute or unmute yourself
+- **Speaker** - Switch to speakerphone
+- **Hold** - Put the call on hold
+- **Hang up** - End the call
 
-- The duration of the call.
+### Call Transfer
 
-- The date of the call.
+Transfer an active call to another team member or external number. Tap transfer, search for the person by name or extension, and select them. The call hands off automatically.
 
-  ![call_logs](https://i.imgur.com/LqrMf5t.jpg)
+### Conference Calls
 
-The third button allows you to listen to your voicemails.
+Merge multiple active calls into a conference. Select which calls to add and the app connects everyone together.
 
-![voicemail](https://i.imgur.com/LsOiPUs.jpg)
+---
 
-**Home button**
+## Directory
 
-Starting at the footer of the page is the home button, which is the main screen that you are on right now. You can click the home button to return your home screen at any time.
+Browse your team and contacts in one place:
 
-![home](https://i.imgur.com/HjfraMP.jpg)
+- **Team** - All team members with their extensions. Tap to call or message.
+- **Contacts** - Your phone's contacts. You'll need to allow Tonet access the first time. Tap to call directly using your business number.
 
-Next, you have the phone keypad, where you can dial any number.
+Use the search bar to find anyone quickly.
 
-![dial](https://i.imgur.com/qh4khDt.jpg)
+---
 
-Next, you have the contacts page, where you can keep records on your contacts and your team members.
+## Profile
 
-![contacts](https://i.imgur.com/PIyXbzP.jpg)
+Manage your app settings:
 
-Lastly, you have your user profile page.
+- **Display Name** - Edit the name your team sees
+- **Call From** - Choose which of your [phone numbers](/phones) to use for outbound calls. If you have multiple numbers, tap **Change** to pick a different one.
+- **Permissions** - See which permissions are enabled. Tap any one to open your phone's settings.
+- **Log Out** - Sign out of the app
 
-![userprofile](https://i.imgur.com/uaWlESt.jpg)
+---
 
-On the top right hand side of the page, you will find a few more options.
+## Push Notifications
 
-![moreoptions](https://i.imgur.com/Hrz7mbv.jpg)
+The app sends push notifications for:
 
-The first button will take you to your messages.
+- **Incoming calls** - Even when the app is in the background
+- **New text messages** - SMS and team messages
+- **New voicemails** - When someone leaves a message
 
-![messages2](https://i.imgur.com/X4muOsR.jpg)
+<Callout type="info">
+  On Android, make sure battery optimization is disabled for Tonet. Some Android manufacturers aggressively kill background apps, which can prevent incoming call notifications. Check your device's battery settings if calls aren't coming through.
+</Callout>
 
-The second button will allow you to change your online status to either, busy, or offline.
+---
 
-![status](https://i.imgur.com/ENY43eZ.jpg)
+## Syncing with the Dashboard
 
-
-
-## Messages/SMS
-
-Click on the messages button.
-
-![messages](https://i.imgur.com/DA2rLxG.jpg)
-
-You will be prompted with the following screen.
-
-![messages_screen](https://i.imgur.com/82Q8TMn.jpg)
-
-
-You can check the messages of your team that you created, note that you create team members from dashboard.tonet.ai
-
-### Sending an SMS to a Team Member
-
-To send an SMS to a team member, click Add.
-
-![addteam](https://i.imgur.com/idwPAO0.jpg)
-
-
-Click the drop down menu.
-
-![dropdown](https://i.imgur.com/sevYEU2.jpg)
-
-Select the team member that you wish to text.
-
-![addteammember](https://i.imgur.com/epTmStD.jpg)
-
-A new window will open where you can text the team member that you selected.
-
-![textteammember](https://i.imgur.com/DQ1ACTZ.jpg)
-
-
-You can check the history of messages of a team member from here.
-
-![history](https://i.imgur.com/w07GKOq.jpg)
-
-To create a group SMS, select the first member from the add button.
-
-![addteam](https://i.imgur.com/idwPAO0.jpg)
-
-
-Select the first recipient.
-
-![addteammember](https://i.imgur.com/epTmStD.jpg)
-
-And then when the window of the recipient opens, click add again.
-
-![addanother](https://i.imgur.com/e5eHLPK.jpg)
-
-
-Select the second recipient.
-
-![second](https://i.imgur.com/xNQFbhy.jpg)
-
-Now you've created a group of two participants.
-
-![two](https://i.imgur.com/p5BDrHq.jpg)
-
-To send a message, click the send button.
-
-![send](https://i.imgur.com/Xkq0v44.jpg)
-
-
-You can also call the team member from the call button.
-
-![call](https://i.imgur.com/Om6rUKF.jpg)
-
-
-### Sending an SMS to Any Number
-
-To send an SMS to any number, click Contacts.
-
-![contacts](https://i.imgur.com/s9qhmaQ.jpg)
-
-Click the add button to add a new number.
-
-![addnewnumber](https://i.imgur.com/Rq7uMx1.jpg)
-
-Enter the number that you wish to send an SMS to.
-
-![enternumber](https://i.imgur.com/WWWNRIB.jpg)
-
-Once you entered the number, a new window will open, where you can text the number.
-
-![numberadded](https://i.imgur.com/jEbKlGt.jpg)
-
-
-Next, choose the number that you're going to send the SMS from.
-
-![sender](https://i.imgur.com/0CXAkAx.jpg)
-
-
-Select the number, you can buy phone numbers from your dashboard on tonet.ai
-
-![selectnumber](https://i.imgur.com/ExBUq8s.jpg)
-
-Type your message, and click send.
-
-![send2](https://i.imgur.com/ptE6vC0.jpg)
-
-
-On the left hand side, you will find all the history of all the SMS that you sent.
-
-![records](https://i.imgur.com/sRmk9YK.jpg)
-
-To send a new SMS, click clear.
-
-![clear](https://i.imgur.com/vnBPCMF.jpg)
-
-
-To call the number instead of sending an SMS, click the call button.
-
-![call2](https://i.imgur.com/lYyV0Vw.jpg)
-
-
-
-## Call Log
-
-To check out the call logs, click on call logs.
-
-![call_logs](https://i.imgur.com/LV1XNmM.jpg)
-
-You will be prompted with this screen.
-
-![call_logscreen](https://i.imgur.com/bIxVdlN.jpg)
-
-- The disposition source is the caller.
-- The destination is the number that was called.
-- You can also find the date and the duration of the call.
-
-Click on the call button to call the number again.
-
-![callnumber](https://i.imgur.com/NBtfi1Q.jpg)
-
-
-You can also check the call logs of the groups.?
-
-![groups](https://i.imgur.com/i4Gt2lO.jpg)
-
-## Voicemails
-
-To check out your voicemails, click on voicemails.
-
-![voicemail](https://i.imgur.com/9pcJ9dM.jpg)
-
-
-You will be prompted with the following screen.
-
-![voicemails](https://i.imgur.com/hZqARTT.jpg)
-
-To play the voice mail, click the play button.
-
-![play](https://i.imgur.com/zOO4LxH.jpg)
-
-This is the name/number of the party that left the voice mail.
-
-![sentvoicemail](https://i.imgur.com/XHUqKOB.jpg)
-
-This is the name/number of the recipient party.
-
-![recipient](https://i.imgur.com/gkYp0z8.jpg)
-
-This is the duration of the voice mail.
-
-![duration](https://i.imgur.com/OlqqZ6V.jpg)
-
-This is the time and date of the voice mail.
-
-![date](https://i.imgur.com/miXT7oJ.jpg)
-
-You can also delete the voicemail by clicking on this button.
-
-![delete](https://i.imgur.com/PrcMTke.jpg)
-
-When you click play, the voicemail will be played on the audio player.
-
- ![playvoicemail](https://i.imgur.com/GdnvsLV.jpg)
-
-You can control the volume or mute the sound.
-
-![mute](https://i.imgur.com/qz9apIp.jpg)
-
-You can download the voicemail, click the three dots.
-
-![threedots](https://i.imgur.com/mjbfZbX.jpg)
-
-And click download.
-
-![download](https://i.imgur.com/ploJdvD.jpg)
-
-You can also change the playback speed.
-
-![speed](https://i.imgur.com/Ik55YiT.jpg)
-
-## Keypad
-
-To dial a number, click on the keypad.
-
-![dial](https://i.imgur.com/ZSmzLs6.jpg)
-
-Enter the number, and click call.
-
-![newnumber](https://i.imgur.com/NMlcfNh.jpg)
-
-## Contacts
-
-To check out your contacts, click on contacts.
-
-![contacts](https://i.imgur.com/68JSAJ6.jpg)
-
-To add a new contact, click new contact.
-
-![newcontact](https://i.imgur.com/ojz7nSU.jpg)
-
-Enter the name and number of the new contact, and click add.
-
-![addcontact](https://i.imgur.com/QzTuygM.jpg)
-
-You can call or text your new contact.
-
-![callortext](https://i.imgur.com/SUyuVK5.jpg)
-
-You can also check out your team members.
-
-![team](https://i.imgur.com/tr7oBih.jpg)
-
-And you can call or text any of them.
-
-![callormessage](https://i.imgur.com/z9kilUu.jpg)
-
-You can also search for any contact.
-
-![search](https://i.imgur.com/vaC5znn.jpg)
-
-## User Profile
-
-Click on your profile to edit it.
-
-![userprofile](https://i.imgur.com/XrxgF89.jpg)
-
-You can edit your display name.
-
-![displayname](https://i.imgur.com/diPEdWk.jpg)
-
-You can choose your outbound number.
-
-![outbound](https://i.imgur.com/D1gxjou.jpg)
-
-## Change Password
-
-From the home menu, click user profile.
-
-![userprofile](https://i.imgur.com/XrxgF89.jpg)
-
-Click change password.
-
-![changepassword](https://i.imgur.com/qyMpkBL.jpg)
-
-Enter your current password.
-
-![entercurrentpassword](https://i.imgur.com/uqr5h0q.jpg)
-
-Then enter your new password to change it, and click update password.
-
-![newpassword](https://i.imgur.com/4fKqeXc.jpg)
-
-## Log Out
-
-To log out, click on the user profile.
-
-![userprofile](https://i.imgur.com/XrxgF89.jpg)
-
-Click logout.
-
-![logout](https://i.imgur.com/BhIYJok.jpg)
+Everything stays in sync. Calls you make from the app appear in [Call History](/analytics/call_logs) on the web dashboard. Messages sent from the app show up in [Chat](/chat). Contacts you add in the dashboard are available in the app. Changes to your [phone numbers](/phones), [groups](/groups), and routing settings take effect on all devices immediately.

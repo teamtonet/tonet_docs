@@ -1,14 +1,42 @@
 {
-  "index": "Introduction",
-  "sign_up": "Sign Up",
-  "phones": "Phones",
+  "-- dashboard": {
+    "type": "separator",
+    "title": "Dashboard"
+  },
+  "index": "Overview",
+  "dialer": "Dialer & Calling",
   "analytics": "Analytics",
+  "chat": "Chat",
+  "contacts": "Contacts",
+  "sign_up": "Sign Up",
+  "-- manage": {
+    "type": "separator",
+    "title": "Manage"
+  },
+  "users": "Users",
+  "phones": "Phones",
+  "groups": "Groups",
+  "auto_attendant": "Auto Attendant",
+  "schedule": "Schedule",
+  "calendar": "Calendar",
+  "-- settings": {
+    "type": "separator",
+    "title": "Settings"
+  },
+  "billing": "Billing",
+  "account": "Account",
+  "profile": "Profile",
+  "-- apps": {
+    "type": "separator",
+    "title": "Apps"
+  },
+  "app": "Mobile App",
+  "ip_phones": "IP Phones",
   "features": "Features",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
     "href": "https://tonet.ai/contact/",
     "newWindow": true
-  },
-  "ip_phones" : "IP Phones"
+  }
 }

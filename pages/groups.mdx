@@ -1,65 +1,87 @@
+import Image from 'next/image'
+import { Callout } from 'nextra-theme-docs'
+
 # Groups
 
-Groups allow you to create groups of users, you can include a certain department in a group so that this group can receive calls, for example, you can create a customer service group, [set the auto-attendant](https://docs.tonet.ai/auto_attendant) to redirect to the customer service when the client presses 2, and one of the available group members will be able to take the call once it comes in.
+Groups let you ring multiple team members at once. Instead of routing a call to a single person, you can route it to a group like "Sales" or "Service Team" - the call rings everyone in the group, and the first person to pick up takes it.
 
-## Create a New Group
+Groups are used throughout your phone system. You can route to them from [phone numbers](/phones), [auto attendant](/auto_attendant) menus, [schedules](/schedule), and [calendars](/calendar).
 
-To create a new group, go to the groups section from your dashboard.
+Go to **Manage > Groups** to see your groups.
 
-![groups](https://i.imgur.com/01PZfCm.jpg)
+<Image src="/images/groups/group_list.png" alt="Groups list showing Service Team and Sales groups with member counts and action buttons" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-On the left side, click New Group.
+## Group List
 
-![newgroup](https://i.imgur.com/RtixXMn.jpg)
+Each group is displayed as a card showing:
 
-You will be prompted with this screen.
+- **Avatar** - The group's initials
+- **Name** - The group name (e.g. "Sales", "Service Team")
+- **Member count** - How many users are in the group
+- **Edit Group** - Opens the group editor to change members, name, or call queue settings
+- **Delete Group** - Removes the group after a confirmation prompt
 
-![screen](https://i.imgur.com/jGqh3pH.jpg)
+Click **+ Add** in the top right to create a new group.
 
-You can enter the group name here.
+---
 
-![groupname](https://i.imgur.com/w5ny8td.jpg)
+## Creating a Group
 
-Here you will find the list of users that you created.
+The group form has three fields:
 
-![users](https://i.imgur.com/QdpYDMJ.jpg)
+- **Name** - A descriptive name for the group (e.g. "Customer Service", "Sales", "After Hours Support")
+- **Call Queue** - Toggle this on to queue callers when all group members are busy (see [Call Queue](#call-queue) below)
+- **Users** - Check the box next to each team member you want in this group. You can add as many users as you need.
 
-To add a user to this group, just click on the toggle button.
+Click **Submit** to save the group.
 
-![toggle](https://i.imgur.com/e6p4wbR.jpg)
+<Image src="/images/groups/group_add.png" alt="Add Group form with name, call queue toggle, and user checkboxes" width={1100} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-You can also enable call queue, by clicking the toggle button.
+To edit an existing group, click **Edit Group** on its card. The same form opens with the current settings pre-filled.
 
-![queue](https://i.imgur.com/DNE7UgK.jpg)
+<Image src="/images/groups/group_edit.png" alt="Edit Group form showing Service Team with three members selected" width={1100} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-If the user is on a call, call queue will be automatically activated and the client will be informed that he is in a queue, and if everyone is offline, then it will go to the voicemail of this group.
+---
 
-Once you are done, click Save.
+## Call Queue
 
-![save](https://i.imgur.com/3gvDSrp.jpg)
+When Call Queue is **off**, an incoming call rings all group members simultaneously. If nobody picks up, the call goes to the group's voicemail.
 
-Now your group is created.
+When Call Queue is **on**, callers are placed in a queue if all group members are currently on other calls. The caller hears hold music and a message letting them know they're in a queue. As soon as a group member finishes their current call, the next queued caller is connected automatically.
 
-![groupcreated](https://i.imgur.com/HdvBIOj.jpg)
+If all group members are offline (not logged in), the call goes directly to the group's [voicemail](#group-voicemail).
 
-## Edit a Group
+<Callout type="info">
+  Call Queue is especially useful for support and sales teams. Without it, a caller who rings in while everyone is busy gets sent straight to voicemail. With it, they wait in line and get connected to the next available person.
+</Callout>
 
-To edit a group, click on it.
+---
 
-![edit](https://i.imgur.com/Y7tlfqF.jpg)
+## Group Voicemail
 
-Make the changes you wish, and click Update.
+Every group gets its own voicemail mailbox, separate from each member's personal mailbox. When a call to the group goes unanswered (or all members are offline), the caller can leave a voicemail for the group.
 
-![update](https://i.imgur.com/IipLXNP.jpg)
+Group voicemails appear in the **Voicemails** tab under [Analytics](/analytics/call_logs#voicemails), labeled with the group's mailbox number.
 
-## Delete a Group
+You can record a custom greeting for each group's voicemail. Go to [Voicemail Settings](/analytics/call_logs#voicemail-settings) and select the group's mailbox from the dropdown. For example, your Sales group might say "You've reached the Sales team at Summit Plumbing, please leave a message" while your Service Team says something different.
 
-To delete a group, click on the recycle bin button.
+---
 
-![delete](https://i.imgur.com/64MRsZx.jpg)
+## Deleting a Group
 
-Confirm that you want to delete.
+Click **Delete Group** on any group card. A confirmation dialog asks you to confirm before the group is permanently removed.
 
-![Confirm](https://i.imgur.com/CoXqior.jpg)
+<Callout type="warning">
+  Before deleting a group, check if any [phone numbers](/phones), [auto attendant](/auto_attendant) menus, or [schedules](/schedule) are routing calls to it. Deleting a group that's still used as a route destination will cause those calls to fail.
+</Callout>
 
-Check out [how to link an auto attendant to a certain group.](https://docs.tonet.ai/auto_attendant#setting-routes-to-groups-example-1)
+---
+
+## Using Groups in Call Routing
+
+Groups become powerful when combined with other routing features:
+
+- **[Phone numbers](/phones)** - Set a phone number's default destination to a group so all incoming calls ring the team
+- **[Auto Attendant](/auto_attendant)** - "Press 1 for Sales, Press 2 for Support" - each key routes to a different group
+- **[Schedule](/schedule)** - Route calls to your Sales group during business hours and your After Hours group in the evening
+- **[Calendar](/calendar)** - On holidays, route calls to a skeleton crew group instead of the full team

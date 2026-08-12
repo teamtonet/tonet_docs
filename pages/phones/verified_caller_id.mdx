@@ -1,38 +1,71 @@
+import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
-# Verified Caller ID's
+# Verified Caller ID
 
-A number that you own can be used as a Caller ID for outbound calls from a Tonet number.
-Before you're able to place outbound calls from Tonet with a non-Tonet phone number, you'll need to verify the phone number you want to use as your caller ID.
+Verified Caller ID lets you display an external phone number - one that's not on your Tonet account - as the outbound caller ID when your team makes calls.
 
-Verifying a Caller ID is a great way to keep using an existing number if your previous phone system is down or during the
-process of porting your number to Tonet. We need to be able to place a call to the number to verify it, but remember that
-that most carriers are able to forward your number to another number even if your phones are down.
+This is useful when:
+
+- **You're porting your number** - During the [porting process](/phones/port_number) (which can take 1-4 weeks), verify your existing number so outbound calls still show it as caller ID while you wait.
+- **You have a well-known number** - Customers recognize your established number. Use it as caller ID even if it's hosted elsewhere.
+- **Your old system is down** - Keep displaying your business number on outbound calls while you transition to Tonet.
+
+## Verified Caller ID Tab
+
+Go to **Manage > [Phones](/phones)** and click the **Verified Caller ID** tab to see all your verified numbers.
+
+{/* <Image src="/images/phones/verified_callerid_tab.png" alt="Verified Caller ID tab showing verified numbers" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/> */}
+
+The table shows each verified number with its friendly name and verification status.
+
+---
 
 ## Verification Process
 
-Go to the Dashboard [Phones tab](https://dashboard.tonet.ai/phones) and click on "Add a new Caller ID".
-
-Enter the phone number you want to verify and give it a friendly name.
-<img target="_blank" src={'https://i.imgur.com/mjcwKTI.png'} />
-
-Next, take note of the 6 digit code displayed. Our automated system will call the phone number you want to verify.
-Answer the call and enter the 6 digit code using your phones keypad.
-
-<Callout type="info" emoji="ℹ️">
-  Most carriers can forward a phone number to another number even if your phones are down. Ask your carrier to forward
-  your well known number to a Tonet number.
+<Callout type="info">
+  **Why verify?** You must prove you own the number before it can be used as caller ID. This prevents anyone from spoofing someone else's number on outbound calls.
 </Callout>
 
-<img target="_blank" src={'https://i.imgur.com/KXA4d6O.png'} />
+### Step 1: Add a new Caller ID
 
-After the call is completed, you will get a success notification and the verification process is complete.
+Click **Add a new Caller ID** on the Verified Caller ID tab. Enter:
 
-<img target="_blank" src={'https://i.imgur.com/gWyd1SF.png'} />
+- **Phone number** - The external number you want to verify
+- **Friendly name** - A label to remember what this number is (e.g. "Old Office Line", "Rick Cell")
 
-## Assign a Caller ID to a number
+### Step 2: Receive the verification call
 
-After you have a Verified Caller ID you can assign it to be used as outgoing Caller ID on any Tonet number.
-Click on Edit on the number you want to configure. And simply select the Caller ID you want to use from in the drop-down.
+After submitting, you'll see a **6-digit verification code** on screen. Tonet's automated system will call the phone number you entered.
 
-<img target="_blank" src={'https://i.imgur.com/eSEpbEP.png'} />
+**Answer the call** and enter the 6-digit code using your phone's keypad.
+
+<Callout type="info">
+  **Can't answer the phone?** Most carriers can forward a phone number to another number even if your phones are down. Ask your current carrier to temporarily forward the number you're verifying to one of your Tonet numbers, then try the verification again.
+</Callout>
+
+### Step 3: Verification complete
+
+After the call completes and the code is accepted, you'll see a success notification. The number now appears in your Verified Caller ID list with a verified status.
+
+---
+
+## Using a Verified Caller ID
+
+Once a number is verified, you can assign it to any of your Tonet phone numbers:
+
+1. Go to the [phone list](/phones) and click the edit icon on the number you want to configure
+2. In the **Configure** tab, find the **Caller ID** dropdown
+3. Select your verified number from the list
+4. Click **Save Settings**
+
+All outbound calls made from that Tonet number will now display your verified number as the caller ID. You can assign the same verified number to multiple Tonet numbers.
+
+---
+
+## Important Notes
+
+- Verified Caller ID only affects **outbound** calls. Inbound calls to your Tonet numbers are unaffected.
+- The external number itself does **not** need to be on Tonet - it can be with any carrier. You just need to be able to answer a verification call on it.
+- If you [port the number to Tonet](/phones/port_number) later, it becomes a regular Tonet number and no longer needs to be "verified" - it's already yours.
+- Removing a verified caller ID from the list means any phone numbers using it as caller ID will revert to showing their own number.
