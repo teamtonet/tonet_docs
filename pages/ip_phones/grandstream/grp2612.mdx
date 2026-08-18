@@ -1,0 +1,44 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Grandstream GRP2612 Configuration
+
+The GRP2612 is Grandstream's current entry-level desk phone with a 2.4" color LCD, 4 line keys, HD voice, and dual Gigabit Ethernet. It replaces the older GXP series.
+
+## SIP Registration
+
+* Find the IP address of your phone. Press the **Menu** button (center of the navigation pad).
+* Navigate to **Status > Network Status**.
+* Take note of the IPv4 address displayed.
+
+* Open a web browser on your computer and type the phone's IP address in the address bar.
+
+* Log in to the phone's web interface. The default username and password is **admin / admin**.
+
+<Callout type="info">
+  The GRP series uses a different web interface than the older GXP phones. The layout is cleaner but the field names are the same.
+</Callout>
+
+* Navigate to **Accounts > Account 1 > General Settings**.
+
+* Set the account to **Active** and fill out the following fields with the credentials you received from Tonet support:
+  - **SIP Server** - Your Tonet SIP server address
+  - **SIP User ID** - Your SIP username
+  - **Authenticate ID** - Your SIP username
+  - **Authenticate Password** - Your SIP password
+  - **Name** - Your name or extension label
+
+* Click **Save and Apply**.
+
+## STUN Configuration
+
+<Callout emoji="⚠">
+  STUN is required to avoid one-way audio issues.
+</Callout>
+
+* In the left menu, click **Settings > Network Settings**.
+* Set **NAT Traversal** to **STUN**.
+* Click **Save and Apply**.
+
+* In the top menu, go to **Settings > General Settings**.
+* In the **STUN Server** field, enter: `stun.tonet.ai:3478`
+* Click **Save and Apply**.

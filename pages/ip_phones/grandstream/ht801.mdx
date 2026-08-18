@@ -1,0 +1,51 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Grandstream HT801 / HT802 Configuration
+
+The HT801 (1 port) and HT802 (2 port) are analog telephone adapters (ATAs). They let you connect regular analog phones and fax machines to Tonet. This is useful for businesses that want to keep their existing analog handsets or need to connect a fax machine.
+
+Plug your analog phone or fax into the FXS port on the back of the adapter, connect the Ethernet port to your network, and configure SIP as described below.
+
+## SIP Registration
+
+* Connect the HT801/HT802 to your network via the Ethernet port.
+* Find the device's IP address. Pick up the connected analog phone and dial `***` to enter the voice menu, then dial `02`. The device will read the IP address to you.
+
+* Open a web browser on your computer and type the IP address in the address bar.
+
+* Log in to the web interface. The default password for the admin account is **admin**.
+
+* Click on **FXS Port** (or **FXS Port 1** on the HT802).
+
+* Fill out the following fields with the credentials you received from Tonet support:
+  - **Primary SIP Server** - Your Tonet SIP server address
+  - **SIP User ID** - Your SIP username
+  - **Authenticate ID** - Your SIP username
+  - **Authenticate Password** - Your SIP password
+  - **Name** - Your name or extension label
+
+* Click **Save and Apply**.
+
+<Callout type="info">
+  On the HT802, repeat the configuration for FXS Port 2 if you are connecting a second phone or fax line.
+</Callout>
+
+## STUN Configuration
+
+<Callout emoji="⚠">
+  STUN is required to avoid one-way audio issues.
+</Callout>
+
+* Click on **FXS Port** (or the port you are configuring).
+* Set **NAT Traversal** to **STUN**.
+* In the **STUN Server** field, enter: `stun.tonet.ai:3478`
+* Click **Save and Apply**.
+
+## Fax Setup
+
+If you are connecting a fax machine:
+
+* In the FXS Port settings, set **Preferred Vocoder** (Codec) to **PCMU** or **PCMA** (G.711). Fax does not work reliably with compressed codecs.
+* Disable **Echo Cancellation** for the fax port.
+* Set **T.38** to **Enabled** if your fax machine supports it (most modern fax machines do).
+* Click **Save and Apply**.

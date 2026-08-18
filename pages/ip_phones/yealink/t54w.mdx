@@ -1,0 +1,45 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Yealink T54W Configuration
+
+The T54W has a 4.3" adjustable color screen, built-in WiFi and Bluetooth, 10 line keys, and HD voice. It connects via WiFi or Ethernet, which makes it a good fit for desks without a network cable nearby.
+
+This is one of the phones available pre-configured from [tonet.ai/desk-phones](https://tonet.ai/desk-phones/).
+
+## SIP Registration
+
+If you purchased the T54W from Tonet, it arrives pre-configured and ready to use. Just plug in the ethernet cable or connect to WiFi and it will register automatically.
+
+For phones purchased elsewhere, follow these steps:
+
+* Find the IP address of your phone. Press the **OK** button on the navigation pad to enter the menu.
+* Go to **Status**. The phone's IP address is displayed under IPv4.
+* Take note of the IP address.
+
+* Open a web browser on your computer and type the phone's IP address in the address bar.
+
+* Log in to the phone's web interface. The default username and password is **admin / admin**.
+
+* Navigate to **Account** and select **Account 1** (or Register).
+
+* Set **Line Active** to **Enabled** and fill out the following fields with the credentials you received from Tonet support:
+  - **Display Name** - Your name or extension label
+  - **Register Name** - Your SIP username
+  - **User Name** - Your SIP username
+  - **Password** - Your SIP password
+  - **Server Host** - Your Tonet SIP server address
+
+* Set **NAT** to **STUN** and set the **STUN Server** to: `stun.tonet.ai`
+
+* Click **Confirm** to save.
+
+* The **Register Status** should change to "Registered". If it does not, reboot the phone from **Settings > Upgrade > Reboot**.
+
+## WiFi Setup
+
+If you are connecting the T54W over WiFi instead of Ethernet:
+
+* On the phone, go to **Menu > Basic > Wi-Fi**.
+* Enable WiFi and scan for available networks.
+* Select your network and enter the password.
+* Once connected, the phone will get an IP address and you can proceed with SIP registration above.

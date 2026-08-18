@@ -1,0 +1,34 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Yealink T33G Configuration
+
+The T33G is Yealink's entry-level IP phone with 4 line keys, HD voice, and a 2.4" color screen. It is one of the most common desk phones in small offices.
+
+## SIP Registration
+
+* Find the IP address of your phone. Press the **OK** button on the navigation pad to enter the menu.
+* Go to **Status**. The phone's IP address is displayed under IPv4.
+* Take note of the IP address.
+
+* Open a web browser on your computer and type the phone's IP address in the address bar.
+
+* Log in to the phone's web interface. The default username and password is **admin / admin**.
+
+* Navigate to **Account** and select **Account 1** (or Register).
+
+* Set **Line Active** to **Enabled** and fill out the following fields with the credentials you received from Tonet support:
+  - **Display Name** - Your name or extension label
+  - **Register Name** - Your SIP username
+  - **User Name** - Your SIP username
+  - **Password** - Your SIP password
+  - **Server Host** - Your Tonet SIP server address
+
+* Set **NAT** to **STUN** and set the **STUN Server** to: `stun.tonet.ai`
+
+* Click **Confirm** to save.
+
+* The **Register Status** should change to "Registered". If it does not, reboot the phone from **Settings > Upgrade > Reboot**.
+
+<Callout type="info">
+  The T33G uses the same web interface as other Yealink T3x/T4x/T5x series phones. If your screen looks slightly different, the field names and locations are the same.
+</Callout>

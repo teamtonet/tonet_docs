@@ -1,0 +1,52 @@
+import { Callout } from 'nextra-theme-docs'
+
+# IP Phones
+
+Tonet works with any standard SIP desk phone. If your office already has IP phones, you can connect them to Tonet by entering your SIP credentials in the phone's web interface. No special hardware or adapters required.
+
+## Compatible Brands
+
+We support all major IP phone manufacturers:
+
+- **Yealink** - The most popular desk phones for small businesses. Models range from the budget T33G (~$70) to the premium T57W with a 7-inch touchscreen.
+- **Grandstream** - Affordable, reliable phones and ATAs. The GRP series is their current lineup. The HT801/HT802 ATAs let you connect existing analog phones and fax machines.
+- **Polycom / Poly** - VVX series phones are still widely deployed in offices.
+- **Cisco** - SPA and CP series small business phones.
+- **Fanvil** - Budget-friendly alternative with solid build quality.
+
+Any phone that supports standard SIP registration will work with Tonet.
+
+## Pre-Configured Phones
+
+Want a phone that's ready to go out of the box? We sell pre-configured Yealink phones that arrive with your Tonet account already set up. Just plug in the ethernet cable and start making calls.
+
+[Browse pre-configured phones at tonet.ai/desk-phones](https://tonet.ai/desk-phones/)
+
+## Bring Your Own Phone
+
+Already have desk phones from a previous provider? You can keep them. Just update the SIP settings to point at your Tonet account. Each phone needs:
+
+- **SIP Server** - Your Tonet SIP server address
+- **SIP User ID / Register Name** - Your extension credentials
+- **Password** - Your SIP password
+- **STUN Server** - `stun.tonet.ai` (prevents one-way audio issues)
+
+Contact support if you need your SIP credentials, or find them in your dashboard under account settings.
+
+## Setup Guides by Brand
+
+### Yealink
+- [T33G](/ip_phones/yealink/t33g) - Entry-level, 4 line keys, HD voice
+- [T46U](/ip_phones/yealink/t46u) - Mid-range, 16 line keys, dual USB
+- [T54W](/ip_phones/yealink/t54w) - 4.3" color screen, WiFi + Bluetooth
+- [T26P](/ip_phones/yealink/t26p) - Legacy model
+
+### Grandstream
+- [GRP2612](/ip_phones/grandstream/grp2612) - Entry-level, 4 line keys, HD voice
+- [HT801 / HT802](/ip_phones/grandstream/ht801) - Analog telephone adapters (connect analog phones and fax machines)
+- [GXP2130](/ip_phones/grandstream/gxp2130) - Legacy model
+- [GXP2170](/ip_phones/grandstream/gxp2170) - Legacy model
+
+<Callout type="info">
+  Don't see your phone model? The setup process is similar across models within the same brand. Follow the guide for the closest model in your brand's lineup, or contact support for help.
+</Callout>
