@@ -7,9 +7,14 @@ The Analytics page is your central hub for call history, recordings, and voicema
 
 ## Call History
 
-The Call History tab shows a complete record of every call on your phone system.
+The Call History tab shows a complete record of every call on your phone system for the selected month.
 
-<Image src="/images/analytics/call_history.png" alt="Call History table showing recent calls with direction, source, destination, and duration" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+<Image src="/images/analytics/analytics_header.png" alt="Analytics page header with the Month picker, the Settings button and the Call History and Voicemails tabs" width={1372} height={140} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+- **Month** - Pick the month you want to look at. The list only goes back as far as your account does.
+- **Settings** - Opens the [Call History Settings](#call-history-settings), where you can give every new call a public link automatically. Shown to owners, managers and admins.
+
+<Image src="/images/analytics/call_history.png" alt="Call History table showing recent calls with direction, extension, source, destination and talk time, with the Select and Export CSV buttons above it" width={1357} height={760} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
 ### Reading the Call Log
 
@@ -29,7 +34,7 @@ Each row represents one call:
 - **Total Duration** - Full call duration from start to end, including ringing
 - **Actions**:
   - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="currentColor" d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"/></svg> Info - view [call details](#call-details)
-  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg> Share - create a [public link](/analytics/secure_call_sharing)
+  - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg> Share - create a [public link](/analytics/secure_call_sharing) to the call. The icon is grey when the call has no link and orange when it does.
   - <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path fill="currentColor" d="M8 5v14l11-7z"/></svg> Play - play the recording inline
 
 ### Inline Recording Playback
@@ -38,12 +43,20 @@ Click the play button on any recorded call to listen to it directly in the call 
 
 ### Call Failure Reasons
 
-When a call fails, Tonet shows you the **specific reason** why - not just "missed" or "failed." Hover over the <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginLeft:'2px',marginRight:'2px'}}><path fill="#EF4444" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"/></svg> icon to see the reason. Common examples:
+When a call fails, Tonet shows you the **specific reason** why - not just "missed" or "failed." Hover over the <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style={{display:'inline-block',verticalAlign:'middle',marginLeft:'2px',marginRight:'2px'}}><path fill="#EF4444" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"/></svg> icon to see it.
 
-- **404 Not Found** - The number you dialed doesn't exist or isn't reachable
-- **486 Busy Here** - The person you called is already on another call
-- **603 Declined** - The carrier actively blocked the call. Under the [FCC's 2026 mandate](https://www.fcc.gov), carriers are required to return a 603 response with a reason when they block a call based on analytics, so you can see exactly why your call was blocked and take action.
-- **408 Request Timeout** - The call wasn't answered and timed out
+<Image src="/images/analytics/failed_call_tooltip.png" alt="Hovering the red failed-call icon shows the reason, here SIP 404 Not Found" width={900} height={110} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+The reason is the SIP response the carrier sent back. The ones you will see most often:
+
+- **SIP 404 Not Found** / **SIP 404 Destination Not Found** - The number you dialed doesn't exist or isn't reachable
+- **SIP 486 Busy Here** / **SIP 486 User Busy** - The person you called is already on another call
+- **SIP 503 Service Unavailable** - The carrier on the other end couldn't take the call. Usually temporary, try again in a minute.
+- **SIP 603 Decline** - The call was rejected before it rang
+- **SIP 603 Network Blocked** - The carrier actively blocked the call. Under the [FCC's 2026 mandate](https://www.fcc.gov), carriers must return a 603 response with a reason when they block a call based on analytics, so you can see exactly why your call was blocked and take action.
+- **SIP 403 Barred Country** - Calls to that country are not enabled on your account. Contact [support@tonet.ai](mailto:support@tonet.ai) to enable it.
+
+The same reason is included in the **Fail reason** column when you [export your call history](#export-to-csv).
 
 <Callout type="info">
   **Why this matters:** Most phone providers just show "Missed" or "Failed" with no explanation. Tonet gives you the actual technical reason a call didn't connect, so you can tell the difference between a customer who was busy, a number that doesn't exist, and a carrier that blocked your call. This level of detail is critical when troubleshooting call delivery issues.
@@ -53,20 +66,86 @@ When a call fails, Tonet shows you the **specific reason** why - not just "misse
 
 The icons in the top-right corner of the table:
 
-- **Column toggle** (grid icon) - Show or hide columns. Useful for adding Billing Duration, or hiding columns you don't need. Your visibility preferences are saved between sessions.
-- **Filter** (funnel icon) - Filter calls by direction, user, phone number, date range, or disposition (answered, missed, busy).
-- **Download** (arrow icon) - Export your call history as a CSV file for reporting or record-keeping.
+- **Column toggle** (grid icon) - Show or hide columns. Useful for adding Billing Duration or Total Duration, or hiding columns you don't need. Your visibility preferences are saved between sessions.
+- **Filter** (funnel icon) - Filter calls by direction, user, phone number, date range, or disposition (answered, missed, busy). The filter also drives the **Matching the current filter** option when [selecting calls](#selecting-calls) and [exporting](#export-to-csv).
 - **Search** (magnifying glass) - Search across all call fields. Supports phone numbers with or without dashes.
 
-You can also resize columns by dragging their edges - your column widths are saved between sessions.
+You can also resize columns by dragging their edges - your column widths are saved between sessions. To download your call history, use the **Export CSV** button above the table (see [Export to CSV](#export-to-csv)).
 
-### Month Selector
+### Selecting Calls
 
-Use the **Month** picker in the top right to view call history for a specific month.
+Every call can be selected, either with the checkbox on its row or in bulk with the **Select** button above the table:
 
-### Bulk Actions
+<Image src="/images/analytics/select_menu.png" alt="Select menu with This page, Matching the current filter, Everything this month and Clear selection" width={236} height={266} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
 
-Select calls using the checkboxes on the left side of the table. When recordings are selected, a **Delete Recordings** button appears to permanently remove the audio files. This is only available if recording deletion is enabled in your account settings.
+- **This page** - The calls currently shown on this page of the table
+- **Matching the current filter** - Every call that matches the active filter, across all pages. Only available while a filter is on.
+- **Everything this month** - Every call in the selected month
+- **Clear selection** - Deselect everything
+
+Once calls are selected, the button shows the count and the bulk actions appear next to it:
+
+<Image src="/images/analytics/bulk_actions.png" alt="Bulk action bar with 25 selected, Create public links, Remove links, Delete recordings and Export CSV" width={1357} height={52} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+- **Create public links** - Gives every selected call a [public link](/analytics/secure_call_sharing) to its details, recording and transcript. Calls that already have a link keep the one they have. Owners, managers and admins only.
+- **Remove N links** - Removes the public links of the selected calls. The count shows how many of the selected calls have a link. Owners, managers and admins only.
+- **Delete N recordings** - Permanently deletes the audio of the selected calls. The count shows how many of the selected calls have a recording. Only shown when recording deletion is enabled on your account (contact [support@tonet.ai](mailto:support@tonet.ai)).
+- **Export CSV** - Always available, with or without a selection. See [Export to CSV](#export-to-csv).
+
+Changing the month clears the selection.
+
+### Deleting Recordings
+
+Select the calls and click **Delete N recordings**. You are asked to confirm first:
+
+<Image src="/images/analytics/delete_recordings.png" alt="Delete recordings confirmation: this permanently deletes the audio of 25 calls, the call log entries stay" width={600} height={178} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+Only the audio is removed. The calls stay in your history with all their details, and their play button shows a strikethrough. The **Recording** column of an export shows **Deleted** for these calls. There is no way to get a deleted recording back.
+
+### Export to CSV
+
+Click **Export CSV** above the table to download your call history as a spreadsheet, for reporting, record-keeping, or to hand to your accountant.
+
+<Image src="/images/analytics/export_dialog.png" alt="Export call history dialog with the scope options and the Create public links for the exported calls checkbox" width={444} height={372} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+Pick what to export:
+
+- **All calls this month** - Everything in the selected month
+- **Calls matching the current filter** - Only what matches the active table filter
+- **Selected calls** - Only the calls you selected
+
+Tick **Create public links for the exported calls** to give every exported call a [public link](/analytics/secure_call_sharing) first. The links land in the **Public link** column, so anyone reading the spreadsheet can open a call's recording and transcript straight from it. Owners, managers and admins only.
+
+The file is named `tonet-calls-YYYY-MM.csv`, has one call per row, newest first, with times in your account's timezone. The columns:
+
+| Column | What it contains |
+| --- | --- |
+| Date, Time | When the call started (YYYY-MM-DD and 24-hour time) |
+| Direction | Incoming or Outgoing |
+| Answered | Yes or No |
+| Status | The call status as recorded by the phone system |
+| Fail reason | The [failure reason](#call-failure-reasons), for example SIP 404 Not Found. Empty for calls that connected. |
+| Extension, Extension name | The team member on your side of the call |
+| Group | The [ring group](/groups) the call went to, if any |
+| Source number, Source name | Who called. The name is filled in for your own numbers. |
+| Destination number, Destination name | Who was called. The name is filled in for your own numbers. |
+| Talk time (seconds) | Length of the conversation |
+| Billing duration (seconds) | The billable duration |
+| Total duration (seconds) | From the first ring to hangup |
+| Recording | Yes, No, or Deleted |
+| Public link | The call's public link, if it has one |
+
+The file opens directly in Excel, Google Sheets or Numbers.
+
+### Call History Settings
+
+Click **Settings** at the top of the page (owners, managers and admins) to open the Call History Settings.
+
+<Image src="/images/analytics/call_history_settings.png" alt="Call History Settings dialog with the Public link for every new call switch" width={600} height={251} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+
+**Public link for every new call** - When this is on, each call gets a [public link](/analytics/secure_call_sharing) to its details, recording and transcript as soon as it is logged. Every export then carries a link for every call, and the share icon on every new row is already orange. Anyone with a link can open that call, so leave this off if your recordings should stay behind the login.
+
+Turning it on does not touch calls that are already in your history. To give those a link, [select them](#selecting-calls) and click **Create public links**.
 
 ### Storage
 
