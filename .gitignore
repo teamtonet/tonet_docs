@@ -1,2 +1,16 @@
 .next
 node_modules
+
+# AI assistant files never belong in the repo
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.claudeignore
+AGENTS.md
+GEMINI.md
+.cursorrules
+.cursor/
+.codex/
+.mcp.json
+docs/*.md
+docs/**/*.md
