@@ -5,6 +5,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps } from 'react';
+import { CallFlow } from './call-flow';
 import { PriceCalculator } from './price-calculator';
 
 export function getMDXComponents(components?: MDXComponents) {
@@ -19,6 +20,7 @@ export function getMDXComponents(components?: MDXComponents) {
     Tab,
     Tabs,
     PriceCalculator,
+    CallFlow,
     ...components,
   } satisfies MDXComponents;
 }

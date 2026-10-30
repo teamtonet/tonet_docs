@@ -273,6 +273,173 @@ body {
   margin: 0;
 }
 
+/* Where does this call go? */
+.tn-flow {
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 1rem;
+  background: var(--color-fd-card);
+  padding: 1.1rem 1.25rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.tn-flow-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.tn-flow-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-fd-muted-foreground);
+}
+.tn-flow-moments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tn-chip {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-fd-border);
+  background: var(--color-fd-background);
+  color: var(--color-fd-foreground);
+  cursor: pointer;
+}
+.tn-chip:hover {
+  border-color: color-mix(in srgb, var(--color-fd-primary) 45%, var(--color-fd-border));
+}
+.tn-chip-on {
+  background: var(--color-fd-primary);
+  border-color: var(--color-fd-primary);
+  color: var(--color-fd-primary-foreground);
+}
+.tn-chip:focus-visible {
+  outline: 2px solid var(--color-fd-ring);
+  outline-offset: 2px;
+}
+.tn-flow-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.tn-flow-steps li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+}
+.tn-flow-steps li:last-child {
+  padding-bottom: 0;
+}
+.tn-flow-steps li::before {
+  content: '';
+  position: absolute;
+  left: calc(0.7rem - 1px);
+  top: 1.25rem;
+  bottom: -0.1rem;
+  width: 2px;
+  background: var(--color-fd-border);
+}
+.tn-flow-steps li:last-child::before {
+  display: none;
+}
+.tn-flow-steps li > div {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.tn-flow-steps strong {
+  font-weight: 600;
+}
+.tn-flow-steps span {
+  font-size: 0.86rem;
+  color: var(--color-fd-muted-foreground);
+}
+.tn-flow-setting {
+  font-family: var(--font-mono);
+  font-size: 0.78rem !important;
+}
+.tn-flow-dot {
+  margin-top: 0.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-fd-border);
+  background: var(--color-fd-background);
+  z-index: 1;
+}
+.tn-flow-call .tn-flow-dot,
+.tn-flow-pass .tn-flow-dot {
+  border-color: var(--color-fd-primary);
+}
+.tn-flow-call::before,
+.tn-flow-pass::before {
+  background: var(--color-fd-primary) !important;
+}
+.tn-flow-stop .tn-flow-dot {
+  border-color: var(--color-fd-primary);
+  background: var(--color-fd-primary);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-fd-primary) 18%, transparent);
+}
+.tn-flow-skip {
+  opacity: 0.45;
+}
+.tn-flow-answer {
+  color: var(--color-fd-foreground) !important;
+  background: var(--tn-soft);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.55rem;
+  justify-self: start;
+  margin-top: 0.2rem;
+}
+.tn-flow-answer b {
+  font-weight: 600;
+}
+.tn-flow figcaption {
+  font-size: 0.82rem;
+  color: var(--color-fd-muted-foreground);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tn-flow-step {
+    animation: tn-flow-in 0.45s ease-out both;
+  }
+  .tn-flow-stop .tn-flow-dot {
+    animation: tn-flow-ping 1.6s ease-out 1s 2;
+  }
+}
+@keyframes tn-flow-in {
+  from {
+    opacity: 0.15;
+    transform: translateY(4px);
+  }
+}
+.tn-flow-skip {
+  animation-name: tn-flow-in-skip !important;
+}
+@keyframes tn-flow-in-skip {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.45;
+  }
+}
+@keyframes tn-flow-ping {
+  50% {
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-fd-primary) 0%, transparent);
+  }
+}
+
 /* 404 */
 .tn-404 {
   max-width: 40rem;
