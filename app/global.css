@@ -76,6 +76,11 @@ body {
   height: 1.15rem;
   width: auto;
 }
+@media (max-width: 1100px) {
+  .tn-docs-tag {
+    display: none;
+  }
+}
 .tn-docs-tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
