@@ -1,140 +1,75 @@
-import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
 # Users
 
-Users are the people on your team who make and receive calls, send SMS, and access the dashboard. Each user gets their own extension, login credentials, and SIP settings for connecting desk phones or softphones.
+Each person on your team is a user. A user has an extension, a sign-in, and the numbers they can call from.
 
-Go to **Manage > Users** to see your team.
+Owners, managers and admins manage users in **Manage › Users**.
 
-<Image src="/images/users/user_list.png" alt="User list showing team members with status, role, and activity" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+## Add a person
 
-## User List
+1. Go to **Manage › Users** and click **Add**.
+2. Fill in:
+   - **Full name**
+   - **Email address**: they sign in with it.
+   - **Extension**: Tonet suggests the next free one, starting at 101.
+   - **Outbound Numbers**: the numbers they can call and text from. Pick at least one.
+   - **User Role**: see [Roles](#roles).
+3. Click **Create User**.
 
-The table shows each user with:
-
-- **Name** - Avatar with a colored border indicating status (green = online, orange = on break, grey = offline), display name, email address, and extension number
-- **Role** - Their permission level: Owner, Manager, or Regular User. Managers and owners can click the pencil icon next to the role badge to change it inline. See [Roles](#roles) below.
-- **Last Seen** - When the user was last active on the dashboard
-- **Last Call** - When the user last made or received a call
-- **Details** - Arrow icon to open the [user detail page](#user-details)
-
-### Filtering and Search
-
-Use the tabs at the top to filter by status:
-
-- **All** - Every user on the account
-- **Online** - Currently logged in and available
-- **Break** - Logged in but set to break status
-- **Offline** - Not currently logged in
-
-The **Search users** box filters by name, extension, or email. Use the **Sort By** dropdown to sort by Last call or Last seen (newest or oldest first).
-
-Checkboxes on the left allow you to select multiple users for bulk actions like deletion (managers and owners only).
-
----
-
-## Creating a User
-
-Click **+ Add** in the top right corner to add a new team member.
-
-<Image src="/images/users/create_user.png" alt="Add User form with name, email, extension, outbound numbers, and role" width={1100} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
-
-Fill in the following fields:
-
-- **Full name** - The user's display name shown in the dashboard, call logs, and team list
-- **Email address** - Used for login and notifications (password reset, voicemail-to-email). Must be unique across your account.
-- **Extension** - A number between 1 and 9999. The form automatically suggests the lowest available extension. If you enter an extension that's already taken, the form shows which user has it.
-- **Outbound Numbers** - Click the pencil icon to select which [phone numbers](/phones) this user can make calls from. You must assign at least one.
-- **User Role** - The user's permission level. See [Roles](#roles) for what each role can access.
+Tonet emails them a link to set their password. Then they can sign in at [dashboard.tonet.ai](https://dashboard.tonet.ai).
 
 <Callout type="info">
-  **Pricing:** Users are charged daily based on your plan. You can cancel anytime - delete the user and the daily charge stops immediately. No contracts.
+  Each person costs $10 or $15 a month, depending on your plan, charged by the day. The first day is charged when you add them, so your balance needs at least 33¢. Delete the person and the daily charge stops.
 </Callout>
-
-Click **Create User** to add them. A confirmation email is sent to their email address with a link to set their password. Once they set their password, they can log in to the [dashboard](https://dashboard.tonet.ai) and the [mobile app](/app).
-
----
-
-## User Details
-
-Click the arrow icon on any user in the list to open their detail page.
-
-<Image src="/images/users/user_detail.png" alt="User detail page showing basic info and SIP credentials" width={1400} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
-
-The detail page has two panels side by side, plus an activity section below.
-
-### User Details Panel
-
-- **Email** - The user's email address, also used to log in to the dashboard.
-- **Extension** - Their extension number
-- **Status** - Green dot for online, orange for on break, grey for offline
-- **Last Seen** - When they were last active
-- **Last Call** - When they last had a call
-- **Role** - Their current role shown as a dropdown. Managers and owners can change it directly from here.
-
-### SIP Information Panel
-
-Use these credentials to connect physical desk phones or third-party softphone apps to Tonet.
-
-- **User Name** - The SIP username for this extension
-- **Password** - The SIP password (hidden by default, click the eye icon to reveal)
-- **Domain** - The SIP server address
-- **STUN** - The STUN server for NAT traversal (e.g. stun.tonet.ai:3478)
-
-For more on desk phone setup, see [IP Phones](/ip_phones).
-
-<Callout type="info">
-  SIP credentials are visible to administrators and owners, or to a user viewing their own account. Regular users can only see their own SIP information.
-</Callout>
-
-### Activity
-
-<Image src="/images/users/activity_stats.png" alt="Activity stats showing SMS sent, incoming calls, outgoing calls, and answer rate" width={900} height={180} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
-
-Below the detail panels, the Activity section shows the user's call and messaging stats. Use the dropdown in the top right to switch between **Today**, **This Week**, or **This Month**.
-
-Four cards show:
-
-- **SMS Sent** - Number of text messages sent
-- **Incoming Calls** - Total incoming calls, with answered and missed breakdown
-- **Outgoing Calls** - Total outgoing calls, with answered and missed breakdown
-- **Answer Rate** - Percentage of incoming calls that were answered
-
----
-
-## Editing a User
-
-From the user list, click the pencil icon next to a user's role to change their role inline. To edit other fields (name, email, extension, outbound numbers), go to the user's detail page and click **Edit**.
-
----
-
-## Deleting a User
-
-From the user list, select users using the checkboxes and click **Delete**. Deleting a user removes their extension and stops the daily charge immediately.
-
-<Callout type="warning">
-  Deleting a user is permanent. Their call history remains in [Analytics](/analytics/call_logs), but their extension becomes available for reassignment.
-</Callout>
-
----
 
 ## Roles
 
-Tonet has three user roles that control what each person can access:
+| Role | What they can do |
+|---|---|
+| **Owner** | Everything. The person who signed up. The owner can't be changed or deleted. |
+| **Manager** | Everything, including **Billing** and **Account**. Manages everyone except the owner. |
+| **Administrator** | Phones, menus, schedules, calendar, users and teams. No Billing or Account. Can add admins and regular users. |
+| **Regular User** | Makes and takes calls, texts, chats and uses contacts. Sees their own calls and their teams' calls. |
 
-### Owner
+## Change a role
 
-Full access to everything. The account owner is the person who signed up for Tonet. The owner cannot be demoted or deleted - their role is locked with a shield icon.
+1. In **Manage › Users**, open the person's **⋯** menu and click **View**.
+2. Under **Role**, pick the new role.
 
-### Manager
+You can't change your own role or the owner's.
 
-Full system access including [billing](/billing), account settings, and all user management. Can create users of any role and change roles for anyone except the owner.
+## Change what a person can use
 
-### Regular User
+- **Which numbers they call and text from:** open the number in [Phones](/phones#choose-who-can-use-a-number) and use its **Permissions** tab.
+- **Which teams they're on:** see [Teams](/groups).
+- **Their display name:** each person can change their own in [Profile](/profile).
 
-Standard access to the phone system. Can make and receive calls, send SMS, and view their own activity. Cannot access any admin features under Manage, and cannot see [billing](/billing) or account settings.
+A person's email and extension can't be changed in the dashboard. Email [support@tonet.ai](mailto:support@tonet.ai) if you need that.
 
-<Callout type="info">
-  **Who can create users?** Managers and owners can create users from the Users page. The roles available in the dropdown depend on your own role - managers can assign any role, but lower roles have restrictions.
-</Callout>
+## Set up a desk phone
+
+Each person has **SIP Information** for connecting a desk phone: a user name, password, domain and STUN server.
+
+1. Open the person's **⋯** menu and click **View**.
+2. Copy the details from the **SIP Information** box.
+
+Owners and managers can see this box for anyone. See [IP Phones](/ip_phones) for setup steps.
+
+## Delete a person
+
+1. Open the person's **⋯** menu and click **Delete**.
+2. Tonet checks where calls go. If numbers, menus, schedules, calendar events or teams still send calls to this person, it lists them. Change those first.
+3. Click **Delete user**.
+
+Their daily charge stops. Their past calls stay in **Calls**. Only support can bring back a deleted user.
+
+You can't delete yourself or the owner.
+
+## Find people
+
+The list shows each person's status, extension, and the device they're on. Use the tabs **All**, **Online**, **Break** and **Offline**, or **Search users**. Switch between cards and a list with the view buttons at the top.
+
+## Next step
+
+[Give your new people a number to call from](/phones#choose-who-can-use-a-number), or [put them on a team](/groups).

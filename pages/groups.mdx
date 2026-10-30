@@ -1,87 +1,65 @@
-import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
-# Groups
+# Teams
 
-Groups let you ring multiple team members at once. Instead of routing a call to a single person, you can route it to a group like "Sales" or "Service Team" - the call rings everyone in the group, and the first person to pick up takes it.
+A team is a few people who share calls, like "Sales" or "Front desk". Send a call to the team and it rings them. Each team also gets its own extension and a shared voicemail box.
 
-Groups are used throughout your phone system. You can route to them from [phone numbers](/phones), [auto attendant](/auto_attendant) menus, [schedules](/schedule), and [calendars](/calendar).
+Owners, managers and admins manage teams in **Manage › Teams**. Changes save as you make them.
 
-Go to **Manage > Groups** to see your groups.
+## Make a team
 
-<Image src="/images/groups/group_list.png" alt="Groups list showing Service Team and Sales groups with member counts and action buttons" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+1. Go to **Manage › Teams** and click **New team**.
+2. Type a name and click **Create team**.
+3. Click **Add members**, find each person, and tick them.
+4. Choose how calls ring: **Ring together** or **Queue**.
 
-## Group List
+On a wide screen you can also drag people from the row at the top onto a team.
 
-Each group is displayed as a card showing:
+## How calls ring
 
-- **Avatar** - The group's initials
-- **Name** - The group name (e.g. "Sales", "Service Team")
-- **Member count** - How many users are in the group
-- **Edit Group** - Opens the group editor to change members, name, or call queue settings
-- **Delete Group** - Removes the group after a confirmation prompt
+| Choice | What callers get |
+|---|---|
+| **Ring together** | Everyone on the team rings at once. The first to answer takes the call. |
+| **Queue** | Callers hold until someone on the team is free. |
 
-Click **+ Add** in the top right to create a new group.
+## Send calls to a team
 
----
+A team only gets calls when something sends them there. Pick **Teams** in any of these:
 
-## Creating a Group
+- A number's **Go To**: [Phones](/phones#choose-where-calls-go)
+- A key in a [menu](/auto_attendant), like "Press 1 for sales"
+- A route in a [schedule](/schedule)
+- A [calendar](/calendar) event
 
-The group form has three fields:
+The team's card lists these under **Gets calls from**. If it says **Nothing sends calls here yet**, no calls reach the team.
 
-- **Name** - A descriptive name for the group (e.g. "Customer Service", "Sales", "After Hours Support")
-- **Call Queue** - Toggle this on to queue callers when all group members are busy (see [Call Queue](#call-queue) below)
-- **Users** - Check the box next to each team member you want in this group. You can add as many users as you need.
+## What a team's card shows
 
-Click **Submit** to save the group.
+- How many members are online
+- Its hours, taken from the schedules that send calls to it
+- **Shared voicemail**, and the team's extension
+- **Gets calls from**: the numbers and menus that send calls to it
+- This week's calls to the team, how many were missed, and calls placed by members
+- **Team chat**: opens a chat with everyone on the team
 
-<Image src="/images/groups/group_add.png" alt="Add Group form with name, call queue toggle, and user checkboxes" width={1100} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+## Change a team
 
-To edit an existing group, click **Edit Group** on its card. The same form opens with the current settings pre-filled.
+- **Rename:** click the name, type, and press Enter.
+- **Members:** click **Edit members**.
+- **Ringing:** switch between **Ring together** and **Queue**.
 
-<Image src="/images/groups/group_edit.png" alt="Edit Group form showing Service Team with three members selected" width={1100} height={650} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+## Team voicemail
 
----
+Team members find the team's voicemails on the **Calls** page. Use the **Voicemail** filter.
 
-## Call Queue
+To change the team's greeting, go to **Calls**, open the **⋯** menu, click **Voicemail greeting and email**, and pick the team's mailbox.
 
-When Call Queue is **off**, an incoming call rings all group members simultaneously. If nobody picks up, the call goes to the group's voicemail.
+## Delete a team
 
-When Call Queue is **on**, callers are placed in a queue if all group members are currently on other calls. The caller hears hold music and a message letting them know they're in a queue. As soon as a group member finishes their current call, the next queued caller is connected automatically.
+1. Open the team's **⋯** menu and click **Delete team**.
+2. If calls still reach the team, Tonet lists where from. Change those first, then click **Check again**.
+3. Click **Delete**. You have 5 seconds to click **Undo**.
 
-If all group members are offline (not logged in), the call goes directly to the group's [voicemail](#group-voicemail).
+## Next step
 
-<Callout type="info">
-  Call Queue is especially useful for support and sales teams. Without it, a caller who rings in while everyone is busy gets sent straight to voicemail. With it, they wait in line and get connected to the next available person.
-</Callout>
-
----
-
-## Group Voicemail
-
-Every group gets its own voicemail mailbox, separate from each member's personal mailbox. When a call to the group goes unanswered (or all members are offline), the caller can leave a voicemail for the group.
-
-Group voicemails appear in the **Voicemails** tab under [Analytics](/analytics/call_logs#voicemails), labeled with the group's mailbox number.
-
-You can record a custom greeting for each group's voicemail. Go to [Voicemail Settings](/analytics/call_logs#voicemail-settings) and select the group's mailbox from the dropdown. For example, your Sales group might say "You've reached the Sales team at Summit Plumbing, please leave a message" while your Service Team says something different.
-
----
-
-## Deleting a Group
-
-Click **Delete Group** on any group card. A confirmation dialog asks you to confirm before the group is permanently removed.
-
-<Callout type="warning">
-  Before deleting a group, check if any [phone numbers](/phones), [auto attendant](/auto_attendant) menus, or [schedules](/schedule) are routing calls to it. Deleting a group that's still used as a route destination will cause those calls to fail.
-</Callout>
-
----
-
-## Using Groups in Call Routing
-
-Groups become powerful when combined with other routing features:
-
-- **[Phone numbers](/phones)** - Set a phone number's default destination to a group so all incoming calls ring the team
-- **[Auto Attendant](/auto_attendant)** - "Press 1 for Sales, Press 2 for Support" - each key routes to a different group
-- **[Schedule](/schedule)** - Route calls to your Sales group during business hours and your After Hours group in the evening
-- **[Calendar](/calendar)** - On holidays, route calls to a skeleton crew group instead of the full team
+[Send calls to your new team](/phones#choose-where-calls-go), or build a [menu](/auto_attendant) so callers pick a team.
