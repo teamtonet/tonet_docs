@@ -1,39 +1,89 @@
 ---
-title: "Yealink T26P Configuration"
-nav: "T26P (Legacy)"
+title: "Yealink T26P setup (older model): IP, password, reset"
+nav: "T26P (older)"
+description: "Set up an older Yealink T26P with Tonet: find its IP address, sign in (default admin / admin), enter your SIP details with STUN, and factory reset it."
 ---
+Setting up a different phone? Pick it on [Desk phones](/ip_phones).
 
-<Callout type="warning">
-  The T26P is a discontinued model. If you are purchasing a new phone, consider the [T33G](/ip_phones/yealink/t33g), [T46U](/ip_phones/yealink/t46u), or [T54W](/ip_phones/yealink/t54w).
-</Callout>
+The T26P is an older Yealink phone with 3 lines. Its web page signs in as **admin** / **admin** by default. Yealink stopped selling it in 2015 and ended support at the end of 2020, so it gets no more firmware.
 
-## SIP Registration
+## What you need
 
-* Find the IP-address of your IP Phone. Press the Menu Key in the middle of the Arrow Pad.
-![main_menu](/images/ip_phones/yealink/main_menu.png)
-* Under "status", as long as the phone has an active network connection it will show the phone's IP-Address.
-* Take note of the IP-Address displayed
+- The phone, connected to your router or network switch with a network cable in the port marked **Internet**. It takes power from the cable (PoE) or from a power adapter, which doesn't come in the box. The T26P has no Wi-Fi.
+- A computer on the same network.
+- The person's [SIP details](/ip_phones#find-your-sip-details): **User Name**, **Password** and **Domain**.
 
-* Navigate to the IP Phones web-interface using a browser on your PC.
-* Type the IP-Address of the IP Phone in the browser's address bar.
+## Find the T26P IP address
 
-![browser-address-bar](/images/ip_phones/yealink/browser_address_bar.png)
+Press **OK** on the phone while it's idle. The status screen shows the **IP Address**. You can also go to **Menu › Status**.
 
-* Login to the IP Phones interface (Default username and password is admin / admin)
+## T26P default password
 
-![login-screen](/images/ip_phones/yealink/login_screen.png)
+The username is **admin** and the password is **admin**.
 
-* Navigate to Account, select Account 1
+1. On the computer, open a browser and type the phone's IP address in the address bar, like `192.168.1.50`.
+2. Sign in with **admin** and **admin**, and click **Confirm**.
 
-* Set Line Active to Enabled and fill out **Display Name**, **Register Name**, **User Name**, **Password** and **Server Host & Port** as per the information
-you recieved from Support. Set **NAT** to STUN and set the **Stun Server** to: stun.tonet.ai.
+To change the password later, go to **Security › Password**.
 
-![account-1-settings](/images/ip_phones/yealink/account_settings.png)
+**admin doesn't work?** Someone changed the password. A [factory reset](#factory-reset-the-t26p) brings back **admin**, but on the T26P both ways to reset ask for the admin password first. Ask whoever set the phone up, or the provider it came from.
 
-* Click on Confirm
+## Enter your Tonet line
 
-* Register Status should switch to show "Registered". If it doesn't, reboot the phone by going to Settings - Upgrade - Reboot.
+On the T26P, STUN is set on the same page as the line.
 
-![register-status](/images/ip_phones/yealink/register_status.png)
+1. On the phone's web page, go to **Account › Register**. In the **Account** list, pick **Account 1**.
+2. Fill in:
 
-![reboot](/images/ip_phones/yealink/reboot.png)
+| Field | Enter |
+|---|---|
+| **Line Active** | **Enabled** |
+| **Label** | What the phone screen shows for this line, like the person's name |
+| **Display Name** | The person's name |
+| **Register Name** | The **User Name** from SIP Information |
+| **User Name** | The **User Name** from SIP Information |
+| **Password** | The **Password** from SIP Information |
+| **NAT** | **STUN** |
+| **STUN Server** | `stun.tonet.ai`, with `3478` in the **Port** box next to it |
+| **Server Host** (under **SIP Server 1**) | The **Domain**, up to the colon |
+| **Port** (next to **Server Host**) | The number after the colon in **Domain** |
+
+3. Click **Confirm**.
+
+For example, if **Domain** shows `pbx.example.com:5080`, enter `pbx.example.com` in **Server Host** and `5080` in **Port**.
+
+## Check that it registered
+
+- On the web page, **Account › Register** shows **Register Status** at the top. It should say **Registered**. The **Status** page lists each account's status too.
+- On the phone, the line's label shows an icon for registered, registering or register failed.
+
+Not registered? Restart the phone: on the web page, go to **Settings › Upgrade** and click **Reboot**. Still not registered? See [Register Failed](/ip_phones/troubleshooting#register-failed).
+
+## Factory reset the T26P
+
+A factory reset erases every setting on the phone, including your line, and sets the admin password back to **admin**.
+
+**From the phone:** go to **Menu › Settings › Advanced Settings** (enter the admin password, **admin** by default), scroll to **Reset to Factory** and press **Enter**. When it asks **Reset to factory settings?**, press **OK**.
+
+**From the web page:** go to **Settings › Upgrade** and click **Reset to Factory**. Click **OK** to confirm.
+
+The reset takes a few minutes. Don't unplug the phone until it has started up again.
+
+## Update the firmware
+
+The T26P's last firmware is 6.73.0.50.
+
+1. Download it from [support.yealink.com](https://support.yealink.com), where the T26P is under **EOL Product**.
+2. On the phone's web page, go to **Settings › Upgrade**. Next to **Select and Upgrade Firmware**, click **Browse** and pick the `.rom` file.
+3. Click **Upgrade**, then **OK**. It takes about 5 minutes. Don't close the browser or unplug the phone until it restarts.
+
+## Problems?
+
+- [No Service on the screen](/ip_phones/troubleshooting#no-service)
+- [Register Failed](/ip_phones/troubleshooting#register-failed)
+- [One-way audio or no audio](/ip_phones/troubleshooting#one-way-audio-or-no-audio)
+- [Turn off SIP ALG on your router](/ip_phones/sip-alg)
+
+## Next step
+
+Replacing the T26P? See the desk phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/), or the [other setup guides](/ip_phones#setup-guides).

@@ -1,66 +1,125 @@
 ---
-title: "Profile"
+title: "Profile: your name, photo, notifications and devices"
+nav: "Your profile"
+description: "Change your display name and photo, see where you're signed in, turn on notifications, and choose what your call card shows."
 ---
+Your profile holds the settings that are only yours: your name and photo, the devices you're signed in on, your notifications and your call card. Everyone can change their own, whatever their role.
 
-Your personal settings - display name, profile picture, and browser notifications. Click your **avatar** in the top-right corner of the dashboard and select **Profile** to open this page.
+**Where:** click your picture at the top right of the dashboard, then **Profile**.
 
-For company-level settings like timezone and business address, see [Account](/account).
+| Tab | What's there |
+|---|---|
+| **General** | Your display name and profile picture |
+| **Security** | **Signed-in devices**: everywhere you're signed in |
+| **Notifications** | Pop-up notifications for calls, texts and voicemail |
+| **Call card** | What your screen shows during a call |
 
-The Profile page has two tabs: **General** and **Notifications**.
+Settings for the whole business, like the time zone, are in [Account](/account). Only owners and managers can open it.
 
----
+## Change your display name
 
-## General
+1. Open **Profile**. You're on **General**.
+2. Under **Basic Details**, type a new **Display Name**, up to 100 characters.
+3. Click **Save Changes**.
 
-### Profile Picture
+Your **Email Address** and **Extension** are shown, but you can't change them in your profile. See [Users](/users#change-what-a-person-can-use).
 
-Upload a profile picture that your team sees in [Chat](/chat), call logs, and anywhere your name appears in the dashboard. Click the avatar to upload a new image or remove the current one.
+## Add a profile picture
 
-### Basic Details
+1. On **General**, click **Upload Photo**.
+2. Pick a JPEG, PNG or WebP image, up to 5 MB.
+3. Zoom and drag until it looks right, then click **Save**.
 
-- **Display Name** - The name your team sees. Change it and click **Save Changes** to update.
-- **Email Address** - Your login email. Read-only - contact your administrator to change it.
-- **Extension** - Your internal extension number for receiving calls. Read-only - your administrator assigns this in [Users](/users).
+It saves right away. Your picture shows at the top right of the dashboard, with a dot for your status. To change it, upload another one.
 
----
+## Set your status
 
-## Notifications
+Your status tells your team whether you're around.
 
-Get notified about incoming calls, texts, and voicemails - even when the dashboard isn't your active tab.
+1. Click your picture at the top right.
+2. Click your status, under your name and email.
+3. Pick one:
 
-### Status
+| Status | What your team sees |
+|---|---|
+| **Available** | **Available** while Tonet is the window you're using, **Away** while you're in another window, and **On a call** during a call |
+| **Away** | **Away**, until you change it |
+| **Busy** | **Busy**, so they know you're occupied |
+| **Appear offline** | You as offline, to keep your availability private |
 
-Check if notifications are set up:
+When Tonet isn't open on any of your devices, you show as offline.
 
-- **Browser Support** - All modern browsers support desktop notifications
-- **Permission** - If you haven't allowed notifications yet, click **Request Permission** and accept the prompt.
+## See where you're signed in
 
-<Callout type="info">
-  If you previously denied notification permission, you'll need to reset it in your browser settings. In Chrome: click the lock icon in the address bar, find Notifications, and change it to Allow.
+Open **Profile › Security**. **Signed-in devices** lists every browser and app where you're signed in, the most recently used first. Each row shows:
+
+- The browser and system, like **Chrome on Windows**, or **Tonet desktop app**
+- **This device** next to the one you're using now
+- The country it signed in from, the day it signed in, and when it was last active
+
+If Tonet support signed in to help with your account, that shows as **Tonet support**.
+
+## Sign out of another device
+
+1. On **Security**, find the device under **Signed-in devices** and click **Sign out**.
+2. Click **Sign out** again to confirm.
+
+That device loses access within 15 minutes. To use Tonet there again, it has to sign in again.
+
+To sign out everywhere except where you are now, click **Sign out of all other devices**, then **Sign out all others**. Every other browser, app and Tonet support session has to sign in again.
+
+<Callout type="warn">
+  Don't recognize a device? Sign it out. If someone may know your password, sign out and use **Forgot your password?** on the sign-in page to set a new one. Setting a new password that way also signs you out of every other device.
 </Callout>
 
-### Notification Types
+## Turn on notifications
 
-Choose what you want to be notified about:
+Tonet can pop up a notification on your computer when a call, text or voicemail comes in. It works while Tonet is open in your browser, even in a tab you're not looking at.
 
-| Type | What it does |
-|------|-------------|
-| **Incoming Calls** | Desktop notification when a call comes in on any of your [phone numbers](/phones) |
-| **Text Messages** | Notification when an SMS arrives on a number you have [permissions](/phones) for |
-| **Voicemail** | Notification when a new voicemail is left |
+1. Open **Profile › Notifications**.
+2. Under **Status**, check **Permission**. If it doesn't say **granted**, click **Request Permission** and allow notifications when your browser asks.
+3. Under **Notification Types**, turn on the ones you want. All three start on.
+4. Click **Test Call**, **Test SMS** or **Test Voicemail** to see a sample.
 
-All three are enabled by default. Turn off any type you don't want notifications for.
+| Switch | Notifies you about |
+|---|---|
+| **Incoming Calls** | Calls ringing you, and calls you missed |
+| **Text Messages** | Texts from customers, and messages from your team |
+| **Voicemail** | New voicemails |
+
+- The switches are saved in this browser only. Set them again on each computer or browser you use.
+- While you're on **Messages**, texts and team messages don't pop up.
+- In the [desktop app](/app), you can pause text, chat and voicemail notifications for an hour from the tray. Calls still ring.
 
 <Callout type="info">
-  You won't get a notification popup for something you're already looking at. For example, no SMS notification while you're on the [Chat](/chat) page.
+  **Permission says denied?** Notifications for Tonet are blocked in your browser, so allow them in the browser itself. In Chrome, click the site information icon in the address bar and turn on **Notifications**.
 </Callout>
 
-### Test Notifications
+## Choose what your call card shows
 
-Use the test buttons to verify notifications are working:
+During a call, a card shows who you're talking to. You choose what else it shows. Your choice is only for you, and it follows you to every computer and the desktop app.
 
-- **Test Call** - Sends a sample incoming call notification
-- **Test SMS** - Sends a sample text message notification
-- **Test Voicemail** - Sends a sample voicemail notification
+1. Open **Profile › Call card**.
+2. Under **Show on my calls**, tick what you want on every call.
+3. To start over, click **Back to the default**.
 
-If test notifications don't appear, make sure you've allowed notifications in your browser and that Do Not Disturb is off on your computer.
+| Field | What it shows |
+|---|---|
+| **Tags** | A saved contact's tags. Click **+** to add one. |
+| **Probably calling about** | What they're likely calling about: something promised on an earlier call, an open task, or the last call |
+| **Your business's fields** | Your business's own contact fields, filled in during the call. Pick each field under it. |
+| **Mic and caller levels** | How loud your microphone and the caller are |
+| **Where they are, their time** | Their company, where they are, and the time there |
+| **Open work** | Open tasks with this person |
+| **Last conversations** | Your last call with them, or a note that this is their first call |
+| **Contact details** | Their email, other numbers, who they usually talk to, and the latest note |
+
+You can also change it during a call: click **▤** (**Choose what your call card shows**) on the card, or hover a field and click its **×** to hide it. Click **Undo** right after if you hid the wrong one.
+
+**Probably calling about**, **Open work** and **Last conversations** are read from your past calls. Accounts that chose no AI or no call recording when they signed up don't get them.
+
+## Next step
+
+- [Account](/account): time zone, call review and recordings for the whole business. Owners and managers.
+- [Desktop App](/app): keep your line on with the browser closed.
+- [Network quality](/network-quality): check your connection if calls sound choppy.

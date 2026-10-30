@@ -1,0 +1,72 @@
+---
+title: "Fix a desk phone: No Service, Register Failed, no audio"
+nav: "Fix a desk phone"
+description: "Fix a desk phone that shows No Service or Register Failed, or has one-way or no audio: check the SIP details, turn on STUN, and turn off SIP ALG."
+---
+Find what your phone shows, then follow that fix.
+
+| What you see | Fix |
+|---|---|
+| **No Service** on a Yealink phone's screen | [No Service](#no-service) |
+| **Register Failed** or a gray line icon (Yealink), **SIP Registration: No** (Grandstream), **Not Registered** or the **Phone** light off (HT801, HT802) | [Register Failed](#register-failed) |
+| Calls connect, but one side hears nothing, or nobody does | [One-way audio or no audio](#one-way-audio-or-no-audio) |
+| The phone's web page won't take the password | The sign-in section of [your phone's guide](/ip_phones#setup-guides) |
+
+## No Service
+
+A Yealink phone shows **No Service** when no line on it is registered. Yealink gives two causes: the phone isn't on the network, or its line failed to register.
+
+1. Press **OK** on the phone. If the status screen shows no IP address, the phone isn't on your network. Check the network cable at both ends, or the [Wi-Fi](/ip_phones/yealink/t54w#connect-the-t54w-to-wi-fi) on a T54W.
+2. If it shows an IP address, the line didn't register. Go to [Register Failed](#register-failed).
+
+## Register Failed
+
+The phone is on your network, but Tonet's phone server didn't accept its line. Check these in order.
+
+**1. The details match SIP Information exactly.** Copy them again from **Manage › Users** › the person › **SIP Information** ([how](/ip_phones#find-your-sip-details)):
+
+- The user name, and the authentication ID if the phone has one, are the **User Name**: a `u` and a number, like `u12345`. Not the extension, not an email address.
+- The password is the **Password**. Use the copy button, or click the eye to check what you typed.
+- The server includes the port. Grandstream phones take the whole **Domain**. On a Yealink, the part before the colon goes in **Server Host** and the number after it in **Port**.
+
+**2. Domain shows `None:None`.** Your account's phone server isn't set up. Email [support@tonet.ai](mailto:support@tonet.ai).
+
+**3. SIP ALG is on in your router.** It can change the phone's traffic so the line can't register. [Turn off SIP ALG](/ip_phones/sip-alg).
+
+**4. A firewall blocks the phone.** Yealink lists firewalls and access lists between the phone and the server as a cause. Let the phone reach the server and port in **Domain**.
+
+**5. Settings left from another provider.** A phone from another provider can keep that provider's settings, or run its firmware. Factory reset the phone, then enter only Tonet's details. Your phone's guide has the steps.
+
+**6. Old firmware.** Yealink's checklist for failed registration includes updating the firmware. Your phone's guide shows how.
+
+Then restart the phone and check its status again:
+
+| Phone | Where to see if it registered |
+|---|---|
+| Yealink | Web page: **Account › Register › Register Status** says **Registered**. The line's icon is green. |
+| Grandstream GRP2612, GXP2130, GXP2170 | Web page: **Status › Account Status › SIP Registration** |
+| Grandstream HT801, HT802 | Web page: **Status › Port Status › Registration** says **Registered**. The **Phone** light is on. |
+
+## One-way audio or no audio
+
+The call connects, but one side hears nothing, or nobody does. Yealink and Grandstream both point to the network first.
+
+1. **Turn on STUN in the phone.** Server `stun.tonet.ai`, port `3478`, and set the line's NAT setting to **STUN**. Your [phone's guide](/ip_phones#setup-guides) has the steps.
+2. **Turn off SIP ALG on your router.** See [Turn off SIP ALG](/ip_phones/sip-alg).
+3. **Check firewalls.** Yealink says that when the server sends the audio and the phone still gets none, the cause is usually the network, like a firewall. Grandstream says to make sure firewall rules let the audio (RTP) through.
+4. **Rule out the handset.** Try the call on speaker or a headset. If those work, the handset or its cord is faulty. Check the handset is plugged in and that the other person isn't on mute.
+5. **Several Grandstream GRP or GXP phones on one router?** Keep **Use Random Port** set to **Yes**, the default. Grandstream says it's usually needed when several phones sit behind the same router. It's on the same page as **STUN Server**.
+
+## Still stuck?
+
+- In the dashboard, click **Report an issue** at the bottom of the left menu. Under **Where did it happen?**, pick **Desk phone**, describe it in **What happened?**, and click **Send report**. We reply by email.
+- Or click **Ask Tonet** at the bottom right of the dashboard, or email [support@tonet.ai](mailto:support@tonet.ai).
+
+Say which phone model you have and what its screen or status page shows.
+
+## Next step
+
+- [Turn off SIP ALG](/ip_phones/sip-alg) on your router
+- [Find your SIP details](/ip_phones#find-your-sip-details) again
+- [Setup guides for each phone](/ip_phones#setup-guides)
+- Replacing a phone? Tonet sells phones that arrive set up: [tonet.ai/desk-phones](https://tonet.ai/desk-phones/)

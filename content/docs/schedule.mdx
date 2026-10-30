@@ -1,125 +1,88 @@
 ---
-title: "Schedule"
+title: "Schedules: route calls by business hours"
+nav: "Schedules"
+description: "Send a number's calls to different places by day and time: open hours to your team, other hours to a menu or voicemail. Make a schedule and apply it."
 ---
+A schedule sends a number's calls to different places by day and time. For example, Monday to Friday from 9 AM to 5 PM, calls ring your front desk. Any time the schedule doesn't cover goes to the number's **Go To**, so after-hours calls can reach voicemail or an after-hours menu.
 
-Schedules let you route calls differently based on the time of day and day of the week. During business hours, calls go to your team. After hours, they go to voicemail, an after-hours message, or an [auto attendant](/auto_attendant). You can create as many schedules as you need and assign them to any [phone number](/phones).
+Owners, managers and admins manage schedules in **Manage › Schedules**.
 
-Go to **Manage > Schedule** to manage your schedules.
+## Make a schedule
 
-## Views
+1. Go to **Manage › Schedules** and click **New Schedule**.
+2. In **Add Schedule**, type a **Title**, like "Business hours", and click **Confirm**. The schedule opens.
+3. Click **Add Route**. A new row appears. If its fields aren't open, click the arrow at the start of the row.
+4. Fill in the route:
+   - **Start time** and **End time**
+   - **Destination**: where calls go during these hours. Pick from **Users**, **Teams**, **IVRs** (menus), **Voicemail** or **Features**.
+   - **Week Days**: pick at least one day.
+5. Click **Update**.
+6. Add more routes the same way, like a shorter day on Saturday.
 
-The Schedule page has two views, toggled with the **View** dropdown in the toolbar:
+A route can't run past midnight: its **End time** can't be earlier than its **Start time**. Leave the night to the number's **Go To**.
 
-### List View
+## Apply a schedule to a number
 
-Shows each schedule as a card with:
+A schedule does nothing until a number uses it.
 
-- **Name** - The schedule name (click to open it in Week View)
-- **Route count** - How many routes are configured
-- **Edit Schedule** - Opens the schedule editor
-- **Delete Schedule** - Removes the schedule after confirmation
+1. Go to **Manage › Phones** and click the number.
+2. Open the **Route & settings** tab.
+3. In **Schedule**, pick your schedule.
+4. In **Go To**, pick where calls go when no route covers the time: voicemail, an after-hours [menu](/auto_attendant), or a person.
+5. Click **Save Settings**.
 
-![List View showing Business Hours and After Hours schedules with route counts](/images/schedule/schedule_list.png)
+Each number uses one schedule. Several numbers can share it. To stop using a schedule, pick **(none)**.
 
-### Week View
+## How Tonet picks where a call goes
 
-A visual calendar grid showing your routes mapped across the week. Each block shows the time range, schedule name, and destination. Use the **Schedule** dropdown to switch between your schedules.
+When a call comes in, Tonet checks in this order:
 
-Click on any block in the calendar to open it in the editor.
+1. A [calendar](/calendar) event happening now, if the number uses it
+2. The schedule: the first route that covers this day and time
+3. **Go To**
 
-![Week View showing Business Hours schedule with routes mapped across Monday-Saturday](/images/schedule/schedule_week.png)
+If two routes overlap, the one higher in the list wins.
 
----
+Schedule times follow your account's time zone. Owners and managers set it in **Manage › Account**, on the **General** tab, under **Time Zone**.
 
-## Creating a Schedule
+## Example: business hours
 
-Click **New Schedule** in the toolbar. Enter a name (e.g. "Business Hours", "Weekend", "After Hours") and click **Confirm**. This creates the schedule and takes you to the editor where you add routes.
+A front desk open weekdays 9 to 5 and Saturday mornings.
 
----
+Routes in a schedule called "Business hours":
 
-## Editing a Schedule
+| Start time | End time | Week Days | Destination |
+|---|---|---|---|
+| 9:00 AM | 5:00 PM | Monday, Tuesday, Wednesday, Thursday, Friday | **Teams** › Front desk |
+| 10:00 AM | 2:00 PM | Saturday | **Teams** › Front desk |
 
-The schedule editor shows the schedule name at the top (editable) and a routes table below.
+On the main number: **Schedule** is "Business hours" and **Go To** is an after-hours menu.
 
-![Schedule editor showing Business Hours with routes table, expanded route editor with time pickers and day selection](/images/schedule/schedule_edit.png)
+Calls in open hours ring the front desk team. Every other hour, including nights and Sundays, goes to the after-hours menu. For holidays, add a [calendar](/calendar) event.
 
-### Routes Table
+## See your week
 
-The routes table shows all routes for this schedule:
+Use **View** at the top:
 
-| Column | Description |
-|--------|-------------|
-| **From** | Start time for this route |
-| **To** | End time for this route |
-| **Week Days** | Which days this route is active (shown as colored pills) |
-| **Destination** | Where calls are routed during this time window |
+- **Week View** draws each route on the week, with its times and destination. Pick a schedule in **Schedule**. Click a block to edit that schedule. On a small screen, it shows one day.
+- **List View** lists your schedules with how many routes each has, and **Edit Schedule** and **Delete Schedule** buttons.
 
-Click the arrow on any row to expand it and edit the route.
+## Change a schedule
 
-### Route Editor
+- **Rename it:** change **Schedule Name** and click **Update**.
+- **Change a route:** click the arrow at the start of its row, make your changes, and click **Update**.
+- **Remove a route:** open it and click **Delete Route**.
 
-When you expand a route, the editor shows four fields:
+## Delete a schedule
 
-- **Start time** - When this route activates (time picker)
-- **End time** - When this route deactivates (time picker)
-- **Destination** - Where to send calls during this time. Opens the route picker with all available destinations: [Users](/users), [Groups](/groups), [Auto Attendants](/auto_attendant), Voicemail, Phone Number, and Features.
-- **Week Days** - Multi-select dropdown for which days of the week this route applies. Select as many days as you need.
+1. Open the schedule and click **Remove Schedule**. In **List View**, click **Delete Schedule**.
+2. If numbers still use it, Tonet lists them. On each number, pick another schedule or **(none)**, then click **Check again**.
+3. Click **Delete schedule**.
 
-Click **Update** to save the route, or **Cancel** to discard changes. Click **Delete Route** to remove this route from the schedule.
+This can't be undone.
 
-### Adding Routes
+## Next step
 
-Click **Add Route** below the table to add a new route. The route is created with default values and the editor opens automatically so you can set the time range, days, and destination.
-
-A schedule can have multiple routes for different time windows. For example:
-
-- Route 1: Monday-Friday, 9:00 AM - 5:00 PM, destination: Sales group
-- Route 2: Monday-Friday, 5:00 PM - 9:00 PM, destination: After Hours auto attendant
-- Route 3: Saturday-Sunday, 10:00 AM - 2:00 PM, destination: Weekend voicemail
-
----
-
-## Example: Business Hours Schedule
-
-Here's how to set up a typical business hours schedule for a plumbing company:
-
-1. Click **New Schedule** and name it "Business Hours"
-2. Click **Add Route** and configure:
-   - Start time: **8:00 AM**
-   - End time: **5:00 PM**
-   - Destination: **Main Menu** (your [auto attendant](/auto_attendant))
-   - Week Days: **Monday, Tuesday, Wednesday, Thursday, Friday**
-3. Click **Update** to save
-4. Click **Add Route** again for after-hours:
-   - Start time: **5:00 PM**
-   - End time: **8:00 AM**
-   - Destination: **Voicemail** (or an after-hours greeting)
-   - Week Days: **Monday, Tuesday, Wednesday, Thursday, Friday**
-5. Click **Update** to save
-6. Go to [Phones](/phones), select your main number, and set its **Schedule** to "Business Hours"
-
-Now calls during business hours reach your auto attendant, and after-hours calls go to voicemail.
-
----
-
-## Assigning a Schedule to a Phone Number
-
-After creating a schedule, assign it to one or more phone numbers:
-
-1. Go to **[Phones](/phones)** and click the number you want to configure
-2. In the **Configure** tab, set the **Schedule** dropdown to your schedule
-3. The schedule's routes now control where calls to that number are directed, based on the current time and day
-
-<Callout type="info">
-  **Routing Priority:** When a phone number has both a [Calendar](/calendar) entry and a Schedule configured, the Calendar takes priority. If today matches a calendar entry (like a holiday), that destination is used. Otherwise, the schedule's routes are checked. If no schedule route matches the current time, the phone's default **Go To** destination is used. See [Call Routing Priority](/phones#choose-where-calls-go) for the full order.
-</Callout>
-
----
-
-## Deleting a Schedule
-
-Click **Remove Schedule** (in the editor) or **Delete Schedule** (in the list view). A confirmation dialog asks you to confirm before it's permanently removed.
-
-<Callout type="warning">
-  Before deleting a schedule, check if any [phone numbers](/phones) are using it. Removing a schedule that's still assigned to a phone number means those calls will fall through to the phone's default **Go To** destination instead.
-</Callout>
+- [Holidays and closures: the Calendar](/calendar)
+- [Build an after-hours menu](/auto_attendant)
+- [After-hours greeting scripts](/guides/menu-and-voicemail-scripts#after-hours-scripts)

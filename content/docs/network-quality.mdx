@@ -1,0 +1,77 @@
+---
+title: "Network quality: test your connection for calls"
+nav: "Network quality"
+description: "What the signal bars in the top bar mean, how to run the network test, what the results mean, and what to do when calls break up or won't connect."
+---
+The signal bars at the top right of the dashboard show how well your computer reaches Tonet's call server. Click them to run a full network test.
+
+## What the signal bars mean
+
+Tonet times a trip to its call server and back when the dashboard opens. It checks again when your network changes or comes back, and when you return to the tab after a minute away. Hover over the bars to see the time in milliseconds.
+
+| Bars | What it means |
+|---|---|
+| Green, full | **Good connection.** Up to 0.8 seconds there and back is fine for calls, even from far away. |
+| Yellow, 2 bars | **Long delay**, over 0.8 seconds. People may talk over each other. |
+| Red, 1 bar | **Very long delay**, over 1.5 seconds. Conversations will be hard. |
+| Red, no bars | **Calls can't connect from this network.** Tonet's call server can't be reached. |
+| Grey | Still testing |
+
+Distance adds delay, but it doesn't make sound choppy. Choppy sound comes from lost packets and jitter, which the network test measures.
+
+## Run a network test
+
+1. Click the signal bars at the top right. The **Network Quality** page opens.
+2. Click **Run Test**. The page shows each step while it runs.
+3. Read the rating at the top: **Connection: Good**, **Fair** or **Poor**.
+
+Run it on the computer and network you take calls on. Click **Run Test** again any time to test again.
+
+## What the results mean
+
+| Card | What it checks |
+|---|---|
+| **STUN Server** | Whether your computer reaches Tonet's server, stun.tonet.ai:3478, and how fast. It also shows your public IP address. |
+| **Connection Path** | How call audio would travel: **Direct (Best)**, **STUN (Normal)** or **Relay (Slow)**. It also shows whether the path goes through Tonet's server or someone else's. |
+| **Network Performance** | 10 pings to the call server: **Avg Latency** (the delay), **Jitter** (how much the delay jumps around) and **Packet Loss** (pings that got no answer) |
+
+Each check can lower the rating:
+
+| Check | **Fair** when | **Poor** when |
+|---|---|---|
+| Tonet's server | It answers slowly, over 0.8 seconds, or the path doesn't go through it | It can't be reached |
+| Connection path | Audio is relayed | It goes through outside servers instead of Tonet's |
+| Packet loss | — | Any of the 10 pings gets no answer |
+| Jitter | Over 15 ms | Over 30 ms |
+| Average delay | Over 0.8 seconds | Over 1.5 seconds |
+
+When nothing lowers it, the rating is **Good** and the page says **Network looks good for VoIP calls.** Otherwise **Issues & Recommendations** lists each problem found.
+
+## Fix a poor result
+
+| The test says | What to do |
+|---|---|
+| **Cannot reach Tonet STUN server** or **STUN may be blocked by firewall** | Your network blocks what calls need. Ask whoever runs your network to allow stun.tonet.ai on port 3478, or try another network. |
+| **High jitter** | Try a wired connection. |
+| **… packet loss detected** | Some pings got no answer, so audio may drop out. Run the test again. If it keeps happening, try another network. |
+| **Connection is being relayed** | Relaying adds delay. Try another network. |
+| **Traffic is routing through external servers** | Call traffic should go through stun.tonet.ai. Try another network, and report it if it keeps happening. |
+| **Long delay** or **Very long delay** | Delay alone doesn't make sound choppy. If calls are hard to follow, try another network and test again. |
+
+Still poor? Click **Report an issue** at the bottom of the left menu, and say what the test showed. Or email [support@tonet.ai](mailto:support@tonet.ai).
+
+## Messages about your connection
+
+These show at the top of the dashboard when the connection to Tonet has a problem:
+
+| Message | What it means |
+|---|---|
+| **Your VPN or network is blocking calls and live updates.** | Tonet couldn't connect from this network at all. Turn the VPN off or try another network. The [desktop app](/app) may also work. |
+| **You're offline.** | Your computer has no internet connection. Calls, messages and updates come back when you're online again. |
+| **Live updates are paused while Tonet reconnects.** | The connection to Tonet dropped. What you see may be out of date for a moment, until it reconnects by itself. |
+
+## Next step
+
+- [Make a test call](/dialer) to hear how it sounds.
+- Keep your line on all day with the [desktop app](/app).
+- Other ways to reach us: [Need help?](/#need-help)

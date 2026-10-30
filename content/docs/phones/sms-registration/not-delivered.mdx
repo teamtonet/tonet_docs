@@ -1,0 +1,108 @@
+---
+title: "Why are my texts not delivering? Causes and fixes"
+nav: "Texts not delivered?"
+description: "What Not sent and Not delivered mean in Tonet Messages, and how to fix unregistered numbers, carrier filtering, STOP opt-outs and links."
+---
+Business texts fail for a few reasons: the number isn't registered for business texting, the carrier filtered the text, the person replied STOP, or their number can't get texts. Tonet shows the reason under the text in [Messages](/chat).
+
+## Check what Messages says
+
+Under each text you send, a small mark shows how far it got. Point at it to see its name.
+
+| You see | It means |
+|---|---|
+| A clock | Still sending |
+| One check mark | Sent: the carrier took it |
+| Two check marks | Delivered to the phone |
+| A red reason, like **Carrier filtered this as spam** | Not delivered: the carrier refused it |
+
+If a text couldn't leave at all, a **Not sent** message pops up and the text stays on screen as failed. See [Texts that say Not sent](#texts-that-say-not-sent).
+
+## What each reason means
+
+| Messages says | What to do |
+|---|---|
+| **Number is not registered for A2P 10DLC** | Your number isn't on an approved registration. See [Your number isn't registered](#your-number-isnt-registered). |
+| **Toll-free number is not verified** | See [Toll-free numbers](#toll-free-numbers). |
+| **Carrier filtered this as spam** | See [Carrier filtering](#carrier-filtering). |
+| **Carrier rejected it without a reason** | See [Carrier filtering](#carrier-filtering). |
+| **Recipient replied STOP and is unsubscribed** | See [STOP and HELP](#stop-and-help). |
+| **Recipient has blocked this number** | They blocked your number. Call them instead. |
+| **Handset unreachable or switched off** | Their phone is off or out of coverage. Try again later. |
+| **Unknown or inactive number** | Check the number. |
+| **Not a valid mobile number** | Check the number. |
+| **Landline, or carrier cannot receive texts** | Call them instead. |
+| **Carrier cannot deliver to this number** | Check the number, or call them. |
+| **Carrier error** and a number | Look it up in the next table. |
+
+New Tonet accounts text through Plivo. On those accounts, Messages shows the reason as **Carrier error** and Plivo's number:
+
+| Carrier error | What it means |
+|---|---|
+| 30 | The carrier's spam filter stopped it. See [Carrier filtering](#carrier-filtering). |
+| 50 | Not a valid number, or a landline |
+| 70 | The number is out of service |
+| 80 | Their phone is off or out of reach. Try again later. |
+| 100 | Their network can't take this text |
+| 200 | They replied STOP. See [STOP and HELP](#stop-and-help). |
+| 420 | It expired before reaching a carrier. For US texts, check that your number is registered. |
+| 960 | The toll-free number isn't verified. See [Toll-free numbers](#toll-free-numbers). |
+
+## Your number isn't registered
+
+Carriers block business texts from numbers that aren't registered for A2P 10DLC.
+
+- A number that isn't registered shows **Texting not approved** on **Manage › Phones**, and Messages won't send from it. If none of your numbers can text yet, Messages shows **Pending Carrier Verification**. [Register your business](/phones/sms-registration).
+- A red **Texting blocked** on a number's card means the carrier refused its recent texts because it says the number isn't registered (or, for a toll-free number, not verified). Calls work as usual. Email [support@tonet.ai](mailto:support@tonet.ai).
+- Bought a number after you registered? It needs adding to your campaign. See [Add a number later](/phones/sms-registration#add-a-number-later).
+
+## Carrier filtering
+
+Carriers filter texts that look unwanted, even from registered numbers. To stay out of the filters:
+
+- Only text people who agreed to get your texts, and only the kind they agreed to. Consent to reminders isn't consent to promotions.
+- Say who you are in each text.
+- Don't send anything on the list of [content you can't register](/phones/sms-registration/rejected#content-you-cant-register), like alcohol, gambling or debt collection.
+- Don't spread the same text across many numbers to get past filters. Carriers don't allow it.
+- Watch your opt-outs. Many STOP replies, or people reporting your texts as spam by forwarding them to 7726, can get a number suspended.
+
+## Links and URL shorteners
+
+- Use full links on your own website.
+- Don't use public shorteners like bit.ly or TinyURL. Carriers filter them. If you shorten links, use a short domain only your business uses.
+- Avoid links that redirect several times. They can look like phishing.
+- Any phone number in a text should be one people can see is yours.
+- If your texts have links or phone numbers, tick those boxes when you register. See [Message content boxes](/phones/sms-registration/what-to-write#message-content-boxes).
+
+## STOP and HELP
+
+- When someone replies STOP, END, QUIT, CANCEL or UNSUBSCRIBE, your later texts to them are blocked. You'll see **Not sent — the carrier rejected this message.**, **Recipient replied STOP and is unsubscribed**, or **Carrier error 200**.
+- To get your texts again, they text START to your number.
+- Don't text them from another of your numbers. Carriers expect you to honor an opt-out.
+- HELP doesn't opt anyone out. Your opt-in wording should tell people to reply HELP for help. See [What to write](/phones/sms-registration/what-to-write#sms-opt-in-wording-for-your-form).
+
+## Texts that say Not sent
+
+| Messages says | What to do |
+|---|---|
+| **Not sent — the account balance is empty. Add funds to resume texting.** | An owner or manager [adds funds](/billing#add-funds). Other roles see **Not sent — please contact your administrator.** |
+| **Not sent — you're not authorized to text from this number.** | Ask an owner, manager or administrator to add you on the number's [Permissions tab](/phones#choose-who-can-use-a-number). |
+| **Not sent — no valid recipient on this thread.** | Start a new conversation with the number. |
+| **Not sent — the carrier rejected this message.** | Check the number. The person may have replied STOP. |
+| **Not sent — something went wrong. Try again.** | Send it again. If it keeps failing, email [support@tonet.ai](mailto:support@tonet.ai). |
+
+A text is charged once the carrier takes it, even if it isn't delivered later. A text that says **Not sent** isn't charged.
+
+## Toll-free numbers
+
+Carriers block or limit texts from toll-free numbers that haven't passed toll-free verification. This is separate from SMS registration, and Tonet's form doesn't do it. Email [support@tonet.ai](mailto:support@tonet.ai) to ask about texting from a toll-free number. More about [toll-free numbers](https://tonet.ai/toll-free-number-for-business/).
+
+## Still not delivered?
+
+Email [support@tonet.ai](mailto:support@tonet.ai) with the number you texted from, the number you texted, and when.
+
+## Next steps
+
+- [SMS registration](/phones/sms-registration): register your business, statuses and fees.
+- [What to write](/phones/sms-registration/what-to-write): wording carriers accept.
+- [Messages](/chat): texting your customers.

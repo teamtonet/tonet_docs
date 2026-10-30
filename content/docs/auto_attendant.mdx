@@ -1,133 +1,123 @@
 ---
-title: "Auto Attendant"
+title: "Menus: set up an auto attendant (IVR)"
+nav: "Menus (IVR)"
+description: "Build a phone menu in Tonet: record a greeting, send each key to a person, team, voicemail or another menu, and connect the menu to your number."
 ---
+A menu answers calls with your greeting and lets callers pick where to go: "For sales, press 1. For service, press 2." It's also called an auto attendant or IVR. Each key sends the caller to a person, a [team](/groups), a voicemail box, another menu or an outside number.
 
-The Auto Attendant (also called IVR - Interactive Voice Response) is the phone menu your callers hear when they call in. "Welcome to Summit Plumbing, press 1 for Sales, press 2 for Service..." - that's an auto attendant.
+Owners, managers and admins manage menus in **Manage › Menus**.
 
-You record a greeting, then map each button press to a destination - a [user](/users), a [group](/groups), another auto attendant, or an external phone number. Callers hear your greeting, press a button, and get routed where they need to go.
+## Make a menu
 
-Go to **Manage > Auto Attendant** to see your auto attendants.
+1. Go to **Manage › Menus** and click **New menu**.
+2. Type a **Name**, like "Main menu".
+3. Click **Upload/Record Audio...** and add your greeting. See [Add the greeting](#add-the-greeting).
+4. Under **Routes**, click **Add Route**. Next to **Press**, pick a key. Next to **For**, click **Destination** and pick where that key goes.
+5. Repeat step 4 for each key.
+6. Click **Save**.
 
-![Auto Attendant list showing Main Menu with edit and delete buttons](/images/auto_attendant/ivr_list.png)
+A new menu gets no calls yet. [Connect it to a number](#connect-a-menu-to-a-number) next.
 
-## Auto Attendant List
+Need words for the greeting? Copy a [menu script](/guides/menu-and-voicemail-scripts).
 
-Each auto attendant is displayed as a card with:
+## Add the greeting
 
-- **Avatar** - The IVR's initials
-- **Name** - The name you gave it (e.g. "Main Menu", "Sales", "After Hours")
-- **Edit IVR** - Opens the editor to change the greeting, routes, or name
-- **Delete IVR** - Removes the auto attendant after a confirmation prompt
+Every menu needs a greeting. You can't save a menu without one.
 
-Click **+ Add** in the top right to create a new auto attendant.
+1. Click **Upload/Record Audio...**.
+2. Either:
+   - **Record:** click the microphone, speak, then click it again to stop. Click play to listen. Allow the microphone if your browser asks.
+   - **Upload an MP3:** drag the file into the box, or click **Click to upload**.
+3. Click **Upload**.
+4. Click **Save** on the menu.
 
----
+Tonet turns your recording into phone audio. If it can't read a file, it tells you and keeps the greeting callers hear now.
 
-## Creating and Editing an Auto Attendant
+To change a greeting later, open the menu, do the same steps, and save.
 
-The auto attendant editor has three sections: name, greeting audio, and routes.
+## Keys you can use
 
-![Edit IVR showing Main Menu with greeting audio player, Upload/Record button, and three routes configured](/images/auto_attendant/ivr_edit.png)
+| Key | Pick in the list |
+|---|---|
+| 1 to 9, 0 | **One** to **Nine**, **Zero** |
+| `*` | **Star** |
+| `#` | **Pound** |
+| No key pressed | **No_response** |
 
-### Name
+Each key can be used once per menu. Keys already used are greyed out.
 
-A descriptive name for this auto attendant. Use names that reflect the menu's purpose - "Main Menu", "Sales Menu", "After Hours", etc.
+## Where a key can send callers
 
-### Greeting Audio
+**Destination** opens **Select Route Destination**. Pick a category, or search by name or extension:
 
-The audio message callers hear when they reach this menu. This is where you tell callers their options: "Thank you for calling Summit Plumbing. For Sales, press 1. For Service, press 2. To speak with the operator, press 0."
+| Category | Sends callers to |
+|---|---|
+| **Users** | One person |
+| **Teams** | A [team](/groups). It rings together or queues, as the team is set. |
+| **IVRs** | Another menu |
+| **Voicemail** | A person's or a team's voicemail box |
+| **Features** | **Busy** (callers hear a busy signal), or **Phone Number** to forward calls to an outside number |
 
-Click **Upload/Record Audio...** to open the audio dialog where you can:
+For **Phone Number**, type the number in **Forward to Phone Number** and click **Set Phone Number**.
 
-- **Record** - Record a greeting directly from your browser using your microphone. Click the record button, speak your greeting, then stop and save.
-- **Upload** - Upload an MP3 file you've already recorded. Drag and drop or click to select a file.
+## What callers hear
 
-After recording or uploading, you can preview the audio with the built-in player before saving.
+- The greeting plays as soon as the call reaches the menu. Callers can press a key at any time. They don't have to wait for the end.
+- Callers can also dial a person's extension while the greeting plays.
+- **If they press nothing:** with **No_response** set, they go there. Without it, the greeting plays again, up to 3 times in all. Then Tonet says goodbye and ends the call.
+- **If they press a key you didn't set:** they hear that it's not valid, then the greeting again. After 5 wrong keys, Tonet ends the call.
 
-<Callout type="info">
-  A greeting is required. You cannot save an auto attendant without recording or uploading audio first.
-</Callout>
+Want a "press 9 to hear this again" option? Point key 9 at this same menu, under **IVRs**. A new menu shows up in that list once it's saved.
 
-### Routes
+## Make a menu inside a menu
 
-Routes map button presses to destinations. Each route reads as: **Press [button] For [destination]**.
+A key can open another menu, for example "For service, press 2" leading to a service menu with its own options. This is a multi-level auto attendant.
 
-Available buttons: **1-9**, **0**, **Star (\*)**, **Pound (#)**, and **No Response** (what happens when the caller doesn't press anything).
+1. Make the second menu first, like "Service menu", with its own greeting and keys.
+2. Open your main menu. Point a key at "Service menu" under **IVRs**.
+3. Click **Save**.
 
-Each button can only be assigned once - already-used buttons are greyed out in the dropdown.
+Tip: give the second menu a key back to the main menu, so callers who picked wrong can go back.
 
-Click **Add Route** to add a new route. For each route, select the button and then pick the destination. Click the trash icon to remove a route.
+## Connect a menu to a number
 
-### Route Destinations
+1. Go to **Manage › Phones** and click the number.
+2. Open the **Route & settings** tab.
+3. In **Go To**, pick **IVRs**, then your menu.
+4. Click **Save Settings**.
 
-When you click the Destination field, the route picker opens with all available destinations:
+More on routing a number: [Choose where calls go](/phones#choose-where-calls-go).
 
-- **[Users](/users)** - Route to a specific team member by extension
-- **[Groups](/groups)** - Route to a ring group (the call rings all members, or queues if [call queue](/groups#how-calls-ring) is enabled)
-- **[IVRs](/auto_attendant)** - Route to another auto attendant for nested menus (see [Nested Menus](#nested-menus-routing-to-individuals) below)
-- **Voicemail** - Send the caller directly to a user's or [group's](/groups#team-voicemail) voicemail
-- **Phone Number** - Forward the call to an external phone number
-- **Features** - Special routing options like Busy (play busy tone) or Repeat (replay the greeting)
+You can also play a menu only at certain times:
 
-Click **Save** to save your auto attendant.
+- In a [schedule](/schedule) route, like your main menu during business hours.
+- In a [calendar](/calendar) event, like a holiday menu on the day.
 
----
+## The Menus page
 
-## Connecting an Auto Attendant to a Phone Number
+Switch between **Cards** and **List** at the top. Your browser remembers which one you picked.
 
-After creating your auto attendant, you need to assign it to one or more phone numbers so callers actually reach it.
+Each card shows:
 
-1. Go to **[Phones](/phones)** and click the phone number you want to configure
-2. In the **Configure** tab, set the **Go To** destination to your auto attendant
-3. You can also set it as the destination in a [Schedule](/schedule) (e.g. play your main menu during business hours) or [Calendar](/calendar) (e.g. play a holiday greeting on specific dates)
+- The menu's name
+- **Answers** and the numbers whose calls come to this menu: through **Go To**, or right now through a schedule or calendar event. Otherwise it says **Not answering a number yet**.
+- A player for the greeting, or **No greeting recorded yet**
+- Each key and where it goes. **No choice** is where callers go when they press nothing.
+- How many options the menu has, and **Edit menu**
 
-See [Call Routing Priority](/phones#choose-where-calls-go) for how Tonet decides which destination to use when you have a calendar, schedule, and default route configured.
+Open a card's **⋯** menu for **Edit** and **Delete**. In **List**, use **Edit IVR** and **Delete IVR**.
 
----
+## Delete a menu
 
-## Example: Routing to Groups
+1. Open the menu's **⋯** menu and click **Delete**. In **List**, click **Delete IVR**.
+2. Tonet checks where calls go. If numbers, other menus, schedules or calendar events still send calls to the menu, it lists them. Change each one, then click **Check again**.
+3. Click **Delete IVR**.
 
-A plumbing company has two departments that receive calls: Sales and Service.
+This can't be undone.
 
-1. [Create two groups](/groups): "Sales" and "Service Team", each with the relevant team members
-2. Create an auto attendant called "Main Menu"
-3. Record a greeting: "Thank you for calling Summit Plumbing. For Sales, press 1. For our Service Team, press 2. To reach the operator, press 0."
-4. Add three routes:
-   - Press **One** for **Sales** (group)
-   - Press **Two** for **Service Team** (group)
-   - Press **Zero** for **Rick** (user - the operator)
-5. Go to [Phones](/phones), select your main number, and set its destination to "Main Menu"
+## Next step
 
-When a customer calls, they hear your greeting and press a button. If they press 1, the call rings everyone in the Sales group. If all Sales members are busy and [Call Queue](/groups#how-calls-ring) is enabled, the caller waits in line. If everyone is offline, the caller gets the Sales group's voicemail.
-
----
-
-## Example: Nested Menus (Routing to Individuals)
-
-For larger teams, you can create multi-level menus by routing to other auto attendants.
-
-Say your Sales team has three people and you want callers to choose who to speak with:
-
-1. Create an auto attendant called **"Sales Menu"** with the greeting: "For Mike, press 1. For Sarah, press 2. For Jake, press 3."
-   - Press **One** for **Mike** (user)
-   - Press **Two** for **Sarah** (user)
-   - Press **Three** for **Jake** (user)
-
-2. In your **"Main Menu"** auto attendant, set the Sales route to point to the **Sales Menu** IVR instead of the Sales group:
-   - Press **One** for **Sales Menu** (IVR)
-
-Now when a caller presses 1 for Sales, they hear a second menu letting them choose the specific person they want. You can nest as many levels as you need.
-
-<Callout type="info">
-  **Groups vs. Nested Menus** - If you just want all Sales members to ring at once, route to a [group](/groups). If you want callers to choose a specific person, use a nested auto attendant. You can also combine both: "Press 1 to ring the Sales team, press 2 for Mike directly."
-</Callout>
-
----
-
-## Deleting an Auto Attendant
-
-Click **Delete IVR** on any auto attendant card. A confirmation dialog asks you to confirm before it's permanently removed.
-
-<Callout type="warning">
-  Before deleting an auto attendant, check if any [phone numbers](/phones), [schedules](/schedule), [calendars](/calendar), or other auto attendants are routing calls to it. Deleting an IVR that's still referenced as a route destination will cause those calls to fail.
-</Callout>
+- [Copy menu and voicemail scripts](/guides/menu-and-voicemail-scripts)
+- [Send after-hours calls somewhere else](/schedule)
+- [Route calls on holidays](/calendar)
+- [Ring a team together, or queue callers?](/guides/ring-together-or-queue)

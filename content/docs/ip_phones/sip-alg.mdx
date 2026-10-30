@@ -1,0 +1,70 @@
+---
+title: "Turn off SIP ALG: Netgear, TP-Link, Verizon, AT&T routers"
+nav: "Turn off SIP ALG"
+description: "SIP ALG on your router can stop a desk phone registering or cause one-way audio. Where to turn it off on Netgear, TP-Link, Verizon and AT&T routers."
+---
+SIP ALG is a router setting that inspects phone-call traffic and changes it on the way through. Grandstream warns that it can change that traffic in ways that stop phones registering or setting up calls. Netgear routers ship with it on.
+
+Turn SIP ALG off if your desk phone shows **Register Failed**, or calls have one-way audio or no audio. Then restart the desk phone so it registers again.
+
+<Callout type="info">
+  Change only a router you manage. If your internet provider manages your router, ask them to turn SIP ALG off.
+</Callout>
+
+## Netgear
+
+For Nighthawk and other Netgear Wi-Fi routers, and Orbi.
+
+1. On a computer or phone connected to the router, go to `routerlogin.net`. On Orbi, go to `orbilogin.com`. Sign in.
+2. Click **ADVANCED › Setup › WAN Setup**.
+3. Tick **Disable SIP ALG**.
+4. Click **Apply**.
+
+## TP-Link
+
+Sign in to the router's web page, or open the Deco app. Where the setting is depends on the router:
+
+| Router | Where |
+|---|---|
+| Archer Wi-Fi routers | **Advanced › NAT Forwarding**. Clear **Enable SIP ALG** and click **Save**. |
+| Some newer Archer routers, like the Archer AX72 | **Advanced › Security › ALG**. Turn off SIP ALG. |
+| Deco mesh | In the Deco app: **More › Advanced › NAT Forwarding › SIP ALG**. Turn it off. |
+| DSL modem routers (Archer VR, Archer VX, TD-W) | **Advanced › NAT Forwarding › ALG**. Turn off SIP ALG. |
+
+Not every TP-Link model has a SIP ALG setting.
+
+## Verizon
+
+For the Verizon Router (CR1000A, CR1000B) and the Verizon Internet Gateway (ARC-XCI55AX, ASK-NCQ1338FA).
+
+1. On a device connected to the router, go to `mynetworksettings.com`.
+2. If the browser warns that the connection isn't private, click **Advanced**, then proceed.
+3. Sign in with the password printed on the router's label. On the Verizon Router, it's next to **Network Settings Password**.
+4. From the **Advanced** menu, select **Security & Firewall**, then **SIP ALG**.
+5. Switch **SIP ALG** off and click **Apply Changes**.
+
+Verizon's guide for the Fios Router G3100 has no SIP ALG setting.
+
+## AT&T
+
+AT&T's guides show SIP ALG on two of its gateways:
+
+- **AT&T Internet Air for Business 5G Gateway:** go to `attwifi.manager` or `192.168.1.1` and sign in. From the **Dashboard**, click **NAT Forwarding**, then **ALG**. Slide **SIP Passthrough** to **Off**.
+- **BGW830:** go to `192.168.1.254` and sign in with the device access code from the back of the gateway. The SIP ALG setting is on the **Firewall advanced** page. AT&T advises changing the firewall pages only on the advice of your service provider or a security specialist.
+
+AT&T's guides for the BGW210 and BGW320 don't mention SIP ALG.
+
+## Routers without a SIP ALG guide
+
+- **ASUS:** ASUS's guides don't use the name SIP ALG. Under **WAN › NAT Passthrough** there's a **SIP Passthrough** setting, but ASUS doesn't say what turning it off does.
+- **A router from your internet provider, like Spectrum or Xfinity:** ask the provider to turn SIP ALG off, or whether it can be turned off.
+
+On the routers above, SIP ALG sits under WAN setup, NAT forwarding or firewall settings, so look there first on other brands.
+
+## Still not working?
+
+See [Fix No Service, Register Failed and no audio](/ip_phones/troubleshooting), or email [support@tonet.ai](mailto:support@tonet.ai) with your router's make and model.
+
+## Next step
+
+[Check that your phone registered](/ip_phones/troubleshooting#register-failed), then make a test call. Setting up more phones? See the [setup guides](/ip_phones#setup-guides), or the phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/).
