@@ -1,95 +1,71 @@
-import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
 # Port a Number
 
-Porting transfers your existing phone number from your current provider to Tonet. Your customers keep calling the same number they already know - it just rings on your Tonet system instead.
+Porting moves a number you already have from your current provider to Tonet. Your customers keep calling the same number.
 
-## What You'll Need
+Owners, managers and admins can start a port in **Manage › Phones › Port a Number**.
 
-Before starting a port request, gather the following from your current provider:
+## Before you start
 
-- **Authorized user or owner's name** - The first and last name on the account
-- **Service address** - The physical address on file with your current carrier (not your billing address unless they're the same)
-- **Letter of Authorization (LoA)** - A signed form authorizing the transfer (see [What is a LoA?](#what-is-a-loa-letter-of-authorization) below)
-- **Recent phone bill** - A scanned or electronic copy of your most recent bill (within the last 30 days)
-- **Account PIN** - Your account PIN with the current carrier (usually found on your bill)
+Get your latest bill from your current provider. You'll copy these from it:
 
-<Callout type="info">
-  We also recommend obtaining a **CSR (Customer Service Record)** from your current carrier. This minimizes the risk of your port request being rejected due to information mismatches. See [What is a CSR?](#what-is-a-csr-customer-service-record) below.
+- The account holder's name and business name, exactly as the provider has them
+- The service address on the account (this can differ from your billing address)
+- Your account number
+- Your account PIN or passcode. You need it for wireless and VoIP numbers. Ask your provider for a port-out PIN if you don't have one.
+- Every number you want to move
+
+You'll also attach proof the numbers are yours: your latest bill showing them, a purchase receipt, or a screenshot of your account.
+
+<Callout type="warning">
+  Copy the details from a recent bill, not from memory. A shortened business name, an old address or a wrong account number is the most common reason a port is rejected.
 </Callout>
 
-## How to Port
+## Start a port
 
-1. In your Dashboard, click on **Support** and select **New Ticket**
-2. In the **Ticket Type** field, select **Port Number**
-3. Fill out the **Basic Information**:
-   - Your name and the service address on file with your current carrier
-   - Your current service provider's name
-   - All the numbers you want to port (the form supports up to 20 numbers)
-   - Your account PIN with the current carrier
-   - The emergency address you want associated with your number(s)
-4. Upload your most recent phone bill (and CSR if you have one)
-5. Sign the form and click **Next** to review
-6. Double-check all information and view your signed LoA
-7. Click **Submit** to finalize
+1. Go to **Manage › Phones** and open the **Port a Number** tab.
+2. Under **Account holder**, fill in the name, organization, service address, email, and **Residential or business**.
+3. Under **Current provider**, enter the **Current service provider**, **Account number**, and **Account PIN / passcode**.
+4. Under **Numbers to port**, add each number and pick its **Type**: **Landline**, **Toll free**, or **Wireless or VoIP**.
+5. Under **Proof the numbers are yours**, click **Attach a file**.
+6. Read the **Authorization** text. Add anything the porting team should know in **Additional information**.
+7. Sign in the box, then type your name in **Print your full name**.
+8. Click **Submit porting request**.
 
-## Timeline
-
-Most ports complete in **7 to 10 business days**. Toll-free numbers and some carriers take longer, up to a few weeks, and the releasing carrier controls the timing, so we cannot guarantee a date. Your existing number continues working with your current provider during the transition - there's no downtime.
-
-## After Submission
-
-- View the status of your port request in **Support > Tickets**
-- You'll receive a notification once the port is accepted and the number is transferred
-- Once transferred, go to the [Phones](/phones) page to configure routing for your ported number
+Not ready yet? Click **Save draft** and come back later.
 
 <Callout type="info">
-  **During the transition**, you can use [Verified Caller ID](/phones/verified_caller_id) to display your existing number on outbound calls, even before the port completes. Most carriers can also forward your number to a Tonet number in the meantime.
+  Don't cancel your current service. Your numbers keep working with your current provider until the switch.
 </Callout>
 
----
+## After you submit
 
-## What is a LoA (Letter of Authorization)?
+The **Port a Number** tab shows where your request is:
 
-The Letter of Authorization is a form that authorizes the release of your phone number(s) from your current provider to Tonet. It must include:
+| Status | What it means |
+|---|---|
+| **Submitted** | Tonet has your request and checks it before filing it with the carrier. |
+| **In progress** | Filed with the carrier. Most ports finish in 7 to 10 business days. |
+| **More information needed** | Read the message, then answer under **Messages** and click **Send reply**. You can attach a file. |
+| **Approved** | The numbers show under **My Phone Numbers** once the transfer finishes. |
+| **Not approved** | Read the reason, fix it, and click **Edit and resubmit**. |
 
-- Your service address as your provider has it on file
-- The phone number(s) being ported
-- Your signature as the authorized user or account owner
+When the numbers arrive, [choose where their calls go](/phones#choose-where-calls-go) and [who can use them](/phones#choose-who-can-use-a-number).
 
-The LoA is generated automatically when you submit a port request through the dashboard.
+Want calls to reach Tonet before the port finishes? Ask your current provider to forward the number to your Tonet number.
 
----
+## Why ports get rejected
 
-## What is a CSR (Customer Service Record)?
+| Reason | How to fix it |
+|---|---|
+| Name, address or account details don't match | Ask your provider for the exact details on file, then correct the request. |
+| Unpaid balance with your provider | Pay what you owe them, then resubmit. |
+| Wrong PIN for a wireless or VoIP number | Ask your provider for the correct port-out PIN. |
+| The number isn't active | Ask your provider to turn it back on before you resubmit. |
 
-A Customer Service Record is a document from your current carrier that shows exactly how your account and number(s) appear in their system. While your phone bill and CSR often contain the same information, they can differ - and mismatches between your LoA and the carrier's records are the most common reason port requests get rejected.
+Tip: ask your provider for your **Customer Service Record (CSR)**. It shows exactly how they have your account, so your details match the first time.
 
-To get a CSR, contact your current carrier and ask specifically for the **Customer Service Record** (not just your billing records). You may need to ask for the carrier's Porting Team.
+## Next step
 
----
-
-## Common Rejection Reasons
-
-Most numbers are portable, but port requests can be initially rejected by the current carrier. In almost all cases, you can resolve the issue and resubmit.
-
-### Unsatisfactory Business Relationship
-
-This usually means you have an unpaid balance or the carrier charges a port-away fee. **Resolution:** Pay any outstanding balance or fees with your current carrier, then resubmit.
-
-### Name Mismatch / Address Mismatch / Data Mismatch
-
-The information on your Letter of Authorization doesn't match what your carrier has on file. The authorized user name, service address, and zip code on the LoA must **exactly** match the carrier's Customer Service Record. **Resolution:** Obtain your CSR, correct the mismatched fields, and resubmit.
-
-### Number is Inactive
-
-Your numbers must be active (in service) with the current carrier for the port to go through. **Resolution:** Contact your current carrier to reinstate the number before resubmitting.
-
-### Wrong Wireless Account PIN
-
-Wireless number ports require the correct account PIN. **Resolution:** The PIN is sometimes the last four digits of the account holder's Social Security Number. Contact your carrier to confirm or reset your PIN.
-
----
-
-Need help with porting? Contact us at [support@tonet.ai](mailto:support@tonet.ai) or call **(888) 836-3006**.
+While you wait, you can [buy a number](/phones#buy-a-number) and start using Tonet today. Questions about a port? Email [support@tonet.ai](mailto:support@tonet.ai).
