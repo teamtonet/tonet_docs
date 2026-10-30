@@ -1,0 +1,77 @@
+---
+title: "Tonet Help"
+nav: "Start here"
+description: "How to set up and use Tonet, the business phone system in your browser: numbers, a line for each person, call routing, texting and voicemail."
+---
+
+import { ArrowRightLeft, Calculator, MessageSquareText, Phone, PhoneCall, PhoneForwarded, Rocket, Users } from 'lucide-react';
+
+## Start here
+
+<Cards>
+  <Card icon={<Rocket />} title="1. Sign up" href="/sign_up">Pick a number and add at least $15 of credit.</Card>
+  <Card icon={<Users />} title="2. Add your team" href="/users">Each person gets an extension and a sign-in.</Card>
+  <Card icon={<PhoneForwarded />} title="3. Choose where calls go" href="/phones#choose-where-calls-go">Ring one person, a team or a menu.</Card>
+  <Card icon={<PhoneCall />} title="4. Make a call" href="/dialer">From the dashboard or the desktop app.</Card>
+</Cards>
+
+## Most asked
+
+<Cards>
+  <Card icon={<ArrowRightLeft />} title="Bring your number" href="/phones/port_number">Move it from your current provider.</Card>
+  <Card icon={<MessageSquareText />} title="Text from your number" href="/phones/sms-registration">Register your business for texting.</Card>
+  <Card icon={<Phone />} title="Set up a desk phone" href="/ip_phones">Yealink, Grandstream and other SIP phones.</Card>
+  <Card icon={<Calculator />} title="What it costs" href="/billing#work-out-your-monthly-cost">Both plans, worked out for your team.</Card>
+</Cards>
+
+## Where things are
+
+Sign in at [dashboard.tonet.ai](https://dashboard.tonet.ai). The menu on the left has:
+
+| Menu item | What's there | Who sees it |
+|---|---|---|
+| **Overview** | Today's or this month's calls and texts, and who's online | Everyone |
+| **Manage** | Phones, Menus, Schedules, Calendar, Users and Teams | Owners, managers, admins |
+| **Calls** | Every call and voicemail, with recordings | Everyone |
+| **Messages** | Texts with customers and chat with your team | Everyone |
+| **Contacts** | Everyone you talk to, with notes | Everyone |
+| **Analytics** | Answering, dialing and team numbers | Owners, managers, admins |
+
+Owners and managers also see **Account** and **Billing** inside **Manage**.
+
+## The top bar
+
+| Item | What it does |
+|---|---|
+| Dialpad icon | Opens the phone. See [Dialer & Calling](/dialer). |
+| Signal bars | Your connection to Tonet. Click it to run a network test. |
+| Bell | Missed calls, voicemails and messages from the last 7 days |
+| Balance | Opens [Billing](/billing). Owners and managers only. |
+| Your picture | Your status, [Profile](/profile), Refer & earn, [Enable click to call](/features/click_to_call), and Logout |
+
+## Who can do what
+
+| Role | Can do |
+|---|---|
+| **Owner** | Everything. Every account has one owner. |
+| **Manager** | Everything, including Billing and Account settings |
+| **Administrator** | Phones, menus, schedules, calendar, users and teams. No Billing or Account. |
+| **Regular User** | Calls, messages and contacts. Sees their own calls and their teams' calls. |
+
+Change someone's role in [Users](/users#change-a-role).
+
+## Ways to take calls
+
+- **In the browser.** Nothing to install. Allow the microphone when asked.
+- **The [desktop app](/app).** Keeps your line on with the window closed. Linux now; Windows and Mac are coming.
+- **A desk phone.** Any standard SIP phone works. See [IP Phones](/ip_phones).
+
+## Need help?
+
+- Click **Ask Tonet**, the chat button at the bottom right of the dashboard. You can reach a person there too.
+- Email [support@tonet.ai](mailto:support@tonet.ai).
+- Call **(888) 836-3006**.
+
+<Callout type="info">
+  Something broken? Click **Report an issue** at the bottom of the left menu. It sends us what you saw along with the technical details.
+</Callout>
