@@ -64,9 +64,9 @@ Click **Add Route** to add a new route. For each route, select the button and th
 When you click the Destination field, the route picker opens with all available destinations:
 
 - **[Users](/users)** - Route to a specific team member by extension
-- **[Groups](/groups)** - Route to a ring group (the call rings all members, or queues if [call queue](/groups#call-queue) is enabled)
+- **[Groups](/groups)** - Route to a ring group (the call rings all members, or queues if [call queue](/groups#how-calls-ring) is enabled)
 - **[IVRs](/auto_attendant)** - Route to another auto attendant for nested menus (see [Nested Menus](#nested-menus-routing-to-individuals) below)
-- **Voicemail** - Send the caller directly to a user's or [group's](/groups#group-voicemail) voicemail
+- **Voicemail** - Send the caller directly to a user's or [group's](/groups#team-voicemail) voicemail
 - **Phone Number** - Forward the call to an external phone number
 - **Features** - Special routing options like Busy (play busy tone) or Repeat (replay the greeting)
 
@@ -82,7 +82,7 @@ After creating your auto attendant, you need to assign it to one or more phone n
 2. In the **Configure** tab, set the **Go To** destination to your auto attendant
 3. You can also set it as the destination in a [Schedule](/schedule) (e.g. play your main menu during business hours) or [Calendar](/calendar) (e.g. play a holiday greeting on specific dates)
 
-See [Call Routing Priority](/phones#call-routing-priority) for how Tonet decides which destination to use when you have a calendar, schedule, and default route configured.
+See [Call Routing Priority](/phones#choose-where-calls-go) for how Tonet decides which destination to use when you have a calendar, schedule, and default route configured.
 
 ---
 
@@ -99,7 +99,7 @@ A plumbing company has two departments that receive calls: Sales and Service.
    - Press **Zero** for **Rick** (user - the operator)
 5. Go to [Phones](/phones), select your main number, and set its destination to "Main Menu"
 
-When a customer calls, they hear your greeting and press a button. If they press 1, the call rings everyone in the Sales group. If all Sales members are busy and [Call Queue](/groups#call-queue) is enabled, the caller waits in line. If everyone is offline, the caller gets the Sales group's voicemail.
+When a customer calls, they hear your greeting and press a button. If they press 1, the call rings everyone in the Sales group. If all Sales members are busy and [Call Queue](/groups#how-calls-ring) is enabled, the caller waits in line. If everyone is offline, the caller gets the Sales group's voicemail.
 
 ---
 
