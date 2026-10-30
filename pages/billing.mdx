@@ -1,106 +1,86 @@
-import Image from 'next/image'
 import { Callout } from 'nextra-theme-docs'
 
 # Billing
 
-Tonet uses a prepaid balance model. You add funds to your account, and charges are deducted automatically based on your plan. No contracts, no surprise invoices.
+Tonet is prepaid. You add credit to your balance, and Tonet takes small charges from it each day. There is no contract and no invoice.
 
-Go to **Account > Billing** to manage your billing. Use the **Billing Month** dropdown to view charges and payments from any previous month.
+**Who can use Billing:** owners and managers.
+**Where:** **Manage › Billing**, or click your balance in the top bar.
 
-<Image src="/images/billing/billing_page.png" alt="Billing page showing Account Information, Usage Summary chart, Topup card, and Payment History" width={1500} height={780} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+## What you pay
 
----
+| Item | Pay as you go | Unlimited |
+|---|---|---|
+| Each person on calls | $10 a month (33¢ a day) | $15 a month (50¢ a day) |
+| Calls to and from US and Canada numbers | 1¢ a minute | Included |
+| Calls that come in on a toll-free number | By the minute | By the minute |
+| Texts | 3¢ each | 3¢ each |
+| Each phone number | $2.50 a month | $2.50 a month |
 
-## Account Information
+- A local number costs $2.50 when you buy it, then $2.50 about every 29 days.
+- A toll-free number costs $3.00 for its first month, then $2.50 a month.
+- Picture messages and recording storage have their own rates.
+- Your exact rates are on the Billing page. Click **More account rates** to see them all.
 
-Shows your business name and email address on file.
+## How charges work
 
----
+- Each person is charged once a day. Delete a person and their daily charge stops.
+- Each number is charged about every 29 days.
+- Calls and texts are charged as they happen.
 
-## Payment Method
+## Add funds
 
-Click **Manage Your Cards** to add a credit or debit card, update expiration dates, or remove cards. This opens a secure Authorize.net window - Tonet never sees or stores your full card number.
+1. Go to **Manage › Billing** and click **Add funds**.
+2. Under **Payment method**, pick **Credit card** or **Crypto**.
+3. Enter an amount in whole dollars. The minimum is $15.
+4. Click **Add Funds**.
 
-If you have multiple cards, swipe between them. The currently displayed card is the one used for top-ups.
-
----
-
-## Topup
-
-Top up manually or set up automatic recharging.
-
-### Recharge
-
-Enter the amount you want to add to your balance (minimum $15) and click **Add Funds**. The charge goes to your currently selected card.
-
-If a payment is declined, you'll need to wait 30 seconds before retrying.
-
-### Auto-Recharge
-
-Toggle **Auto Recharge** on to automatically top up your account when your balance gets low. Two fields appear:
-
-- **Balance Falls** - The threshold that triggers a recharge. When your balance drops to this amount, a top-up is initiated automatically.
-- **Recharge To** - The amount your balance is brought back up to. Must be at least $10 more than the Balance Falls threshold.
-
-Click **Confirm** to save your auto-recharge settings. You can toggle it off at any time.
-
-<Image src="/images/billing/auto_recharge.png" alt="Auto-Recharge settings with Balance Falls and Recharge To fields" width={600} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+**First time paying by card?** Click **Add card** first. Your card details go straight to Authorize.Net; Tonet never sees the full number. After you save the card, click **Continue to amount**.
 
 <Callout type="info">
-  Auto-recharge prevents service interruptions. If your balance hits zero, outbound calls and SMS stop working until you add funds. Setting a threshold like $5 with a recharge-to of $25 keeps your system running without manual intervention.
+  If a card payment is declined, you can try again after 2 minutes. Some payments are checked by hand. You'll see **Payment pending review**, and the money is added once it's approved.
 </Callout>
 
----
+## Pay with crypto
 
-## Usage Summary
+1. Click **Add funds** and choose **Crypto**.
+2. Pick a **Coin** and a **Network**. You can pay with USDT, USDC, BTC, ETH, SOL, LTC or TON.
+3. Enter the amount. The minimum is $15.
+4. Send the exact amount to the **Address** shown. If a **Memo** is shown, include it.
+5. Send it before the rate lock runs out. The page shows a countdown.
 
-Your spending breakdown for the selected month, shown as a donut chart with totals per category:
+Your balance goes up once the payment is confirmed on the network. This can take a few minutes. Click **Check payment** to look again.
 
-| Category | What it covers |
-|----------|---------------|
-| **Users** | Daily per-user charge based on your plan |
-| **Calls** | Inbound and outbound call minutes |
-| **SMS** | Inbound and outbound text messages |
-| **Phones** | New number purchases, toll-free numbers, and monthly number maintenance |
-| **Storage** | Call recording storage |
-| **Other** | Any charges that don't fit the above categories |
+## Use a code
 
-<Image src="/images/billing/usage_summary.png" alt="Usage Summary donut chart with spending categories breakdown" width={700} height={400} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+In **Add funds**, type your code in the **Have a code?** box and click **Apply**. Partner, promo and team codes all go here.
 
----
+## Turn on auto-recharge
 
-## Usage Details
+Auto-recharge adds funds by card when your balance gets low, so calls never stop.
 
-Every individual charge on your account for the selected month, exportable to a spreadsheet.
+1. On the Billing page, click **Auto-recharge off** under your balance.
+2. Turn on **Enable auto-recharge**.
+3. Set **When balance falls below (USD)**, for example $10.
+4. Set **Bring balance up to (USD)**. It must be at least $10 more than the first amount.
+5. Click **Save settings**.
 
-| Column | Description |
-|--------|-------------|
-| **Date and Time** | When the charge occurred |
-| **Type** | Inbound Call, Outbound Call, Tollfree Call, SMS, User Day, Number Maintenance, New Number, New Toll-Free Number, Storage, Setup Fee, or Other |
-| **Amount** | The dollar amount deducted |
-| **Description** | Details like the phone number called or the user charged |
+You need a saved card for auto-recharge.
 
-<Image src="/images/billing/usage_details.png" alt="Usage Details table showing individual charges with date, type chips, amount, and description" width={1500} height={500} style={{borderRadius: '8px', border: '1px solid #e0e0e0', maxWidth: '100%', height: 'auto'}}/>
+## When your balance reaches $0
 
----
+- Outgoing calls and texts stop until you add funds.
+- Daily charges pause.
+- Accounts left at $0 for a long time can lose their numbers. If a number is missing after you top up, contact [support@tonet.ai](mailto:support@tonet.ai).
 
-## Payment History
+## See what you spent
 
-Every payment made to your account:
+- **Billing period:** pick a month.
+- **Spending:** your charges for that month. Switch between **By item** and **By user**.
+- **Payment history:** every payment, its status and how you paid. Click **Receipt** to download a PDF.
 
-| Column | Description |
-|--------|-------------|
-| **Date and Time** | When the payment was processed |
-| **Amount** | The dollar amount charged to your card |
-| **Status** | Whether the payment was approved or declined |
-| **Method** | The payment method used |
+Tonet also emails a receipt for each payment to the account owner, and to the person who paid if that's someone else.
 
-Declined payments flash red briefly so you can spot issues quickly.
+## Next step
 
----
-
-## How Billing Works
-
-Charges are deducted from your prepaid balance as you go. What you're charged for depends on your plan - check [Usage Details](#usage-details) for a full breakdown at any time.
-
-When your balance gets low, top up manually or let [auto-recharge](#auto-recharge) handle it. If your balance hits zero, outbound calls and SMS stop working until you add funds.
+Running low often? [Turn on auto-recharge](#turn-on-auto-recharge). Adding people? See [Users](/users).
