@@ -3,19 +3,19 @@
     "type": "separator",
     "title": "Dashboard"
   },
-  "index": "Overview",
+  "index": "Start Here",
+  "sign_up": "Sign Up",
   "dialer": "Dialer & Calling",
   "analytics": "Analytics",
   "chat": "Chat",
   "contacts": "Contacts",
-  "sign_up": "Sign Up",
   "-- manage": {
     "type": "separator",
     "title": "Manage"
   },
   "users": "Users",
   "phones": "Phones",
-  "groups": "Groups",
+  "groups": "Teams",
   "auto_attendant": "Auto Attendant",
   "schedule": "Schedule",
   "calendar": "Calendar",
@@ -30,7 +30,7 @@
     "type": "separator",
     "title": "Apps"
   },
-  "app": "Mobile App",
+  "app": "Desktop App",
   "ip_phones": "IP Phones",
   "features": "Features",
   "contact": {
