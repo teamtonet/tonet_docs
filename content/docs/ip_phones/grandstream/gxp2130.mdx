@@ -1,0 +1,86 @@
+---
+title: "Grandstream GXP2130 setup: default password, IP, reset"
+nav: "GXP2130"
+description: "Set up a Grandstream GXP2130 with Tonet: the default password (admin / admin), its IP address, your SIP details, STUN, and how to factory reset it."
+---
+The GXP2130 has a 2.8-inch color screen and 3 line keys. Version 2 of the GXP2130 also has Bluetooth. Its web page signs in as **admin** / **admin** by default. You set it up from that web page, on a computer on the same network.
+
+## What you need
+
+- The phone, connected to your router or network switch with a network cable. It takes power from the cable (PoE) or from a power adapter. The GXP2130 has no Wi-Fi.
+- A computer on the same network.
+- The person's [SIP details](/ip_phones#find-your-sip-details): **User Name**, **Password** and **Domain**.
+
+## Find the GXP2130 IP address
+
+Press the **Up** arrow key while the phone is idle. The screen shows the IP address. You can also go to **Menu › Status › Network Status**.
+
+## GXP2130 default password
+
+The username is **admin** and the password is **admin**. On firmware 1.0.9.63 and later, the phone makes you set a new admin password the first time you sign in, and again after a factory reset. It can be up to 25 characters.
+
+1. On the computer, open a browser and go to `https://` followed by the phone's IP address, like `https://192.168.1.50`. Firmware older than 1.0.11.98 uses `http://`.
+2. Sign in with **admin** and **admin**.
+3. Set a new admin password when asked, and write it down.
+
+**admin doesn't work?** Someone changed the password. A [factory reset](#factory-reset-the-gxp2130) sets it back.
+
+## Enter your Tonet line
+
+1. On the phone's web page, go to **Accounts › Account 1 › General Settings**.
+2. Fill in:
+
+| Field | Enter |
+|---|---|
+| **Account Active** | **Yes** |
+| **Account Name** | What the phone screen shows for this line, like the person's name |
+| **SIP Server** | The whole **Domain**, including the colon and port, like `pbx.example.com:5080` |
+| **SIP User ID** | The **User Name** from SIP Information |
+| **SIP Authentication ID** (older firmware: **Authenticate ID**) | The **User Name** from SIP Information |
+| **SIP Authentication Password** (older firmware: **Authenticate Password**) | The **Password** from SIP Information |
+| **Name** | The person's name |
+
+3. Click **Save and Apply**.
+
+## Turn on STUN
+
+1. Go to **Settings › General Settings**. In **STUN Server**, enter `stun.tonet.ai:3478`. Click **Save and Apply**.
+2. Go to **Accounts › Account 1 › Network Settings**. Set **NAT Traversal** to **STUN**. Click **Save and Apply**.
+
+## Check that it registered
+
+- On the web page, **Status › Account Status** shows **SIP Registration**: **Yes** on green means registered, **No** on red means it isn't.
+- On the phone, the line key shows a green handset when registered, and a red icon when not registered.
+- On the phone, you can also go to **Menu › Status › Account Status**.
+
+Not registered? See [Register Failed](/ip_phones/troubleshooting#register-failed).
+
+## Factory reset the GXP2130
+
+A factory reset erases every setting on the phone, including your line, and brings back the default password.
+
+**From the web page:** click **Factory Reset** at the top right of the page.
+
+**From the phone's menu:** go to **Menu › System** and select **Operations – Factory Reset**. Press **Yes** to confirm.
+
+**With the keypad while it starts up** (firmware 1.0.9.25 and later): restart the phone. When the screen shows "booting", press and hold **1** and **9**. Enter the admin password if it asks, then press `#` to reset, or `*` to cancel.
+
+## Update the firmware
+
+1. Download the GXP2130 firmware from [grandstream.com/support/firmware](https://www.grandstream.com/support/firmware). The latest is 1.0.11.106, from January 2026.
+2. On the phone's web page, go to **Maintenance › Upgrade and Provisioning**.
+3. Next to **Upgrade**, pick the file and press **Start**. The phone upgrades on its own.
+
+<Callout type="info">
+  A phone on firmware 1.0.6.x or older has to step up first: 1.0.7.97, then 1.0.8.x, then 1.0.9.x. Read Grandstream's release notes before you upgrade an older phone.
+</Callout>
+
+## Problems?
+
+- [Register Failed or not registered](/ip_phones/troubleshooting#register-failed)
+- [One-way audio or no audio](/ip_phones/troubleshooting#one-way-audio-or-no-audio)
+- [Turn off SIP ALG on your router](/ip_phones/sip-alg)
+
+## Next step
+
+Set up the [next person's phone](/ip_phones#find-your-sip-details), or see the desk phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/).

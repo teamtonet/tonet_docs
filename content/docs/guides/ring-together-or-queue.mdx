@@ -1,0 +1,90 @@
+---
+title: "Ring group vs call queue: which should your team use?"
+nav: "Ring together or queue?"
+description: "Tonet teams ring as a ring group or a call queue. What callers hear, how long phones ring, what happens when nobody answers, and when to pick each."
+---
+Every Tonet [team](/groups) rings one of two ways:
+
+- **Ring together** is a ring group. Everyone on the team rings at once for 25 seconds. If nobody answers, the caller goes to the team's voicemail.
+- **Queue** is a call queue. Callers wait on hold with music until someone on the team is free to answer. There's no time limit.
+
+You pick one per team in **Manage › Teams**.
+
+## Ring together vs Queue at a glance
+
+| | Ring together | Queue |
+|---|---|---|
+| Who rings | Everyone on the team, at once | Everyone on the team who's free, at once. Members already on a call are skipped. |
+| How long phones ring | 25 seconds | 20 seconds at a time, then a 5-second pause, then again, until someone answers |
+| Hold message and music | No | Yes: a short message asking callers to hold, then music |
+| When nobody answers | The caller goes to voicemail after 25 seconds | The caller keeps waiting. Voicemail only when no one on the team is connected. |
+| Best for | Small teams who are usually free | Busy lines where callers should reach a person |
+
+See both with the same five calls:
+
+<RingVsQueue />
+
+## How Ring together works
+
+1. A call reaches the team.
+2. Every member rings at once, wherever they're connected: the dashboard, the desktop app, the [phone app](/phone-app) or a desk phone.
+3. The first person to answer gets the call.
+4. If nobody answers within 25 seconds, the caller goes to the team's shared voicemail.
+
+If no one on the team is connected, the caller still waits the 25 seconds, then goes to voicemail.
+
+## How Queue works
+
+1. A call reaches the team. The caller hears a short recorded message saying everyone is busy and to wait, then hold music.
+2. Every member who's free rings at once. Members already on a call aren't rung.
+3. Phones ring for 20 seconds. If nobody answers, there's a 5-second pause, then they ring again. This repeats until someone answers or the caller hangs up.
+4. Every 30 seconds, the caller hears the message again.
+
+More than one caller can wait at a time, with no limit. Callers aren't told their place in line or how long the wait is.
+
+A caller goes to the team's voicemail only when no one on the team is connected: when the call comes in, or while they're waiting.
+
+<Callout type="warn">
+  A queue keeps callers waiting as long as anyone on the team is connected, even after hours. Use a [schedule](/schedule) so calls outside your hours go to voicemail or an after-hours menu instead.
+</Callout>
+
+## Which one should you pick?
+
+**Pick Ring together if:**
+
+- Your team is small and usually free to pick up.
+- You'd rather take a message than keep a caller waiting.
+- Calls are short, like a front desk that answers and passes calls on.
+
+**Pick Queue if:**
+
+- Calls often come in while everyone is on the phone, like a support or order line.
+- Callers should wait for a person instead of leaving a message.
+- Someone is always connected during the hours the team gets calls.
+
+Not sure? Start with **Ring together**. If the [Calls](/analytics/call_logs) page shows many missed calls while your team was busy, switch the team to **Queue**.
+
+## Ring group vs hunt group
+
+A hunt group usually means ringing people one after another until someone answers. Tonet teams don't ring one by one: both **Ring together** and **Queue** ring everyone at once.
+
+A call sent to one person rings only that person. If they don't answer, it goes to their own voicemail. It doesn't move on to someone else.
+
+## Set how a team rings
+
+1. Go to **Manage › Teams**. Owners, managers and admins can open it.
+2. On the team's card, pick **Ring together** or **Queue**. It saves right away.
+3. Make sure calls reach the team. The card's **Gets calls from** lists what sends calls there. If it says **Nothing sends calls here yet**, send calls to the team from:
+   - a number's **Go To**, in [Phones](/phones#choose-where-calls-go)
+   - a key in a [menu](/auto_attendant), like "For sales, press 1"
+   - a [schedule](/schedule) route or a [calendar](/calendar) event
+
+## The team's voicemail
+
+Both ways can send callers to the team's shared voicemail. Team members find its messages on the **Calls** page. To set the greeting callers hear, see [Voicemail](/calls/voicemail), or copy a [team voicemail script](/guides/menu-and-voicemail-scripts#voicemail-greeting-scripts).
+
+## Next step
+
+- [Make a team](/groups)
+- [Let callers pick a team with a menu](/auto_attendant)
+- [Route calls by business hours](/schedule)

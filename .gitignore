@@ -14,3 +14,8 @@ GEMINI.md
 .mcp.json
 docs/*.md
 docs/**/*.md
+
+# Fumadocs / Next build output
+.source
+next-env.d.ts
+*.tsbuildinfo

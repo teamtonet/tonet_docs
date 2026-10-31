@@ -1,0 +1,90 @@
+---
+title: "Grandstream GRP2612 setup: default password, IP, reset"
+nav: "GRP2612"
+description: "Set up a Grandstream GRP2612 with Tonet: the default password (on the sticker), its IP address, your SIP details, STUN, and how to factory reset it."
+---
+The GRP2612 has a 2.4-inch color screen and 4 line keys. Its web page signs in as **admin**, with the password printed on the sticker on the back of the phone. You set it up from that web page, on a computer on the same network.
+
+## What you need
+
+- The phone, connected to your router or network switch with a network cable.
+- Power: the plain GRP2612 needs its power adapter. The GRP2612P, GRP2612W and GRP2612G can also take power from the network cable (PoE).
+- The GRP2612 has no Wi-Fi. The GRP2612W does.
+- A computer on the same network.
+- The person's [SIP details](/ip_phones#find-your-sip-details): **User Name**, **Password** and **Domain**.
+
+## Find the GRP2612 IP address
+
+While the phone is idle, press and hold the **Up** arrow key for 3 seconds. The screen shows the IP address. You can also go to **Menu › Status › Network Status**.
+
+## GRP2612 default password
+
+The username is **admin**. The password is printed on the sticker on the back of the phone. (Grandstream's guide also lists **admin** as a default, so try it if there's no sticker.) The first time you sign in, the phone makes you set a new admin password, 6 to 25 characters long.
+
+1. On the computer, open a browser and type the phone's IP address in the address bar, like `192.168.1.50`.
+2. Sign in as **admin** with the password from the sticker.
+3. Set a new admin password when asked, and write it down.
+
+**No sticker, or can't read it?** On firmware 1.0.13.21 or later, click **Login from LCD** on the sign-in page. Type the code it shows into the phone, then choose **AdminLogin**.
+
+**Lost the new password?** [Factory reset](#factory-reset-the-grp2612) the phone. It goes back to the default password.
+
+## Enter your Tonet line
+
+1. On the phone's web page, go to **Accounts › Account 1 › General Settings**.
+2. Fill in:
+
+| Field | Enter |
+|---|---|
+| **Account Active** | **Yes** |
+| **Account Name** | What the phone screen shows for this line, like the person's name |
+| **SIP Server** | The whole **Domain**, including the colon and port, like `pbx.example.com:5080` |
+| **SIP User ID** | The **User Name** from SIP Information |
+| **SIP Authentication ID** | The **User Name** from SIP Information |
+| **SIP Authentication Password** | The **Password** from SIP Information |
+| **Name** | The person's name |
+
+3. Click **Save and Apply**.
+
+## Turn on STUN
+
+1. Go to **Phone Settings › General Settings**. In **STUN Server**, enter `stun.tonet.ai:3478`. Click **Save and Apply**.
+2. Go to **Accounts › Account 1 › Network Settings**. Set **NAT Traversal** to **STUN**. Click **Save and Apply**.
+
+## Check that it registered
+
+- On the web page, **Status › Account Status** shows the account's **SIP Registration**.
+- On the phone, the line key shows a green handset when registered, and a gray handset with a line through it when not registered.
+- On the phone, you can also go to **Menu › Status › Account Status**.
+
+Not registered? See [Register Failed](/ip_phones/troubleshooting#register-failed).
+
+## Factory reset the GRP2612
+
+A factory reset erases every setting on the phone, including your line.
+
+**From the phone's menu:** go to **Menu › System** and select **Operations - Factory Reset**. Press **Yes** to confirm. The phone may ask for the admin password first.
+
+**With the keypad while it starts up:** restart the phone and, while it's booting, press and hold **1** and **9**. In the menu that appears, pick **Factory Reset** with the arrow keys and press **Submit**.
+
+**From the web page:** go to **Maintenance › Upgrade and Provisioning**, open **Advanced Settings**, and click **Start** next to **Factory reset**.
+
+## Update the firmware
+
+1. Download the GRP261x firmware from [grandstream.com/support/firmware](https://www.grandstream.com/support/firmware).
+2. On the phone's web page, go to **Maintenance › Upgrade and Provisioning › Firmware**.
+3. Under **Upgrade via Manually Upload**, use **Upload Firmware File to Update** to pick the file. The upgrade starts once it's uploaded.
+
+<Callout type="info">
+  Phones on firmware 1.0.13.127 or older must install Grandstream's transition firmware before 1.0.15; it comes in the 1.0.15 download. Phones with hardware version 1.x (the part number on the back label looks like 962-NNNNN-1NN) can't take 1.0.15 at all and stay on 1.0.13.127. Read Grandstream's release notes before you upgrade an older phone.
+</Callout>
+
+## Problems?
+
+- [Register Failed or not registered](/ip_phones/troubleshooting#register-failed)
+- [One-way audio or no audio](/ip_phones/troubleshooting#one-way-audio-or-no-audio)
+- [Turn off SIP ALG on your router](/ip_phones/sip-alg)
+
+## Next step
+
+Set up the [next person's phone](/ip_phones#find-your-sip-details), or see the desk phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/).

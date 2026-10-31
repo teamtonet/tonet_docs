@@ -1,0 +1,68 @@
+---
+title: "Calendar: route calls on holidays and closures"
+nav: "Calendar"
+description: "Send calls somewhere else on holidays, closures and special days. Add a calendar event, choose where calls go, then pick the event on your numbers."
+---
+A calendar event sends a number's calls somewhere else for a set time, like a holiday, a closure or a team day out. While the event is on, it beats the number's [schedule](/schedule) and **Go To**.
+
+Owners, managers and admins manage events in **Manage › Calendar**.
+
+## Add an event
+
+1. Go to **Manage › Calendar** and click **New Event**. Or click a day on the calendar, or drag across several days, to start an event with those dates.
+2. In **Add Event**, fill in:
+   - **Title**, like "Thanksgiving"
+   - **Destination**: where calls go during the event. Pick from **Users**, **Teams**, **IVRs** (menus), **Voicemail** or **Features**.
+   - **Start date** and **End date**, each with a time
+3. Click **Confirm**.
+
+## Turn the event on for a number
+
+An event changes nothing until a number picks it.
+
+1. Go to **Manage › Phones** and click the number.
+2. Open the **Route & settings** tab.
+3. In **Calendars**, tick the event. A number can use several events.
+4. Click **Save Settings**.
+
+New events aren't added to numbers on their own. Repeat these steps on every number that should follow the event.
+
+## How Tonet picks where a call goes
+
+When a call comes in, Tonet checks in this order:
+
+1. An event picked in the number's **Calendars** that is happening now
+2. The number's [schedule](/schedule)
+3. **Go To**
+
+## Change the view
+
+Use **View** at the top: **Month**, **Week**, **Day** or **Agenda** (a list of the month's events). The arrows next to it move back and forward.
+
+## Change or delete an event
+
+- **Change it:** click the event, make your changes in **Edit Event**, and click **Confirm**.
+- **Delete it:** click the event, then click the bin at the bottom left of **Edit Event**. It's deleted at once, with no undo, and taken off every number that used it.
+
+## Example: a holiday
+
+1. Make a "Holiday" [menu](/auto_attendant) with your holiday greeting. Need words? Copy a [holiday script](/guides/menu-and-voicemail-scripts#holiday-greeting-scripts).
+2. Click **New Event**:
+   - **Title:** Christmas
+   - **Destination:** **IVRs** › Holiday
+   - **Start date:** Dec 24, 5:00 PM
+   - **End date:** Dec 26, 8:00 AM
+3. Click **Confirm**.
+4. On each number, tick "Christmas" in **Calendars** and click **Save Settings**.
+
+From Christmas Eve at 5 PM until 8 AM on Dec 26, callers hear your holiday menu. Then your usual hours apply again.
+
+<Callout type="info">
+  **Busy** under **Features** gives callers a busy signal and nothing else. A short holiday greeting tells them when you're back and how to leave a message.
+</Callout>
+
+## Next step
+
+- [Set your business hours](/schedule)
+- [Copy a holiday greeting](/guides/menu-and-voicemail-scripts#holiday-greeting-scripts)
+- [Choose where a number's calls go](/phones#choose-where-calls-go)

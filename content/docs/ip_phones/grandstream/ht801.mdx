@@ -1,0 +1,134 @@
+---
+title: "Grandstream HT801 and HT802 setup: password, IP, reset"
+nav: "HT801 / HT802 adapter"
+description: "Connect analog phones to Tonet with an HT801 or HT802: hear its IP (dial *** then 02), the default password (V2: on the sticker), STUN and factory reset."
+---
+The HT801 (one phone port) and HT802 (two phone ports) connect regular analog phones to Tonet. Each phone port signs in as one person's line.
+
+The default web sign-in is **admin** / **admin**. On the V2 models, the password is printed on the sticker on the back of the unit.
+
+<Callout type="info">
+  Tonet doesn't support fax. Connect phones only.
+</Callout>
+
+**Which version do you have?** The HT801 V2 and HT802 V2 have **NET** printed by the network port, and their web page calls them **HT801V2** and **HT802V2**. Where the steps differ, this page says **V2**.
+
+## What you need
+
+- The adapter and its power adapter.
+- A regular (analog) phone and its cord for each port you use.
+- A network cable to your router.
+- A computer on the same network.
+- The [SIP details](/ip_phones#find-your-sip-details) of the person who'll use each phone: **User Name**, **Password** and **Domain**.
+
+## Connect the adapter
+
+1. Plug the phone into the phone port. On the HT802, the first phone goes in port **1** and the second in port **2**.
+2. Connect the adapter's network port to your router.
+3. Plug in the power last.
+
+The **Power** light and the network light come on. The **Phone** light stays off until the line registers.
+
+## Grandstream ATA default IP address
+
+By default, the HT801 and HT802 get their IP address from your router (DHCP), so it depends on your network. To hear it:
+
+1. Pick up the phone connected to the adapter.
+2. Dial `***`. Wait for "Enter the menu option".
+3. Press `02`. The adapter reads out its IP address.
+
+## HT801, HT802 and V2 default password
+
+| Model | Username | Password |
+|---|---|---|
+| HT801, HT802 | **admin** | **admin** |
+| HT801 V2, HT802 V2 | **admin** | Printed on the sticker on the back of the unit |
+
+The first time you sign in, the adapter makes you choose a new password: 8 to 20 characters, with at least one number, one uppercase letter and one lowercase letter. (On the first HT801 and HT802, this starts with firmware 1.0.53.3.)
+
+1. On the computer, open a browser and type the adapter's IP address, like `192.168.1.50`. On a V2, type `https://` first, like `https://192.168.1.50`.
+2. Sign in as **admin** with the default password.
+3. Set a new password when asked, and write it down.
+
+**Lost the new password?** [Factory reset](#factory-reset-the-ht801-or-ht802) the adapter. It goes back to its default password.
+
+## Enter your Tonet line
+
+1. Open the port's settings:
+   - **HT801, HT802:** click the **FXS PORT** tab (on the HT802, **FXS PORT1** for the first phone).
+   - **V2:** go to **Port Settings**, pick the FXS port (on the HT802 V2, **FXS PORT1** for the first phone), then **General Settings**.
+2. Fill in:
+
+| Field | Enter |
+|---|---|
+| **Account Active** | **Yes** (on V2, tick it) |
+| **Primary SIP Server** | The whole **Domain**, including the colon and port, like `pbx.example.com:5080` |
+| **SIP User ID** | The **User Name** from SIP Information |
+| **Authenticate ID** | The **User Name** from SIP Information |
+| **Authenticate Password** | The **Password** from SIP Information |
+| **Name** | The person's name |
+| **NAT Traversal** | **STUN** |
+
+3. Click **Apply** at the bottom of the page. On V2, click **Save and Apply**.
+4. Restart the adapter: unplug the power for a few seconds. Many port settings only take effect after a restart.
+
+## Turn on STUN
+
+You set **NAT Traversal** to **STUN** on the port page above. Now enter the STUN server:
+
+- **HT801, HT802:** open the **ADVANCED SETTINGS** tab. In **STUN Server is**, enter `stun.tonet.ai:3478`. Click **Apply**.
+- **V2:** go to **System Settings › Basic Settings › ATA Settings**. In **STUN Server**, enter `stun.tonet.ai:3478`. Click **Save and Apply**.
+
+## Check that it registered
+
+- On the web page, the **Status** page has a **Port Status** table. **Registration** should say **Registered** for your port. **Not Registered** means a setting is wrong.
+- The **Phone** light is on when the line is registered, and off when it isn't.
+
+A dial tone doesn't prove the line works: the adapter can play dial tone even when it isn't registered. Not registered? See [Register Failed](/ip_phones/troubleshooting#register-failed).
+
+## Set up the second phone on an HT802
+
+1. Plug the second phone into port **2**.
+2. Repeat [Enter your Tonet line](#enter-your-tonet-line) on **FXS PORT2**, with the SIP details of the person who'll use that phone.
+3. Check the **FXS 2** row in **Status › Port Status**, and the **Phone 2** light.
+
+## Factory reset the HT801 or HT802
+
+A factory reset erases every setting, including your lines, and brings back the default password.
+
+**With the reset button:**
+
+1. Unplug the network cable.
+2. Push a pin into the reset hole and hold it for about 7 seconds.
+3. Take out the pin.
+
+**From the phone:**
+
+1. Dial `***`, then `99`. Wait for the voice to say "reset".
+2. Key in the adapter's MAC address, printed on the bottom of the unit. Numbers stay as they are. For letters, press: A = `22`, B = `222`, C = `2222`, D = `33`, E = `333`, F = `3333`. For example, `000b8200e395` is keyed as `0002228200333395`.
+3. The adapter restarts and resets after about 15 seconds.
+
+**From the web page:**
+
+- **HT801, HT802:** on the **BASIC SETTINGS** tab, set **Reset Type** to **Full Reset** and click **Reset**.
+- **V2:** under **Maintenance**, open **Restore Factory**, set **Reset Type** to **Full Reset** and click **Reset**.
+
+An adapter locked by a previous provider may only restart when you press the reset button. Ask that provider to release it.
+
+## Update the firmware
+
+1. Download the firmware from [grandstream.com/support/firmware](https://www.grandstream.com/support/firmware), under **HandyTone ATA's**. In October 2026 the latest is 1.0.65.3 for the HT801 and HT802, and 1.0.15.3 for the V2 models.
+2. Upload it:
+   - **HT801, HT802:** on the **ADVANCED SETTINGS** tab, pick the file (`ht801fw.bin` or `ht802fw.bin`) and click **Upload Firmware**.
+   - **V2:** go to **Maintenance › Upgrade**, open the **Firmware** tab, and under **Upgrade via Manual Upload**, upload the file (`ht80xv2fw.bin`).
+3. Wait a few minutes. Don't unplug the adapter. Then check the version on the **Status** page.
+
+## Problems?
+
+- [Register Failed or Not Registered](/ip_phones/troubleshooting#register-failed)
+- [One-way audio or no audio](/ip_phones/troubleshooting#one-way-audio-or-no-audio)
+- [Turn off SIP ALG on your router](/ip_phones/sip-alg)
+
+## Next step
+
+Want a desk phone instead of an analog one? See the phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/), or the [other setup guides](/ip_phones#setup-guides).

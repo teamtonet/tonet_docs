@@ -1,0 +1,282 @@
+---
+title: "Auto attendant and voicemail greeting scripts"
+nav: "Menu and voicemail scripts"
+description: "Copy-ready scripts for a phone menu, after hours, holidays, voicemail greetings and a call-recording notice, and how to set up each one in Tonet."
+---
+These are templates for the recordings callers hear: your phone menu (auto attendant), after hours, holidays, voicemail and a recording notice. Copy one, change the words in [brackets], and record it. Each script says where it goes in Tonet, and the setup steps are at the end of this page.
+
+## Before you record
+
+- Say the option first, then the key: "For billing, press 2."
+- Put the option most callers want first.
+- Keep a menu to four or five options. Need more? Send one key to a [second menu](/auto_attendant#make-a-menu-inside-a-menu).
+- Callers can press a key before the greeting ends, so you don't need long pauses.
+- Callers can also dial a person's extension during the greeting. If your team has extensions, say so.
+- If a caller presses nothing, the greeting plays again, up to 3 times, then the call ends. Set **No_response** to a person or team so these callers still reach someone.
+- Record in a quiet room and read a little slower than you talk.
+
+## Auto attendant script examples
+
+### Main menu for any business
+
+```text
+Thank you for calling [Business name].
+For sales, press 1.
+For support, press 2.
+For billing, press 3.
+If you know your party's extension, you can dial it at any time.
+To hear these options again, press 9.
+```
+
+In Tonet: keys 1 to 3 go to [teams](/groups), key 9 goes to this same menu, and **No_response** goes to your front desk.
+
+### Dental office
+
+```text
+Thank you for calling [Practice name].
+If you have a dental emergency, press 1.
+To book or change an appointment, press 2.
+For billing and insurance, press 3.
+For anything else, press 0.
+```
+
+More for dental practices: [Phone system for dental offices](https://tonet.ai/phone-system-for-dental-offices/).
+
+### Medical office
+
+```text
+Thank you for calling [Practice name].
+If this is a medical emergency, hang up and dial 911.
+To book or change an appointment, press 1.
+For prescription refills, press 2.
+For billing, press 3.
+For anything else, press 0.
+```
+
+More for clinics: [Phone system for medical offices](https://tonet.ai/phone-system-for-medical-offices/).
+
+### Plumbing, HVAC and contractors
+
+```text
+Thanks for calling [Company name].
+If you have an emergency, like [a burst pipe or no heat], press 1.
+To book a visit or get a quote, press 2.
+To check on a job that's already booked, press 3.
+For billing, press 4.
+```
+
+More for the trades: [plumbers](https://tonet.ai/phone-system-for-plumbers/), [HVAC](https://tonet.ai/phone-system-for-hvac/), [contractors](https://tonet.ai/phone-system-for-contractors/).
+
+### Law firm
+
+```text
+Thank you for calling [Firm name].
+If you're a new client, press 1.
+If you're a current client, press 2.
+For billing, press 3.
+If you know your party's extension, you can dial it at any time.
+```
+
+More for law firms: [Phone system for law firms](https://tonet.ai/phone-system-for-law-firms/).
+
+### Accounting firm
+
+```text
+Thank you for calling [Firm name].
+For tax appointments, press 1.
+For bookkeeping and payroll, press 2.
+For billing, press 3.
+For anything else, press 0.
+```
+
+More for accountants: [Phone system for accountants](https://tonet.ai/phone-system-for-accountants/).
+
+### Property management and real estate
+
+```text
+Thank you for calling [Company name].
+For a maintenance emergency, press 1.
+For other repairs, press 2.
+For leasing and showings, press 3.
+For rent and payments, press 4.
+```
+
+More: [property management](https://tonet.ai/phone-system-for-property-management/), [real estate](https://tonet.ai/phone-system-for-real-estate/).
+
+### Restaurant
+
+```text
+Thanks for calling [Restaurant name]. We're open [days and hours].
+To order for pickup, press 1.
+For reservations, press 2.
+For catering and events, press 3.
+```
+
+More for restaurants: [Phone system for restaurants](https://tonet.ai/phone-system-for-restaurants/).
+
+### Salon
+
+```text
+Thanks for calling [Salon name].
+To book, change or cancel an appointment, press 1.
+For anything else, press 2.
+```
+
+More for salons: [Phone system for salons](https://tonet.ai/phone-system-for-salons/).
+
+### Auto repair and car dealerships
+
+```text
+Thank you for calling [Business name].
+For service and repairs, press 1.
+For parts, press 2.
+For sales, press 3.
+For anything else, press 0.
+```
+
+More: [auto repair shops](https://tonet.ai/voip-phone-system-auto-repair-shops/), [car dealerships](https://tonet.ai/phone-system-for-car-dealerships/).
+
+### Insurance agency
+
+```text
+Thank you for calling [Agency name].
+To report a claim, press 1.
+For a new quote, press 2.
+For questions about your policy or a payment, press 3.
+```
+
+More for agencies: [Phone system for insurance agencies](https://tonet.ai/phone-system-for-insurance-agencies/).
+
+## After-hours scripts
+
+### Closed for the day
+
+```text
+Thank you for calling [Business name]. Our office is closed.
+Our hours are [Monday to Friday, 9 AM to 5 PM].
+To leave a message, press 1, or stay on the line.
+[For emergencies, press 2.]
+We'll call you back [the next business day].
+```
+
+In Tonet: an after-hours menu. Key 1 and **No_response** go to **Voicemail** › your team's voicemail. Key 2 goes to the person on call, or under **Features**, **Phone Number** forwards to an outside number.
+
+### Closed for lunch
+
+```text
+Thank you for calling [Business name]. We're on a lunch break and back at [1 PM].
+To leave a message, press 1, or stay on the line.
+```
+
+In Tonet: a menu set up like the one above, played by a [schedule](/schedule) route for your lunch hour. Split the day around it so routes don't overlap: for example 9:00 AM to 12:00 PM and 1:00 PM to 5:00 PM for your team, and 12:00 PM to 1:00 PM for this menu.
+
+## Holiday greeting scripts
+
+### Closed for a holiday
+
+```text
+Thank you for calling [Business name]. Our office is closed today for [holiday].
+We'll be back on [day, date] at [time].
+To leave a message, press 1, or stay on the line.
+[For emergencies, press 2.]
+```
+
+### Closed for the holiday season
+
+```text
+Happy holidays from everyone at [Business name].
+Our office is closed from [date] through [date], and we reopen on [date].
+To leave a message, press 1, or stay on the line, and we'll call you back when we're back.
+```
+
+### Open with holiday hours
+
+```text
+Thank you for calling [Business name]. For [holiday], we're open until [time] today.
+For sales, press 1.
+For support, press 2.
+```
+
+In Tonet: a holiday menu, played by a [calendar](/calendar) event for those dates. As with the after-hours menu, send key 1 and **No_response** to voicemail, so "stay on the line" leads to a message.
+
+## Voicemail greeting scripts
+
+### Main business voicemail
+
+```text
+You've reached [Business name]. We can't take your call right now.
+Please leave your name, your number and a short message, and we'll call you back [within one business day].
+```
+
+### Team voicemail
+
+```text
+You've reached the [Sales] team at [Business name]. We're helping other customers right now.
+Please leave your name, your number and how we can help, and someone on the team will call you back.
+```
+
+### Your own voicemail
+
+```text
+Hi, you've reached [Your name] at [Business name]. I can't take your call right now.
+Please leave your name, your number and a good time to reach you, and I'll call you back.
+```
+
+### Out of the office
+
+```text
+Hi, you've reached [Your name] at [Business name]. I'm out of the office until [date].
+Please leave a message, or for help sooner, call our main line at [number].
+```
+
+## Call-recording notice
+
+```text
+Thank you for calling [Business name]. This call may be recorded for quality and training.
+```
+
+Tonet doesn't play a recording notice on its own. Put this line at the start of your main menu greeting.
+
+Do your calls skip the menu and go straight to a person or team? Make a menu whose greeting is only this line, and set its **No_response** to that person or team. Then set the number's **Go To** to this menu. Callers hear the notice, and a few seconds later they're put through.
+
+## Set them up in Tonet
+
+### Menu greetings: main menu, after hours, holidays, recording notice
+
+1. Go to **Manage › Menus** and click **New menu**, or open a menu.
+2. Click **Upload/Record Audio...**. Record the script, or upload an MP3. Click **Upload**.
+3. Add the keys under **Routes** and click **Save**.
+4. Go to **Manage › Phones**, click the number, and open **Route & settings**. In **Go To**, pick **IVRs** and the menu. Click **Save Settings**.
+
+For "press 9 to hear these options again", point key 9 at the same menu. All the details are in [Menus](/auto_attendant).
+
+### After hours
+
+1. Make an after-hours menu with an after-hours script.
+2. In **Manage › Schedules**, make a schedule with your open hours. Send those hours to your main menu or your team.
+3. On the number, set **Schedule** to it, and **Go To** to the after-hours menu.
+
+Calls outside the schedule's hours go to **Go To**. See [Schedules](/schedule).
+
+### Holidays
+
+1. Make a holiday menu with a holiday script.
+2. In **Manage › Calendar**, click **New Event**. Set **Destination** to **IVRs** › your holiday menu, and the start and end.
+3. On each number, tick the event in **Calendars** and click **Save Settings**.
+
+See [Calendar](/calendar).
+
+### Voicemail greetings
+
+1. Open **Calls**, click the **⋯** menu, then **Voicemail greeting and email**.
+2. In **Select Mailbox**, pick your own mailbox, or a team you're on.
+3. Click **Choose Audio File** (WAV, MP3 or OGG, up to 10 MB), then **Upload Greeting**.
+
+To record your own greeting by phone instead, dial **\*865** and follow the prompts. Until you add a greeting, callers hear Tonet's standard one. See [Voicemail](/calls/voicemail).
+
+## Next step
+
+- [Build your menu](/auto_attendant)
+- [Set business hours](/schedule)
+- [Add holidays](/calendar)
+- [Ring a team together, or queue callers?](/guides/ring-together-or-queue)

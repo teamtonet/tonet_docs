@@ -1,0 +1,109 @@
+---
+title: "Yealink T54W setup: Wi-Fi, IP address, default password"
+nav: "T54W"
+description: "Set up a Yealink T54W with Tonet: connect it to Wi-Fi, find its IP address, sign in (default admin / admin), enter your SIP details and turn on STUN."
+---
+The T54W has an adjustable 4.3-inch color screen, 10 line keys, and built-in Wi-Fi and Bluetooth. You set it up from its web page, on a computer on the same network. The web page's default sign-in is **admin** / **admin**.
+
+## What you need
+
+- The phone, connected to your network with a network cable or over [Wi-Fi](#connect-the-t54w-to-wi-fi).
+- Power: from the network cable (PoE), or from a Yealink power adapter. On Wi-Fi you need the adapter. Yealink lists it as optional, so it may not come in the box.
+- A computer on the same network.
+- The person's [SIP details](/ip_phones#find-your-sip-details): **User Name**, **Password** and **Domain**.
+
+## Connect the T54W to Wi-Fi
+
+Skip this if the phone has a network cable.
+
+1. On the phone, go to **Menu › Basic › Wi-Fi**.
+2. In the **Wi-Fi** field, select **On**, then select **Save**. The phone scans for networks.
+3. Select your network, then select **Connect**. Don't see it? Select **Scan** to look again.
+4. Enter the Wi-Fi password in **Password** and select **OK**.
+
+Hidden network? In **Menu › Basic › Wi-Fi**, select **Known Network(s) › Add**, enter the **SSID**, pick the **Security Mode**, enter the password, and save. The phone remembers up to 5 networks.
+
+You can also turn on Wi-Fi from the phone's web page, in **Network › Wi-Fi**. If the phone has both a cable and Wi-Fi, it uses the cable.
+
+## Find the T54W IP address
+
+Press **OK** on the phone while it's idle. The status screen shows the IP address. You can also go to **Menu › Status**.
+
+## T54W default admin password
+
+The username is **admin** and the password is **admin**. Current firmware makes you choose a new password the first time you sign in, and again after a factory reset.
+
+1. On the computer, open a browser and go to `https://` followed by the phone's IP address, like `https://192.168.1.50`.
+2. If the browser warns that the connection isn't private, click **Advanced**, then continue to the address.
+3. Sign in with **admin** and **admin**.
+4. If asked, set a new password and write it down. It needs at least 8 characters and at least three of these: lowercase letters, uppercase letters, numbers, symbols. No more than 3 of the same character in a row, and it can't be the username.
+
+**admin doesn't work?** The password was changed. A [factory reset](#factory-reset-the-t54w) sets it back to **admin**. If the phone came from another provider, it may run that provider's own firmware and password: Yealink says to ask that provider. If **admin** still fails after a reset, follow Yealink's [password reset and recovery](https://support.yealink.com/document-detail/b4da2b33210c49dcbecffd65683a45bb) steps.
+
+## Enter your Tonet line
+
+1. On the phone's web page, go to **Account › Register**. In the **Account** list, pick **Account 1**.
+2. Fill in:
+
+| Field | Enter |
+|---|---|
+| **Line Active** | **Enabled** |
+| **Label** | What the phone screen shows for this line, like the person's name |
+| **Display Name** | The person's name |
+| **Register Name** | The **User Name** from SIP Information |
+| **User Name** | The **User Name** from SIP Information |
+| **Password** | The **Password** from SIP Information |
+| **Server Host** (under **SIP Server 1**) | The **Domain**, up to the colon |
+| **Port** (under **SIP Server 1**) | The number after the colon in **Domain** |
+
+3. Click **Confirm**.
+
+For example, if **Domain** shows `pbx.example.com:5080`, enter `pbx.example.com` in **Server Host** and `5080` in **Port**.
+
+## Turn on STUN
+
+1. Go to **Network › NAT**. Under **STUN**, set **Active** to **Enabled**. Enter `stun.tonet.ai` in **STUN Server** and `3478` in **STUN Port**. Click **Confirm**.
+2. Go to **Account › Register**, pick **Account 1**, and set **NAT** to **STUN**. Click **Confirm**.
+
+The account's **NAT** setting only works once STUN is active in **Network › NAT**.
+
+## Check that it registered
+
+- On the web page, **Account › Register** shows **Register Status**. It should say **Registered**.
+- On the phone, the line's icon is green when registered, yellow while registering, and gray if registration failed.
+
+Not registered after a minute? See [Register Failed](/ip_phones/troubleshooting#register-failed).
+
+## Factory reset the T54W
+
+A factory reset erases every setting on the phone, including your line, and sets the admin password back to **admin**.
+
+**From the phone:**
+
+- Press and hold **OK** while the phone is idle. When it asks **Reset to factory setting?**, select **OK**.
+- Or go to **Menu › Advanced › Reset Config › Reset to Factory Settings** and select **OK**. **Advanced** asks for the admin password.
+
+**From the web page:** go to **Settings › Upgrade** and click **Reset to Factory**. Click **OK** to confirm.
+
+The reset takes a few minutes. Don't unplug the phone until it has started up again.
+
+## Update the firmware
+
+1. Download the T54W's latest firmware from [support.yealink.com](https://support.yealink.com): find the phone, then its **Firmware & Release Note** section. The file ends in `.rom`.
+2. On the phone's web page, go to **Settings › Upgrade › Upgrade Firmware**, pick the file, and start the upgrade.
+3. Don't close the browser or unplug the phone until it restarts.
+
+<Callout type="warn">
+  Going from version 86 to version 87 firmware (96.86 to 96.87) on the web page fails with **ROM invalid**. Install 96.86.0.118 first, then version 87. Once on version 87, the phone can't go back to 86.
+</Callout>
+
+## Problems?
+
+- [No Service on the screen](/ip_phones/troubleshooting#no-service)
+- [Register Failed](/ip_phones/troubleshooting#register-failed)
+- [One-way audio or no audio](/ip_phones/troubleshooting#one-way-audio-or-no-audio)
+- [Turn off SIP ALG on your router](/ip_phones/sip-alg)
+
+## Next step
+
+Set up the [next person's phone](/ip_phones#find-your-sip-details), or see the desk phones Tonet sells at [tonet.ai/desk-phones](https://tonet.ai/desk-phones/).

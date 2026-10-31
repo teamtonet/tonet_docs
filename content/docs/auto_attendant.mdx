@@ -1,0 +1,127 @@
+---
+title: "Menus: set up an auto attendant (IVR)"
+nav: "Menus (IVR)"
+description: "Build a phone menu in Tonet: record a greeting, send each key to a person, team, voicemail or another menu, and connect the menu to your number."
+---
+A menu answers calls with your greeting and lets callers pick where to go: "For sales, press 1. For service, press 2." It's also called an auto attendant or IVR. Each key sends the caller to a person, a [team](/groups), a voicemail box, another menu or an outside number.
+
+Owners, managers and admins manage menus in **Manage › Menus**.
+
+## Make a menu
+
+1. Go to **Manage › Menus** and click **New menu**.
+2. Type a **Name**, like "Main menu".
+3. Click **Upload/Record Audio...** and add your greeting. See [Add the greeting](#add-the-greeting).
+4. Under **Routes**, click **Add Route**. Next to **Press**, pick a key. Next to **For**, click **Destination** and pick where that key goes.
+5. Repeat step 4 for each key.
+6. Click **Save**.
+
+A new menu gets no calls yet. [Connect it to a number](#connect-a-menu-to-a-number) next.
+
+Need words for the greeting? Copy a [menu script](/guides/menu-and-voicemail-scripts).
+
+## Add the greeting
+
+Every menu needs a greeting. You can't save a menu without one.
+
+1. Click **Upload/Record Audio...**.
+2. Either:
+   - **Record:** click the microphone, speak, then click it again to stop. Click play to listen. Allow the microphone if your browser asks.
+   - **Upload an MP3:** drag the file into the box, or click **Click to upload**.
+3. Click **Upload**.
+4. Click **Save** on the menu.
+
+Tonet turns your recording into phone audio. If it can't read a file, it tells you and keeps the greeting callers hear now.
+
+To change a greeting later, open the menu, do the same steps, and save.
+
+## Keys you can use
+
+| Key | Pick in the list |
+|---|---|
+| 1 to 9, 0 | **One** to **Nine**, **Zero** |
+| `*` | **Star** |
+| `#` | **Pound** |
+| No key pressed | **No_response** |
+
+Each key can be used once per menu. Keys already used are greyed out.
+
+## Where a key can send callers
+
+**Destination** opens **Select Route Destination**. Pick a category, or search by name or extension:
+
+| Category | Sends callers to |
+|---|---|
+| **Users** | One person |
+| **Teams** | A [team](/groups). It rings together or queues, as the team is set. |
+| **IVRs** | Another menu |
+| **Voicemail** | A person's or a team's voicemail box |
+| **Features** | **Busy** (callers hear a busy signal), or **Phone Number** to forward calls to an outside number |
+
+For **Phone Number**, type the number in **Forward to Phone Number** and click **Set Phone Number**.
+
+## What callers hear
+
+Try it on an example menu, then read the rules:
+
+<MenuDemo />
+
+- The greeting plays as soon as the call reaches the menu. Callers can press a key at any time. They don't have to wait for the end.
+- Callers can also dial a person's extension while the greeting plays.
+- **If they press nothing:** with **No_response** set, they go there. Without it, the greeting plays again, up to 3 times in all. Then Tonet says goodbye and ends the call.
+- **If they press a key you didn't set:** they hear that it's not valid, then the greeting again. After 5 wrong keys, Tonet ends the call.
+
+Want a "press 9 to hear this again" option? Point key 9 at this same menu, under **IVRs**. A new menu shows up in that list once it's saved.
+
+## Make a menu inside a menu
+
+A key can open another menu, for example "For service, press 2" leading to a service menu with its own options. This is a multi-level auto attendant.
+
+1. Make the second menu first, like "Service menu", with its own greeting and keys.
+2. Open your main menu. Point a key at "Service menu" under **IVRs**.
+3. Click **Save**.
+
+Tip: give the second menu a key back to the main menu, so callers who picked wrong can go back.
+
+## Connect a menu to a number
+
+1. Go to **Manage › Phones** and click the number.
+2. Open the **Route & settings** tab.
+3. In **Go To**, pick **IVRs**, then your menu.
+4. Click **Save Settings**.
+
+More on routing a number: [Choose where calls go](/phones#choose-where-calls-go).
+
+You can also play a menu only at certain times:
+
+- In a [schedule](/schedule) route, like your main menu during business hours.
+- In a [calendar](/calendar) event, like a holiday menu on the day.
+
+## The Menus page
+
+Switch between **Cards** and **List** at the top. Your browser remembers which one you picked.
+
+Each card shows:
+
+- The menu's name
+- **Answers** and the numbers whose calls come to this menu: through **Go To**, or right now through a schedule or calendar event. Otherwise it says **Not answering a number yet**.
+- A player for the greeting, or **No greeting recorded yet**
+- Each key and where it goes. **No choice** is where callers go when they press nothing.
+- How many options the menu has, and **Edit menu**
+
+Open a card's **⋯** menu for **Edit** and **Delete**. In **List**, use **Edit IVR** and **Delete IVR**.
+
+## Delete a menu
+
+1. Open the menu's **⋯** menu and click **Delete**. In **List**, click **Delete IVR**.
+2. Tonet checks where calls go. If numbers, other menus, schedules or calendar events still send calls to the menu, it lists them. Change each one, then click **Check again**.
+3. Click **Delete IVR**.
+
+This can't be undone.
+
+## Next step
+
+- [Copy menu and voicemail scripts](/guides/menu-and-voicemail-scripts)
+- [Send after-hours calls somewhere else](/schedule)
+- [Route calls on holidays](/calendar)
+- [Ring a team together, or queue callers?](/guides/ring-together-or-queue)

@@ -1,0 +1,127 @@
+---
+title: "Calls: call history, recordings and voicemail"
+nav: "Call history"
+description: "Find any call on the Calls page. Filter missed calls and voicemail, play recordings, read Tonet's summaries, export to CSV and share calls."
+---
+Your call history is the **Calls** page in the left menu. It lists calls and voicemails: who called, who took it, how long you talked, the recording, and what Tonet heard, in one line.
+
+<Shot
+  src="/images/calls/calls-page.webp"
+  alt="The Calls page: filters, periods, and each call with what Tonet heard"
+  width={1500}
+  height={624}
+  spots={[
+    { x: 60, y: 10, title: 'Search', text: 'by number, name, or words said on the call.' },
+    { x: 78, y: 10, title: 'Period:', text: 'today, this week, this month or a month you pick.' },
+    { x: 4, y: 19.5, title: 'Show', text: 'all calls, incoming, outgoing, missed or voicemail, with counts.' },
+    { x: 90, y: 38, title: 'Views:', text: 'by time, by caller, or a table.' },
+    { x: 22, y: 61, title: "Tonet's summary", text: 'of the call, in one line.' },
+    { x: 79.6, y: 69, title: "Tonet's tags.", text: 'Dashed ones come from Tonet, like Answering Machine.' },
+    { x: 94.8, y: 54, title: 'Play', text: 'the recording right in the list.' },
+  ]}
+/>
+
+| Role | Calls you see | Voicemails you see |
+|---|---|---|
+| Owner, Manager | Every call on the account | Your own mailbox and your teams' |
+| Administrator, Regular User | Your own calls and your teams' calls | Your own mailbox and your teams' |
+
+## Find a call
+
+- **Search**: type a number, a name, or words said on the call. Words need at least 3 letters.
+- **Period**: **Today**, **This week** (from Monday), **This month**, or **Pick a month**. The page opens on this week.
+- **Show**: **All calls**, **Incoming**, **Outgoing**, **Missed**, **Voicemail** or **Unheard voicemail**. Each shows its count.
+- **Person**: **Everyone**, or one teammate. Shown when more than one person has calls in the period.
+- **More filters**: only calls with a recording, only calls with a public link, only failed calls, talk time over 2 minutes, one line, or one team. **Clear these filters** resets them.
+
+Times are in your account's time zone.
+
+## Pick a view
+
+Click **By time**, **By caller** or **Table** above the list. Everyone starts on **Table**. Tonet remembers the view you pick.
+
+| View | Shows |
+|---|---|
+| **Table** | One row per call: Call, Date and Time, Extension, Source, Destination, Talk Time, Billing Duration, Total Duration and Actions (play, share, open the call). 25, 50 or 100 a page. |
+| **By time** | Calls by day, newest first, each with Tonet's summary and tags |
+| **By caller** | One row per number, with how many calls and the latest one. **Show calls** lists them; **Call** calls back. |
+
+## What each call shows
+
+In **By time**, each row shows the time, an arrow (red for missed or failed), the name or number, and the result: **Answered**, **No answer** or **Busy**. Then your line and who took or made the call.
+
+- **Summary**: the first sentence of Tonet's summary of the call. A voicemail with no summary shows its text instead. When your search matched words said on the call, the row shows where they were said.
+- **Tags**: dashed tags were added by Tonet. Solid ones were added by your team.
+- **Failed**: a call that didn't go through shows **Failed** and the reason.
+- A link icon means the call has a [public link](/analytics/secure_call_sharing).
+
+Tonet writes summaries from the recording, so a call needs a recording and enough conversation. Summaries also need Tonet AI on for your account. Owners and managers can stop them in [call review settings](/calls/after-call-review#choose-what-the-review-shows).
+
+Click the arrow at the end of a row (**Every detail of this call**) to see the date and time, direction, disposition, from, to, extension, team, talk time, billing duration, total duration, recording, voicemail, public link and call ID. A recorded call plays right there, with what was said under the player. Click a line to play from it.
+
+The buttons under the details:
+
+| Button | What it does |
+|---|---|
+| **Open call** | Opens the [call's page](/calls/call-page) |
+| **Share** | Makes a [public link](/analytics/secure_call_sharing). Owners, managers and admins. |
+| **Call back** or **Call again** | Calls the number |
+| **Add task** | Adds a task about this call |
+| **Delete voicemail** | Deletes the voicemail. The call stays in the list. |
+
+## Play a recording
+
+Click ▶ on the call. In **By time**, the call opens and plays above its transcript. In **Table**, a player opens at the bottom of the page.
+
+A deleted recording shows **Recording deleted**.
+
+## Voicemail on the Calls page
+
+A voicemail sits on the call it was left on.
+
+- Click **Voicemail** for calls with a voicemail, or **Unheard voicemail** for new ones.
+- Click the voicemail button on the call to listen. It shows the length, and it's filled in while unheard.
+- Listening marks the voicemail heard. **Mark heard** does it without listening.
+- With either filter on, **Delete N heard voicemails older than 30 days** clears out old messages.
+
+More in [Voicemail](/calls/voicemail).
+
+## The ⋯ menu
+
+| Item | What it does | Who |
+|---|---|---|
+| **Export CSV** | Downloads calls as a spreadsheet | Everyone |
+| **Select calls to share, delete or export** | Lets you tick calls and act on them together | Owners, managers, admins |
+| **Voicemail greeting and email** | Your greeting and voicemail emails. See [Voicemail](/calls/voicemail#change-your-voicemail-greeting). | Everyone |
+| **Public link for every new call** | Gives each new call a public link. Shows **On** or **Off**. | Owners, managers, admins |
+| **Recordings use …** | How much storage your recordings use. Owners and managers click it to open **Account**, where the **Calls** tab sets how long recordings are kept. | Everyone sees it |
+
+## Export calls to a spreadsheet
+
+1. Open **⋯** and click **Export CSV**.
+2. Pick **All calls** in the period, **Calls matching the current filter**, or **Selected calls**.
+3. Optional, for owners, managers and admins: tick **Create public links for the exported calls**.
+4. Click **Export CSV**.
+
+You get `tonet-calls-YYYY-MM.csv`, newest call first, with times in your account's time zone. Columns: Date, Time, Direction, Answered, Status, Fail reason, Extension, Extension name, Group, Source number, Source name, Destination number, Destination name, Talk time (seconds), Billing duration (seconds), Total duration (seconds), Recording and Public link.
+
+## Act on many calls at once
+
+Owners, managers and admins:
+
+1. Click **Select** above the list.
+2. Tick calls, or open the **Select** menu: **This page**, **Matching the current filter**, **Everything** in the period, or **Clear selection**.
+3. Click **Create public links**, **Remove N links**, **Delete N voicemails** or **Export CSV**.
+4. Click **Done** to stop selecting.
+
+## Open a call's page
+
+Click → in the **Table**, or **Open call** in a call's details. [A call's page](/calls/call-page) has the full transcript, Tonet's summary, **Translate**, **Share**, downloads and **Report a problem**.
+
+## Translate a call
+
+Open the call's page and pick a language in **Translate**, above the transcript. You can pick English, Spanish, French, Portuguese, Tagalog, Hindi, Arabic, Chinese, Vietnamese, German or Swedish. **Show the original** switches back. See [Translate the transcript](/calls/call-page#translate-the-transcript).
+
+## Next step
+
+Open [a call's page](/calls/call-page), [share a call](/analytics/secure_call_sharing), or set up your [voicemail greeting](/calls/voicemail#change-your-voicemail-greeting).

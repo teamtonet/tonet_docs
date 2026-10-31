@@ -1,0 +1,119 @@
+---
+title: "Phone numbers"
+nav: "Phone numbers"
+description: "Buy a local or toll-free number, choose where its calls go, pick who can use it, set its caller ID and texting, or delete it."
+---
+
+Your phone numbers live in **Manage › Phones**. Owners, managers and admins can open it.
+
+![Manage › Phones, with a card for each number showing where its calls go](/images/phones/my-phone-numbers.webp)
+
+The page has these tabs:
+
+| Tab | What it's for |
+|---|---|
+| **My Phone Numbers** | Your numbers and where their calls go |
+| **SMS Registration** | Registering your numbers for business texting |
+| **Port a Number** | [Moving a number you already have](/phones/port_number) to Tonet |
+| **Verified Caller ID** | [Showing an outside number](/phones/verified_caller_id) on your calls. Only some accounts have this tab. |
+| **Blocked** | [Numbers you've blocked](/phones/blacklist) |
+
+## Buy a number
+
+Owners and managers can buy numbers.
+
+![The Purchase Phones form: number type, area code and the numbers to pick](/images/phones/buy-a-number.webp)
+
+1. Go to **Manage › Phones** and click **Add a new Phone Number**.
+2. Under **Number Type**, pick **Local Number** or **Toll Free**.
+3. Under **Area Code**, type 3 digits and click **Search**.
+4. Under **Select Numbers**, tick the numbers you want.
+5. Click **Submit**.
+
+The number is ready right away. Your balance must cover the price: $2.50 for a local number, $3.00 for a toll-free one. See [Billing](/billing#what-you-pay).
+
+Anyone who can use the new number and doesn't have an outgoing number yet will now call from it.
+
+## Choose where calls go
+
+1. Go to **Manage › Phones** and click the number.
+2. Open the **Route & settings** tab.
+3. In **Go To**, pick where calls go:
+
+![A number's Route & settings tab with Calendars, Schedule, Go To and Caller ID](/images/phones/route-and-settings.webp)
+
+| Choice | What happens |
+|---|---|
+| **Users** | Rings one person |
+| **Teams** | Rings a [team](/groups) |
+| **IVRs** | Plays a [menu](/auto_attendant), like "Press 1 for sales" |
+| **Voicemail** | Sends callers straight to a person's or team's voicemail |
+| **Features** | **Busy** (callers hear busy), or **Phone Number** to forward calls to another number |
+
+![The route picker: choose a user, a team, a voicemail box or a feature](/images/phones/route-picker.webp)
+
+4. Click **Save Settings**.
+
+Want different routing at night or on holidays? On the same tab:
+
+- **Schedule:** pick a [schedule](/schedule) to route by day and time.
+- **Calendars:** pick [calendar events](/calendar), like a holiday, that override everything else.
+
+When a call comes in, Tonet checks in this order:
+
+1. A calendar event happening now
+2. The schedule
+3. **Go To**
+
+Pick a moment to see it work on an example setup:
+
+<CallFlow />
+
+<Callout type="info">
+  Have many numbers? On **My Phone Numbers**, click **Select numbers**, tick them, and route them all at once.
+</Callout>
+
+## Choose who can use a number
+
+People who can use a number can call from it and text from it. They also see its texts in **Messages**.
+
+![A number's Permissions tab, with a card for each person who can use it](/images/phones/phone-access.webp)
+
+1. Click the number and open the **Permissions** tab.
+2. Under **Phone Access**, click each person to tick or untick them. **Select All** and **Clear All** help.
+3. Click **Save Settings**.
+
+This doesn't change who the number's calls ring. That's set in **Go To**.
+
+## Show a different caller ID
+
+On the **Route & settings** tab, **Caller ID** sets the number people see when you call from this number. It is the number itself unless you pick an outside number you've [verified](/phones/verified_caller_id). Only some accounts have Verified Caller ID.
+
+## Name a number
+
+On the **Route & settings** tab, type a **Name**, like "Front desk", and click **Save Settings**. Your team sees this name in the dashboard.
+
+## Texting from a number
+
+Carriers only deliver business texts from registered numbers.
+
+- Each number shows **Texting approved** or **Texting not approved**. If a carrier refuses its texts, it shows **Texting blocked**. See [Register for texting](/phones/sms-registration).
+- Register your numbers in the **SMS Registration** tab. Its status shows Draft, Submitted, Under review, More information needed, Approved or Rejected.
+- Calls work while a number waits for approval.
+
+## Delete a number
+
+1. On **My Phone Numbers**, open the number's **⋯** menu and click **Delete**.
+2. Click **Delete Phone** to confirm.
+
+This can't be undone. The number goes back to the carrier.
+
+## What each number shows
+
+Each number's card shows where its calls go, who can use it, whether texting is approved, and the daily spam check: **Spam check: clean** or **Spam check: flagged**.
+
+Open a number's **Activity** tab to see its calls and texts.
+
+## Next step
+
+[Add the people](/users) who will answer, or [make a team](/groups) so a call rings several people.
