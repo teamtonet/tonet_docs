@@ -4,7 +4,7 @@ nav: "Start here"
 description: "How to set up and use Tonet, the business phone system in your browser: numbers, a line for each person, call routing, texting and voicemail."
 ---
 
-import { ArrowRightLeft, Calculator, MessageSquareText, Phone, PhoneCall, PhoneForwarded, Rocket, Users } from 'lucide-react';
+import { ArrowRightLeft, BookOpen, Bot, Calculator, MessageSquareText, Phone, PhoneCall, PhoneForwarded, Rocket, Smartphone, Sparkles, TrendingUp, Users } from 'lucide-react';
 
 ## Start here
 
@@ -12,7 +12,18 @@ import { ArrowRightLeft, Calculator, MessageSquareText, Phone, PhoneCall, PhoneF
   <Card icon={<Rocket />} title="1. Sign up" href="/sign_up">Pick a number and add at least $15 of credit.</Card>
   <Card icon={<Users />} title="2. Add your team" href="/users">Each person gets an extension and a sign-in.</Card>
   <Card icon={<PhoneForwarded />} title="3. Choose where calls go" href="/phones#choose-where-calls-go">Ring one person, a team or a menu.</Card>
-  <Card icon={<PhoneCall />} title="4. Make a call" href="/dialer">From the dashboard or the desktop app.</Card>
+  <Card icon={<PhoneCall />} title="4. Make a call" href="/dialer">From the dashboard, the desktop app or your phone.</Card>
+</Cards>
+
+## What Tonet's AI does for you
+
+Every recorded call is written out, summed up and tagged after it ends. You don't have to set anything up.
+
+<Cards>
+  <Card icon={<Sparkles />} title="Summaries and next steps" href="/ai#after-every-call">What was said, what was agreed, and a task in one click.</Card>
+  <Card icon={<TrendingUp />} title="Leads going cold" href="/ai#across-all-your-calls">Callers who asked for a quote and haven't heard back.</Card>
+  <Card icon={<Bot />} title="Ask Tonet does it" href="/ask-tonet">"Send calls to voicemail after 6 PM." Done and checked.</Card>
+  <Card icon={<BookOpen />} title="It learns your answers" href="/knowledge">From your calls, texts and website.</Card>
 </Cards>
 
 ## Most asked
@@ -20,6 +31,7 @@ import { ArrowRightLeft, Calculator, MessageSquareText, Phone, PhoneCall, PhoneF
 <Cards>
   <Card icon={<ArrowRightLeft />} title="Bring your number" href="/phones/port_number">Move it from your current provider.</Card>
   <Card icon={<MessageSquareText />} title="Text from your number" href="/phones/sms-registration">Register your business for texting.</Card>
+  <Card icon={<Smartphone />} title="Calls on your cell" href="/phone-app">The Tonet app for iPhone and Android.</Card>
   <Card icon={<Phone />} title="Set up a desk phone" href="/ip_phones">Yealink, Grandstream and other SIP phones.</Card>
   <Card icon={<Calculator />} title="What it costs" href="/billing#work-out-your-monthly-cost">Both plans, worked out for your team.</Card>
 </Cards>
@@ -41,7 +53,20 @@ Keep your number. Each page says what to get from your current provider, then ho
 
 Sign in at [dashboard.tonet.ai](https://dashboard.tonet.ai). The menu on the left has:
 
-![The Tonet dashboard: the left menu, the top bar and the Overview page](/images/overview/dashboard-overview.webp)
+<Shot
+  src="/images/overview/dashboard-overview.webp"
+  alt="The Tonet dashboard: the left menu, the top bar and the Overview page"
+  width={1600}
+  height={603}
+  spots={[
+    { x: 9, y: 33, title: 'The menu.', text: 'Overview, Manage, Calls, Messages, Contacts, Knowledge and Analytics.' },
+    { x: 4, y: 70, title: 'Phones and Team.', text: 'Your lines, and who on your team is online.' },
+    { x: 33, y: 38, title: 'All communications.', text: "Every call, text and voicemail, with Tonet's one-line summary of each call." },
+    { x: 84, y: 65, title: 'What Tonet noticed.', text: 'Patterns in your calls, like callers asking about Saturdays, with a suggestion.' },
+    { x: 84, y: 5, title: 'The bell.', text: 'Missed calls, voicemails and messages from the last 7 days.' },
+    { x: 92.5, y: 5, title: 'Your balance.', text: 'Opens Billing. Owners and managers only.' },
+  ]}
+/>
 
 | Menu item | What's there | Who sees it |
 |---|---|---|
@@ -50,6 +75,7 @@ Sign in at [dashboard.tonet.ai](https://dashboard.tonet.ai). The menu on the lef
 | **Calls** | Calls and voicemails, with recordings | Everyone. Admins and regular users see their own and their teams' calls. |
 | **Messages** | Texts with customers and chat with your team | Everyone |
 | **Contacts** | Everyone you talk to, with notes | Everyone |
+| **Meetings** | Voice meetings with your team and guests, with Tonet AI's notes. See [Meetings](/meetings). | Everyone |
 | **Knowledge** | What Tonet knows about your business: answers for callers, and where it learns them | Everyone |
 | **Analytics** | Answering, dialing and team numbers | Owners, managers, admins |
 
@@ -62,6 +88,7 @@ Owners and managers also see **Account** and **Billing** inside **Manage**.
 | Dialpad icon | Opens the phone. See [Make and take calls](/dialer). |
 | Signal bars | Your connection to Tonet. Click it to run a network test. |
 | Bell | Missed calls, voicemails and messages from the last 7 days |
+| Question-mark speech bubble (**Contact Support**) | Opens **How can we help?**: Ask Tonet, email support, or these docs |
 | ✦ | Ask Tonet's replies. Shows on the Messages page, and when you have unread replies |
 | Balance | Opens [Billing](/billing). Owners and managers only. |
 | Your picture | Your status, [Profile](/profile), Usage Data, Billing (owners and managers), [Refer & earn](/refer), [Enable click to call](/features/click_to_call), and Logout |
@@ -79,9 +106,13 @@ Change someone's role in [Users](/users#change-a-role).
 
 ## Ways to take calls
 
+A call to you rings everywhere you're signed in, at once. Answer wherever you are.
+
 - **In the browser.** Nothing to install. Allow the microphone when asked.
+- **The [phone app](/phone-app)** for [iPhone](/phone-app/iphone) and [Android](/phone-app/android). Rings on the lock screen, with your business number.
 - **The [desktop app](/app).** Keeps your line on with the window closed. Linux now; Windows and Mac are coming.
 - **A desk phone.** Any standard SIP phone works. See [IP Phones](/ip_phones).
+- **Your cell number,** without the app. See [forward calls to a cell](/guides/forward-to-cell).
 
 ## Need help?
 
