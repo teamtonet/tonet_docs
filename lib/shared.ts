@@ -5,9 +5,9 @@ export const appName = 'Tonet Docs';
 export const signInUrl = 'https://dashboard.tonet.ai';
 export const signUpUrl = 'https://dashboard.tonet.ai/signup';
 
-// Ask Tonet's launcher already allows docs.tonet.ai, but the API still refuses the docs origin
-// (tonet.io_fast/__init__.py `origins`). Turn this on once that list includes https://docs.tonet.ai.
-export const askTonetEnabled = false;
+// Ask Tonet's bubble. The API allows https://docs.tonet.ai (tonet.io_fast/__init__.py `origins`);
+// turn this off if that ever changes.
+export const askTonetEnabled = true;
 
 export const docsImageRoute = '/og';
 export const docsContentRoute = '/llms.mdx';
