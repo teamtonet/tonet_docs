@@ -5,9 +5,15 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps } from 'react';
+import { AskDemo } from './ask-demo';
+import { CallDemo } from './call-demo';
 import { CallFlow } from './call-flow';
 import { Heading } from './heading';
+import { LiveCallDemo } from './live-call-demo';
+import { PortTimeline } from './port-timeline';
 import { PriceCalculator } from './price-calculator';
+import { RingEverywhere } from './ring-everywhere';
+import { Shot } from './shot';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
@@ -27,6 +33,12 @@ export function getMDXComponents(components?: MDXComponents) {
     Tabs,
     PriceCalculator,
     CallFlow,
+    CallDemo,
+    AskDemo,
+    Shot,
+    RingEverywhere,
+    PortTimeline,
+    LiveCallDemo,
     ...components,
   } satisfies MDXComponents;
 }
