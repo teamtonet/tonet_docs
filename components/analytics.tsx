@@ -43,7 +43,7 @@ export const ATTRIBUTION = `(function () {
   } catch (e) { /* attribution is best effort */ }
 })();`;
 
-/** GA4 (same property as tonet.ai and the dashboard) and Rybbit, loaded after the page. */
+/** GA4 (same property as tonet.ai and the dashboard) and Rybbit (same site as tonet.ai), loaded after the page. */
 export function Analytics() {
   return (
     <>
@@ -51,7 +51,7 @@ export function Analytics() {
       <Script id="ga4" strategy="lazyOnload">
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1N6KVQV3HQ');`}
       </Script>
-      <Script src="https://app.rybbit.io/api/script.js" data-site-id="8404" strategy="lazyOnload" />
+      <Script src="https://app.rybbit.io/api/script.js" data-site-id="1a94d7fcfa3d" strategy="lazyOnload" />
     </>
   );
 }
