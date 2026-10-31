@@ -10,10 +10,14 @@ import { CallDemo } from './call-demo';
 import { CallFlow } from './call-flow';
 import { Heading } from './heading';
 import { LiveCallDemo } from './live-call-demo';
+import { MenuDemo } from './menu-demo';
+import { PhonePicker } from './phone-picker';
 import { PortTimeline } from './port-timeline';
 import { PriceCalculator } from './price-calculator';
 import { RingEverywhere } from './ring-everywhere';
+import { RingVsQueue } from './ring-vs-queue';
 import { Shot } from './shot';
+import { TextingChecker } from './texting-checker';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
@@ -39,6 +43,10 @@ export function getMDXComponents(components?: MDXComponents) {
     RingEverywhere,
     PortTimeline,
     LiveCallDemo,
+    TextingChecker,
+    MenuDemo,
+    RingVsQueue,
+    PhonePicker,
     ...components,
   } satisfies MDXComponents;
 }
